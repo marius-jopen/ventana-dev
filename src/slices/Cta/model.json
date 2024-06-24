@@ -1,0 +1,58 @@
+{
+  "id": "cta",
+  "type": "SharedSlice",
+  "name": "Cta",
+  "description": "Cta",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "button_text_1": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text 1",
+            "placeholder": ""
+          }
+        },
+        "button_link_1": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link 1",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "button_text_2": {
+          "type": "Text",
+          "config": {
+            "label": "Button Text 2",
+            "placeholder": ""
+          }
+        },
+        "button_link_2": {
+          "type": "Link",
+          "config": {
+            "label": "Button Link 2",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "headline": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Headline",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "put",
+				"type": "Text"
+			},
+			"sub_headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod pariatur voluptate nulla nostrud est minim voluptate non ex nulla nisi. Fugiat do consectetur sint ullamco duis aliquip aute dolore velit sunt dolore cupidatat."
+						}
+					}
+				]
+			},
+			"video": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"id": "mock_Media_link",
+					"kind": "image/jpeg",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"__TYPE__": "FileLink"
+				}
+			},
+			"text_1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud anim esse minim sit excepteur officia laborum adipisicing est culpa deserunt ut labore pariatur. Laboris magna aliqua officia magna non deserunt minim voluptate non exercitation labore eu."
+						}
+					}
+				]
+			},
+			"text_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "In sit ea laborum velit consequat culpa irure ullamco anim ex officia eiusmod incididunt ea."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

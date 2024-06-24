@@ -1,0 +1,63 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"max_number": {
+				"__TYPE__": "FieldContent",
+				"value": "17",
+				"type": "Number"
+			},
+			"fade_in_text": {
+				"__TYPE__": "FieldContent",
+				"value": "red",
+				"type": "Text"
+			},
+			"headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt dolor non irure duis sint eu quis non consectetur id."
+						}
+					}
+				]
+			},
+			"sub_headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Eiusmod occaecat tempor ex nisi dolor deserunt culpa fugiat ex tempor pariatur in officia. Amet laboris laboris ea commodo do eu culpa aliquip dolore velit sunt proident."
+						}
+					}
+				]
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Ut duis aute nulla adipisicing aliquip voluptate do duis sint ad cillum magna elit. Veniam id laborum incididunt proident sint pariatur nostrud ipsum ut laborum."
+						}
+					}
+				]
+			},
+			"video": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"id": "mock_Media_link",
+					"kind": "image/jpeg",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"__TYPE__": "FileLink"
+				}
+			}
+		},
+		"items": []
+	}
+]

@@ -1,0 +1,25 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"subheadline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nisi consectetur est officia ex minim deserunt aute. Voluptate sunt officia minim occaecat cillum."
+						}
+					}
+				]
+			},
+			"headline": {
+				"__TYPE__": "FieldContent",
+				"value": "ago",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

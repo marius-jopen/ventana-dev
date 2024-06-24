@@ -1,0 +1,44 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"button_text_1": {
+				"__TYPE__": "FieldContent",
+				"value": "feathers",
+				"type": "Text"
+			},
+			"button_link_1": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://slicemachine.dev"
+				}
+			},
+			"button_text_2": {
+				"__TYPE__": "FieldContent",
+				"value": "piece",
+				"type": "Text"
+			},
+			"button_link_2": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"__TYPE__": "ExternalLink",
+					"url": "https://prismic.io"
+				}
+			},
+			"headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Aliquip ea nulla eu dolor sint minim aliqua esse adipisicing non consequat labore aute. Ea pariatur reprehenderit minim do veniam cupidatat cillum in sit eiusmod ex excepteur quis."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

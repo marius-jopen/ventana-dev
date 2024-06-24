@@ -1,0 +1,75 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"video": {
+				"__TYPE__": "LinkContent",
+				"value": {
+					"id": "mock_Media_link",
+					"kind": "image/jpeg",
+					"name": "mock_name",
+					"url": "https://source.unsplash.com/daily",
+					"size": "0",
+					"__TYPE__": "FileLink"
+				}
+			},
+			"headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Occaecat aliqua eu amet duis sit excepteur velit voluptate qui incididunt. Fugiat commodo laborum adipisicing irure exercitation. In officia enim nulla eu ullamco in nisi culpa velit deserunt."
+						}
+					}
+				]
+			},
+			"sub_headline": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Elit est officia incididunt nostrud deserunt in enim aliqua deserunt occaecat nisi adipisicing nostrud pariatur tempor. Adipisicing laborum excepteur ut aliquip tempor tempor. Non ea do consectetur do."
+						}
+					}
+				]
+			},
+			"text_1": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Deserunt dolor minim eu Lorem id ut culpa eiusmod nostrud ullamco ipsum commodo tempor."
+						}
+					}
+				]
+			},
+			"text_2": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Magna enim voluptate dolore sint sit nulla deserunt quis reprehenderit culpa anim voluptate consectetur eu. Voluptate deserunt enim aliquip ut nisi sunt. Ad excepteur sint reprehenderit laborum aliqua eiusmod."
+						}
+					}
+				]
+			},
+			"text_3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Mollit nostrud irure id tempor est id dolore officia qui."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]
