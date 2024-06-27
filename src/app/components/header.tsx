@@ -5,7 +5,7 @@ const Header = (): JSX.Element => {
     <div className="flex justify-between">
       <div>Ventana</div>
       
-      <div>
+      <div className="flex gap-4">
         <Link href="/">Home</Link>
         <Link href="/product">Product</Link>
         <Link href="/company">Company</Link>

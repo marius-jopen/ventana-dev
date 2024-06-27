@@ -6,19 +6,29 @@ export type ChipProps = SliceComponentProps<Content.ChipSlice>;
 const Chip = ({ slice }: ChipProps): JSX.Element => {
   return (
     <section>
-      {slice.primary.max_number}
+      <div className="grid grid-cols-24">
+        <div className="col-start-2 col-end-24 text-center bg-white/30">
+          {slice.primary.max_number}
 
-      {slice.primary.fade_in_text}
+          {slice.primary.fade_in_text}
+        </div>
 
-      <PrismicRichText field={slice.primary.headline} />
+        <div className="col-span-24 bg-white/30">
+          <PrismicLink field={slice.primary.video}>
+            Video
+          </PrismicLink>
+        </div>
 
-      <PrismicRichText field={slice.primary.sub_headline} />
+        <div className="col-start-3 col-end-11 bg-white/30">
+          <PrismicRichText field={slice.primary.headline} />
 
-      <PrismicRichText field={slice.primary.text} />
+          <PrismicRichText field={slice.primary.sub_headline} />
+        </div>
 
-      <PrismicLink field={slice.primary.video}>
-        Video
-      </PrismicLink>
+        <div className="col-start-17 col-end-23 bg-white/30">
+          <PrismicRichText field={slice.primary.text} />
+        </div>
+      </div>
     </section>
   );
 };

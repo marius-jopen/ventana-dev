@@ -6,9 +6,11 @@ export type ImageOpenerProps = SliceComponentProps<Content.ImageOpenerSlice>;
 const ImageOpener = ({ slice }: ImageOpenerProps): JSX.Element => {
   return (
     <section>
-      <PrismicRichText field={slice.primary.headline} />
+      <div className="grid grid-cols-24">
+        <PrismicRichText field={slice.primary.headline} />
 
-      <PrismicImage field={slice.primary.image} />
+        <PrismicImage field={slice.primary.image} />
+      </div>
     </section>
   );
 };

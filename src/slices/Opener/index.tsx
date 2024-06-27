@@ -6,9 +6,17 @@ export type OpenerProps = SliceComponentProps<Content.OpenerSlice>;
 const Opener = ({ slice }: OpenerProps): JSX.Element => {
   return (
     <section >
-      {slice.primary.headline}
+      <div className="grid grid-cols-24">
+        <div className="col-span-24 bg-white/30">
+          Video
+        </div>
 
-      <PrismicRichText field={slice.primary.subheadline} />
+        <div className="col-start-2 col-end-24 text-center bg-white/30">
+          {slice.primary.headline}
+
+          <PrismicRichText field={slice.primary.subheadline} />
+        </div>
+      </div>
     </section>
   );
 };
