@@ -1,5 +1,6 @@
 import Footer from "./components/footer"
 import Header from "./components/header"
+import '@/app/styles.css'
 
 export const metadata = {
   title: 'Next.js',

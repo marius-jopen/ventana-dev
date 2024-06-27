@@ -2,8 +2,9 @@ import Link from "next/link";
 
 const Header = (): JSX.Element => {
   return (
-    <div>
+    <div className="flex justify-between">
       <div>Ventana</div>
+      
       <div>
         <Link href="/">Home</Link>
         <Link href="/product">Product</Link>
