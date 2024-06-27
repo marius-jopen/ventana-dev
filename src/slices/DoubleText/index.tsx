@@ -10,7 +10,7 @@ const DoubleText = ({ slice }: DoubleTextProps): JSX.Element => {
         <PrismicRichText field={slice.primary.headline} />
       </div>
       
-      <div className="col-start-12 col-end-23">
+      <div className="col-start-13 col-end-24">
         <PrismicRichText field={slice.primary.text} />
       </div>
     </section>
