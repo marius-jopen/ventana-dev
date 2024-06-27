@@ -1,21 +1,21 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
 
-/**
- * Props for `Cta`.
- */
 export type CtaProps = SliceComponentProps<Content.CtaSlice>;
 
-/**
- * Component for "Cta" Slices.
- */
 const Cta = ({ slice }: CtaProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for cta (variation: {slice.variation}) Slices
+    <section>
+      <PrismicLink field={slice.primary.button_link_1}>
+        {slice.primary.button_text_1}
+      </PrismicLink>
+
+
+      <PrismicLink field={slice.primary.button_link_2}>
+        {slice.primary.button_text_2}
+      </PrismicLink>
+
+      <PrismicRichText field={slice.primary.headline} />
     </section>
   );
 };

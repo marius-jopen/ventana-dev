@@ -14,9 +14,9 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
 
       <PrismicRichText field={slice.primary.text_2} />
 
-      <PrismicLink field={slice.primary.video}>
+      {/* <PrismicLink field={slice.primary.video}>
         Video
-      </PrismicLink>
+      </PrismicLink> */}
     </section>
   );
 };

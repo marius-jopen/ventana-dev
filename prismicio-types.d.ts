@@ -817,6 +817,16 @@ export type OpenerSlice = prismic.SharedSlice<"opener", OpenerSliceVariation>;
  */
 export interface PowerSliceDefaultPrimary {
   /**
+   * Video field in *Power → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: power.default.primary.video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField;
+
+  /**
    * Sub Headline field in *Power → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -855,16 +865,6 @@ export interface PowerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_2: prismic.RichTextField;
-
-  /**
-   * Video field in *Power → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: power.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
 }
 
 /**
