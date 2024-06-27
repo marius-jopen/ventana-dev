@@ -1,5 +1,6 @@
 import Footer from "./components/footer"
 import Header from "./components/header"
+import Grid from "./components/grid"
 import '@/app/styles.css'
 
 export const metadata = {
@@ -18,6 +19,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Grid />
       </body>
     </html>
   )
