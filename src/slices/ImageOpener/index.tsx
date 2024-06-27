@@ -7,9 +7,14 @@ const ImageOpener = ({ slice }: ImageOpenerProps): JSX.Element => {
   return (
     <section>
       <div className="grid grid-cols-24">
-        <PrismicRichText field={slice.primary.headline} />
+        <div className="col-span-24 bg-white/30">
+          <PrismicImage field={slice.primary.image} />
+          Image
+        </div>
 
-        <PrismicImage field={slice.primary.image} />
+        <div className="col-start-2 col-end-24 bg-white/30">
+          <PrismicRichText field={slice.primary.headline} />
+        </div>
       </div>
     </section>
   );

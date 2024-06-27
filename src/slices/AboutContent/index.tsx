@@ -7,31 +7,53 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
   return (
     <section>
       <div className="grid grid-cols-24">
-        <PrismicRichText field={slice.primary.text_1} />
+        <div className="col-start-2 col-end-13 bg-white/30">
+          <PrismicRichText field={slice.primary.text_1} />
+        </div>
 
-        <PrismicRichText field={slice.primary.text_2} />
+        <div className="col-start-2 col-end-12 bg-white/30">
+          <PrismicImage field={slice.primary.image_1} />
+          Image
 
-        <PrismicRichText field={slice.primary.text_3} />
+          <PrismicRichText field={slice.primary.caption_1} />
+        </div>
 
-        <PrismicImage field={slice.primary.image_1} />
+        <div className="col-start-15 col-end-22 bg-white/30">
+          <PrismicImage field={slice.primary.image_2} />
+          Image
 
-        <PrismicRichText field={slice.primary.caption_1} />
+          <PrismicRichText field={slice.primary.caption_2} />
+        </div>
 
-        <PrismicImage field={slice.primary.image_2} />
 
-        <PrismicRichText field={slice.primary.caption_2} />
+        <div className="col-start-2 col-end-20 bg-white/30">
+          <PrismicRichText field={slice.primary.text_2} />
+        </div>
 
-        <PrismicImage field={slice.primary.image_3} />
+        <div className="col-start-2 col-end-10 bg-white/30">
+          <PrismicImage field={slice.primary.image_3} />
+          Image
 
-        <PrismicRichText field={slice.primary.caption_3} />
+          <PrismicRichText field={slice.primary.caption_3} />
+        </div>
 
-        <PrismicImage field={slice.primary.image_4} />
+        <div className="col-start-15 col-end-23 bg-white/30">
+          <PrismicRichText field={slice.primary.text_3} />
+        </div>
 
-        <PrismicRichText field={slice.primary.caption_4} />
+        <div className="col-start-12 col-end-23 bg-white/30">
+          <PrismicImage field={slice.primary.image_4} />
+          Image
 
-        <PrismicImage field={slice.primary.image_5} />
+          <PrismicRichText field={slice.primary.caption_4} />
+        </div>
 
-        <PrismicRichText field={slice.primary.caption_5} />
+        <div className="col-start-2 col-end-10 bg-white/30">
+          <PrismicImage field={slice.primary.image_5} />
+          Image
+
+          <PrismicRichText field={slice.primary.caption_5} />
+        </div>
       </div>
     </section>
   );

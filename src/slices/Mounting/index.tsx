@@ -7,13 +7,19 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
   return (
     <section>
       <div className="grid grid-cols-24">
-        <PrismicRichText field={slice.primary.text_1} />
+        <div className="col-span-24 bg-white/30">
+          <PrismicLink field={slice.primary.video}>
+            Video
+          </PrismicLink>
+        </div>
 
-        <PrismicRichText field={slice.primary.text_2} />
+        <div className="col-start-3 col-end-11 bg-white/30">
+          <PrismicRichText field={slice.primary.text_1} />
+        </div>
 
-        <PrismicLink field={slice.primary.video}>
-          Video
-        </PrismicLink>
+        <div className="col-start-17 col-end-23 bg-white/30">
+          <PrismicRichText field={slice.primary.text_2} />
+        </div>
       </div>
     </section>
   );

@@ -7,14 +7,18 @@ const Specs = ({ slice }: SpecsProps): JSX.Element => {
   return (
     <section>
       <div className="grid grid-cols-24">
-        <PrismicRichText field={slice.primary.headline} />
+        <div className="col-start-2 col-end-12 bg-white/30">
+          <PrismicRichText field={slice.primary.headline} />
+        </div>
 
-        {Array.isArray(slice.primary.table) && slice.primary.table.map((item, index) => (
-          <div className="flex justify-between" key={index}>
-            <PrismicRichText field={item.label} />
-            <PrismicRichText field={item.content} />
-          </div>
-        ))}
+        <div className="col-start-14 col-end-24 bg-white/30">
+          {Array.isArray(slice.primary.table) && slice.primary.table.map((item, index) => (
+            <div className="flex justify-between" key={index}>
+              <PrismicRichText field={item.label} />
+              <PrismicRichText field={item.content} />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
