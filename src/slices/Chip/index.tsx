@@ -1,21 +1,24 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
 
-/**
- * Props for `Chip`.
- */
 export type ChipProps = SliceComponentProps<Content.ChipSlice>;
 
-/**
- * Component for "Chip" Slices.
- */
 const Chip = ({ slice }: ChipProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for chip (variation: {slice.variation}) Slices
+    <section>
+      {slice.primary.max_number}
+
+      {slice.primary.fade_in_text}
+
+      <PrismicRichText field={slice.primary.headline} />
+
+      <PrismicRichText field={slice.primary.sub_headline} />
+
+      <PrismicRichText field={slice.primary.text} />
+
+      <PrismicLink field={slice.primary.video}>
+        Video
+      </PrismicLink>
     </section>
   );
 };

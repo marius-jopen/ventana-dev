@@ -1,21 +1,24 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicLink, PrismicRichText } from "@prismicio/react";
 
-/**
- * Props for `Darker`.
- */
 export type DarkerProps = SliceComponentProps<Content.DarkerSlice>;
 
-/**
- * Component for "Darker" Slices.
- */
 const Darker = ({ slice }: DarkerProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for darker (variation: {slice.variation}) Slices
+    <section>
+      <PrismicRichText field={slice.primary.headline} />
+
+      <PrismicRichText field={slice.primary.sub_headline} />
+
+      <PrismicRichText field={slice.primary.text_1} />
+      
+      <PrismicRichText field={slice.primary.text_2} />
+      
+      <PrismicRichText field={slice.primary.text_3} />
+
+      <PrismicLink field={slice.primary.video}>
+        Video
+      </PrismicLink>
     </section>
   );
 };

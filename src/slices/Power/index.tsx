@@ -1,21 +1,22 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
 
-/**
- * Props for `Power`.
- */
 export type PowerProps = SliceComponentProps<Content.PowerSlice>;
 
-/**
- * Component for "Power" Slices.
- */
 const Power = ({ slice }: PowerProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for power (variation: {slice.variation}) Slices
+    <section>
+      <PrismicRichText field={slice.primary.sub_headline} />
+
+      <PrismicRichText field={slice.primary.headline} />
+
+      <PrismicRichText field={slice.primary.text_1} />
+
+      <PrismicRichText field={slice.primary.text_2} />
+
+      <PrismicLink field={slice.primary.video}>
+        Video
+      </PrismicLink>
     </section>
   );
 };

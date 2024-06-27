@@ -859,12 +859,12 @@ export interface PowerSliceDefaultPrimary {
   /**
    * Video field in *Power → Default → Primary*
    *
-   * - **Field Type**: Image
+   * - **Field Type**: Link to Media
    * - **Placeholder**: *None*
    * - **API ID Path**: power.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#image
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  video: prismic.ImageField<never>;
+  video: prismic.LinkToMediaField;
 }
 
 /**

@@ -1,22 +1,14 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 
-/**
- * Props for `DoubleText`.
- */
 export type DoubleTextProps = SliceComponentProps<Content.DoubleTextSlice>;
 
-/**
- * Component for "DoubleText" Slices.
- */
 const DoubleText = ({ slice }: DoubleTextProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for double_text (variation: {slice.variation})
-      Slices
+    <section>
+      <PrismicRichText field={slice.primary.headline} />
+      
+      <PrismicRichText field={slice.primary.text} />
     </section>
   );
 };

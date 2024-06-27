@@ -1,21 +1,22 @@
 import { Content } from "@prismicio/client";
-import { SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
 
-/**
- * Props for `Space`.
- */
 export type SpaceProps = SliceComponentProps<Content.SpaceSlice>;
 
-/**
- * Component for "Space" Slices.
- */
 const Space = ({ slice }: SpaceProps): JSX.Element => {
   return (
-    <section
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      Placeholder component for space (variation: {slice.variation}) Slices
+    <section>
+      {slice.primary.headline}
+
+      <PrismicRichText field={slice.primary.sub_headline} />
+
+      <PrismicLink field={slice.primary.video}>
+        Video
+      </PrismicLink>
+
+      <PrismicRichText field={slice.primary.text_1} />
+      
+      <PrismicRichText field={slice.primary.text_2} />
     </section>
   );
 };

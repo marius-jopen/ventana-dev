@@ -49,11 +49,11 @@
           }
         },
         "video": {
-          "type": "Image",
+          "type": "Link",
           "config": {
             "label": "Video",
-            "constraint": {},
-            "thumbnails": []
+            "placeholder": "",
+            "select": "media"
           }
         }
       },
