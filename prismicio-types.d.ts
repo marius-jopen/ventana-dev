@@ -1123,6 +1123,16 @@ export type ThicknessSlice = prismic.SharedSlice<
  */
 export interface WelcomeSliceDefaultPrimary {
   /**
+   * Video field in *Welcome → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: welcome.default.primary.video
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  video: prismic.LinkToMediaField;
+
+  /**
    * Headline field in *Welcome → Default → Primary*
    *
    * - **Field Type**: Rich Text
