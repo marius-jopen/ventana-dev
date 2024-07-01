@@ -16,11 +16,11 @@ const Welcome = ({ slice }: WelcomeProps): JSX.Element => {
           Ventana Logo
         </div>
 
-        <div className="col-start-2 col-end-12 md:col-end-24 text-center bg-white/30">
+        <div className="col-start-2 col-end-12 md:col-end-24 text-center bg-white/30 text-style-5">
           <PrismicRichText field={slice.primary.headline} />
         </div>
 
-        <div className="col-start-3 md:col-start-11 col-end-11 md:col-end-15 text-center bg-white/30">
+        <div className="col-start-3 md:col-start-11 col-end-11 md:col-end-15 text-center bg-white/30 text-style-12">
           <PrismicLink field={slice.primary.button_link}>
             {slice.primary.button_text}
           </PrismicLink>

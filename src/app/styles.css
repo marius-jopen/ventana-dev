@@ -1,3 +1,137 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.text-style-2 {
+  font-size: 120px;
+  font-weight: medium;
+}
+
+.text-style-3 {
+  font-family: Outfit;
+  font-size: 120px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104.5%; /* 125.4px */
+}
+
+.text-style-4 {
+  font-family: Outfit;
+  font-size: 70px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 74.8px; /* 106.857% */
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 42px */
+  }
+}
+
+.text-style-5 {
+  font-family: Outfit;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 59.8px; /* 119.6% */
+}
+
+.text-style-6 {
+  font-family: Outfit;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130.5%; /* 52.2px */
+  letter-spacing: 1px;
+}
+
+.text-style-6-1 {
+  font-family: Outfit;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130.5%; /* 52.2px */
+  letter-spacing: 1px;
+}
+
+.text-style-7 {
+  font-family: Outfit;
+  font-size: 35px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 122.5%; /* 42.875px */
+  letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130%; /* 26px */
+    letter-spacing: 1px;
+  }
+}
+
+.text-style-8 {
+  font-family: Outfit;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130.5%; /* 32.625px */
+  letter-spacing: 1px;
+}
+
+.text-style-9 {
+  font-size: 90px;
+}
+
+.text-style-10 {
+  font-size: 20px;
+}
+
+.text-style-11 {
+  font-family: Outfit;
+  font-size: 90px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 94.8px; /* 105.333% */
+}
+
+.text-style-12 {
+  font-family: Outfit;
+  font-size: 21.564px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 122.5%; /* 26.416px */
+  letter-spacing: 0.719px;
+}
+
+.text-style-13 {
+  text-align: center;
+  font-family: Outfit;
+  font-size: 311.818px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 342.584px; /* 109.867% */
+}
+
+.text-style-14 {
+  font-family: Outfit;
+  font-size: 540px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 104.5%; /* 564.3px */
+  letter-spacing: -31px;
+}
+
+.text-style-15 {
+  font-family: Outfit;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130.5%; /* 24.795px */
+  letter-spacing: 1px;
+}

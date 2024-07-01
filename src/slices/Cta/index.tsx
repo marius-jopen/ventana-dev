@@ -19,7 +19,7 @@ const Cta = ({ slice }: CtaProps): JSX.Element => {
           </PrismicLink>
         </div>
 
-        <div className="col-start-2 col-end-12 md:col-end-24 bg-white/30">
+        <div className="col-start-2 md:col-start-6 col-end-12 md:col-end-20 bg-white/30">
           <PrismicRichText field={slice.primary.headline} />
         </div>
       </div>

@@ -5,27 +5,35 @@ export type ChipProps = SliceComponentProps<Content.ChipSlice>;
 
 const Chip = ({ slice }: ChipProps): JSX.Element => {
   return (
-    <section>
+    <section className="bg-black text-white">
       <div className="grid grid-cols-12 md:grid-cols-24">
-        <div className="col-start-2 col-end-24 text-center bg-white/30">
-          {slice.primary.max_number}
+        <div className="col-start-2 col-end-24 text-center">
+          <div className="text-style-14">
+            {slice.primary.max_number}
+          </div>
 
-          {slice.primary.fade_in_text}
+          <div className="text-style-5">
+            {slice.primary.fade_in_text}
+          </div>
         </div>
 
-        <div className="col-span-24 bg-white/30">
+        <div className="col-span-24">
           <PrismicLink field={slice.primary.video}>
             Video
           </PrismicLink>
         </div>
 
-        <div className="col-start-2 md:col-start-3 col-end-12 md:col-end-11 bg-white/30">
-          <PrismicRichText field={slice.primary.headline} />
+        <div className="col-start-2 md:col-start-3 col-end-12 md:col-end-11">
+          <div className="text-style-4">
+            <PrismicRichText field={slice.primary.headline} />
+          </div>
 
-          <PrismicRichText field={slice.primary.sub_headline} />
+          <div className="text-style-7">
+            <PrismicRichText field={slice.primary.sub_headline} />
+          </div>
         </div>
 
-        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 bg-white/30">
+        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8">
           <PrismicRichText field={slice.primary.text} />
         </div>
       </div>

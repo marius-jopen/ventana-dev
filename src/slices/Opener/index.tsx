@@ -5,16 +5,20 @@ export type OpenerProps = SliceComponentProps<Content.OpenerSlice>;
 
 const Opener = ({ slice }: OpenerProps): JSX.Element => {
   return (
-    <section >
+    <section className="bg-black text-white">
       <div className="grid grid-cols-12 md:grid-cols-24">
-        <div className="col-span-12 md:col-span-24 bg-white/30">
+        <div className="col-span-12 md:col-span-24">
           Video
         </div>
 
-        <div className="col-start-2 col-end-12 md:col-end-24 text-center bg-white/30">
-          {slice.primary.headline}
+        <div className="col-start-2 col-end-12 md:col-end-24 text-center">
+          <div className="text-style-13">
+            {slice.primary.headline}
+          </div>
 
-          <PrismicRichText field={slice.primary.subheadline} />
+          <div className="text-style-5">
+            <PrismicRichText field={slice.primary.subheadline} />
+          </div>
         </div>
       </div>
     </section>

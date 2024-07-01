@@ -5,6 +5,13 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        'text-gray-on-black': '#AAA',
+        'offWhite': '#F6F6F6',
+        'darkGray': "#979797",
+        'text-black-on-white': '#181818',
+        'lightGray': '#C5C5C5',
+      },
       gridTemplateColumns: {
         '24': 'repeat(24, minmax(0, 1fr))',
       },
