@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.line-box {
+  @apply border-t border-text-gray-on-black pt-4;
+}
+
 .distance-top-1 {
   padding-top: 36px;
 }

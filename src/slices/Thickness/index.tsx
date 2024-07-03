@@ -7,7 +7,7 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
   return (
     <section>
       <div className="grid grid-cols-12 md:grid-cols-24">
-        <div className="col-start-2 col-end-12 md:col-end-24 text-center text-style-4 distance-top-4">
+        <div className="col-start-2 col-end-12 md:col-end-24 text-center text-style-4 text-black-on-white distance-top-4">
           <PrismicRichText field={slice.primary.headline} />
         </div>
 

@@ -19,7 +19,7 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
           
-          <div className="text-style-3 text-black-on-white distance-bottom-4">
+          <div className="text-style-3 text-black-on-white distance-bottom-4 text-black-on-white">
             <PrismicRichText field={slice.primary.headline} />
           </div>
         </div>
@@ -28,7 +28,7 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>

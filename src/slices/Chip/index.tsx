@@ -33,7 +33,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
           </div>
         </div>
 
-        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
           <PrismicRichText field={slice.primary.text} />
         </div>
       </div>

@@ -7,7 +7,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
   return (
     <section>
       <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-6">
-        <div className="col-start-2 col-end-24 text-center text-black-on-white distance-top-4">
+        <div className="col-start-2 col-end-24 text-center text-black-on-white distance-top-4 text-black-on-white">
           <div className="text-style-3">
             {slice.primary.headline}
           </div>
@@ -27,7 +27,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         
-        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>
