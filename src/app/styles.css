@@ -13,6 +13,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: 104.5%; /* 125.4px */
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 42px */
+  }
 }
 
 .text-style-4 {
@@ -37,6 +45,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: 59.8px; /* 119.6% */
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 29.8px; /* 119.2% */
+  }
 }
 
 .text-style-6 {
@@ -46,6 +62,15 @@
   font-weight: 500;
   line-height: 130.5%; /* 52.2px */
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 24px */
+    letter-spacing: 1px;
+  }
 }
 
 .text-style-6-1 {
@@ -55,6 +80,15 @@
   font-weight: 400;
   line-height: 130.5%; /* 52.2px */
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 130.5%; /* 26.1px */
+    letter-spacing: 1px;
+  }
 }
 
 .text-style-7 {
@@ -82,14 +116,49 @@
   font-weight: 400;
   line-height: 130.5%; /* 32.625px */
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 18px */
+    letter-spacing: 1px;
+  }
 }
 
 .text-style-9 {
+  font-family: Outfit;
   font-size: 90px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 94.8px; /* 105.333% */
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 48px */
+  }
 }
 
 .text-style-10 {
+  font-family: Outfit;
   font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 130.5%; /* 26.1px */
+  letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 15.6px */
+    letter-spacing: 1px;
+  }
 }
 
 .text-style-11 {
@@ -98,6 +167,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: 94.8px; /* 105.333% */
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 34px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 }
 
 .text-style-12 {
@@ -107,6 +184,15 @@
   font-weight: 400;
   line-height: 122.5%; /* 26.416px */
   letter-spacing: 0.719px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 16.56px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 122.5%; /* 20.286px */
+    letter-spacing: 0.719px;
+  }
 }
 
 .text-style-13 {
@@ -116,6 +202,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: 342.584px; /* 109.867% */
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 }
 
 .text-style-14 {
@@ -125,6 +219,15 @@
   font-weight: 400;
   line-height: 104.5%; /* 564.3px */
   letter-spacing: -31px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    letter-spacing: 1px;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
 }
 
 .text-style-15 {
@@ -134,4 +237,31 @@
   font-weight: 500;
   line-height: 130.5%; /* 24.795px */
   letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130.5%; /* 20.88px */
+    letter-spacing: 1px;    
+  }
+}
+
+.text-style-16 {
+  font-family: Outfit;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130.5%; /* 20.88px */
+    letter-spacing: 1px;    
+  }
 }
