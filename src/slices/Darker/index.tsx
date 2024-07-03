@@ -17,19 +17,19 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
           <PrismicRichText field={slice.primary.headline} />
         </div>
 
-        <div className="col-start-2 col-end-12 md:col-end-17 text-right text-style-5 text-text-gray-on-black">
+        <div className="col-start-2 col-end-12 md:col-end-17 text-right text-style-5 text-text-gray-on-black distance-bottom-6">
           <PrismicRichText field={slice.primary.sub_headline} />
         </div>
 
-        <div className="col-start-2 md:col-start-5 col-end-12 text-center md:text-right text-style-8 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-5 col-end-12 text-center md:text-right text-style-8 text-text-gray-on-black distance-bottom-4">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         
-        <div className="col-start-2 md:col-start-14 col-end-12 md:col-end-21 text-center md:text-left text-style-8 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-14 col-end-12 md:col-end-21 text-center md:text-left text-style-8 text-text-gray-on-black distance-bottom-4">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
         
-        <div className="col-start-2 md:col-start-5 col-end-12 text-center md:text-right text-style-8 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-5 col-end-12 text-center md:text-right text-style-8 text-text-gray-on-black distance-bottom-5">
           <PrismicRichText field={slice.primary.text_3} />
         </div>
       </div>

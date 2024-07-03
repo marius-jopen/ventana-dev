@@ -2,6 +2,107 @@
 @tailwind components;
 @tailwind utilities;
 
+.distance-top-1 {
+  padding-top: 36px;
+}
+
+.distance-bottom-1 {
+  padding-bottom: 36px;
+}
+
+.distance-top-2 {
+  padding-top: 72px;
+}
+
+.distance-bottom-2 {
+  padding-bottom: 72px;
+}
+
+.distance-top-3 {
+  padding-top: 108px;
+
+  @media (max-width: 768px) {
+    padding-top: 36px;
+  }
+}
+
+.distance-bottom-3 {
+  padding-bottom: 108px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 36px;
+  }
+}
+
+.distance-top-4 {
+  padding-top: 144px;
+
+  @media (max-width: 768px) {
+    padding-top: 36px;
+  }
+}
+
+.distance-bottom-4 {
+  padding-bottom: 144px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 36px;
+  }
+}
+
+.distance-top-5 {
+  padding-top: 216px;
+
+  @media (max-width: 768px) {
+    padding-top: 36px;
+  }
+}
+
+.distance-bottom-5 {
+  padding-bottom: 216px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 36px;
+  }
+}
+
+.distance-top-6 {
+  padding-top: 288px;
+
+  @media (max-width: 768px) {
+    padding-top: 36px;
+  }
+}
+
+.distance-bottom-6 {
+  padding-bottom: 288px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 36px;
+  }
+}
+
+.distance-top-7 {
+  padding-top: 360px;
+
+  @media (max-width: 768px) {
+    padding-top: 36px;
+  }
+}
+
+.distance-bottom-7 {
+  padding-bottom: 360px;
+
+  @media (max-width: 768px) {
+    padding-bottom: 36px;
+  }
+}
+
+
+
+
+
+
 .text-style-2 {
   font-size: 120px;
   font-weight: medium;

@@ -6,8 +6,8 @@ export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 const Colors = ({ slice }: ColorsProps): JSX.Element => {
   return (
     <section className="bg-offWhite">
-      <div className="grid grid-cols-12 md:grid-cols-24">
-        <div className="col-span-24">
+      <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-5">
+        <div className="col-span-24 distance-bottom-4">
           <PrismicLink field={slice.primary.video}>
             Video
           </PrismicLink>

@@ -6,8 +6,8 @@ export type SpaceProps = SliceComponentProps<Content.SpaceSlice>;
 const Space = ({ slice }: SpaceProps): JSX.Element => {
   return (
     <section>
-      <div className="grid grid-cols-12 md:grid-cols-24">
-        <div className="col-start-2 col-end-24 text-center text-black-on-white">
+      <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-6">
+        <div className="col-start-2 col-end-24 text-center text-black-on-white distance-top-4">
           <div className="text-style-3">
             {slice.primary.headline}
           </div>
@@ -17,13 +17,13 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
           </div>
         </div>
 
-        <div className="col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center">
+        <div className="col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center distance-top-3 distance-bottom-3">
           <PrismicLink field={slice.primary.video}>
             Video
           </PrismicLink>
         </div>
 
-        <div className="col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-6-1 text-text-gray-on-black">
+        <div className="col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-6-1 text-text-gray-on-black ">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         

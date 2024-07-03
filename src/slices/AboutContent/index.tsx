@@ -6,7 +6,7 @@ export type AboutContentProps = SliceComponentProps<Content.AboutContentSlice>;
 const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
   return (
     <section>
-      <div className="grid grid-cols-12 md:grid-cols-24">
+      <div className="grid grid-cols-12 md:grid-cols-24 distance-top-4 distance-bottom-5">
         <div className="col-start-2 col-end-12 md:col-end-13 bg-white/30 text-style-7 text-text-gray-on-black">
           <PrismicRichText field={slice.primary.text_1} />
         </div>

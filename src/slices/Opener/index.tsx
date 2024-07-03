@@ -6,7 +6,7 @@ export type OpenerProps = SliceComponentProps<Content.OpenerSlice>;
 const Opener = ({ slice }: OpenerProps): JSX.Element => {
   return (
     <section className="bg-black text-white">
-      <div className="grid grid-cols-12 md:grid-cols-24">
+      <div className="grid grid-cols-12 md:grid-cols-24 distance-top-6 distance-bottom-6">
         <div className="col-span-12 md:col-span-24">
           Video
         </div>

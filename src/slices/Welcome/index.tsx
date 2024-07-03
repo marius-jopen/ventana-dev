@@ -6,7 +6,7 @@ export type WelcomeProps = SliceComponentProps<Content.WelcomeSlice>;
 const Welcome = ({ slice }: WelcomeProps): JSX.Element => {
   return (
     <section className="bg-black text-white">
-      <div className="grid grid-cols-12 md:grid-cols-24">
+      <div className="grid grid-cols-12 md:grid-cols-24 distance-top-6 distance-bottom-6">
         <div className="col-span-12 md:col-span-24">
           <PrismicImage field={slice.primary.image} />
           Image
