@@ -13,7 +13,7 @@ const Specs = ({ slice }: SpecsProps): JSX.Element => {
 
         <div className="col-start-2 md:col-start-14 col-end-12 md:col-end-24">
           {Array.isArray(slice.primary.table) && slice.primary.table.map((item, index) => (
-            <div className="flex justify-between" key={index}>
+            <div className="flex justify-between border-t border-text-gray-on-black pt-6 pb-6" key={index}>
               <div className="text-lightGray text-style-15">
                 <PrismicRichText field={item.label} />
               </div>

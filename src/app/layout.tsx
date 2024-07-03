@@ -1,7 +1,8 @@
-import Footer from "./components/footer"
-import Header from "./components/header"
-import Grid from "./components/grid"
-import '@/app/styles.css'
+import Footer from "./components/footer";
+import Header from "./components/header";
+import Grid from "./components/grid";
+import '@/app/styles.css';
+import Head from 'next/head'; // Import the Head component
 
 export const metadata = {
   title: 'Next.js',
@@ -15,12 +16,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
       <body>
         <Header />
         {children}
         <Footer />
-        {/* <Grid /> */}
+        {/* <Grid /> Optionally uncomment this if you need the Grid component */}
       </body>
     </html>
-  )
+  );
 }
