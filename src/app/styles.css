@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+.text-text-gray-on-white strong {
+  @apply text-text-black-on-white font-normal;
+}
+
+.text-text-gray-on-black strong {
+  @apply text-text-white-on-black font-normal;
+}
+
+.fade-in {
+  animation: fadeInEffect 1s ease-in forwards;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 .line-box {
   @apply border-t border-text-gray-on-black pt-4;
 }

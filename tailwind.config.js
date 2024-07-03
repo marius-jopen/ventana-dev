@@ -6,11 +6,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        'text-white-on-black': '#FFF',
         'text-gray-on-black': '#AAA',
+        'text-gray-on-white': '#AAA',
+        'text-black-on-white': '#181818',
         'text-black-on-white': '#181818',
         'offWhite': '#F6F6F6',
         'darkGray': "#979797",
-        'text-black-on-white': '#181818',
         'lightGray': '#C5C5C5',
       },
       gridTemplateColumns: {
