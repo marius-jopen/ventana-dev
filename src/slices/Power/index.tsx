@@ -24,11 +24,11 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
           </div>
         </div>
         
-        <div className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">
+        <div className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+        <div className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>
