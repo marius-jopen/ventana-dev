@@ -24,13 +24,9 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
   }, [isHovering, words.length]);
 
   return (
-    <section className="bg-black text-white">
-      <div className="grid grid-cols-12 md:grid-cols-24 h-[80vw]">
-        <div className="col-span-12 md:col-span-24">
-          Video
-        </div>
-
-        <div className="col-start-2 col-end-12 md:col-end-24 text-center">
+    <section className="text-white">
+      <div className="relative h-[60vw]">
+        <div className="flex flex-col justify-center h-full text-center">
           <div 
           className="text-style-13"
           onMouseEnter={() => setIsHovering(true)}
@@ -42,6 +38,13 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
           <div className="text-style-5">
             <PrismicRichText field={slice.primary.subheadline} />
           </div>
+        </div>
+
+        <div className="absolute h-full w-full top-0 left-0 -z-10">
+          <video className="object-cover h-full" width="100%" height="100%" loop playsInline autoPlay muted preload="none">
+            <source src="/video.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </section>
