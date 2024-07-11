@@ -1,4 +1,4 @@
-import Button from "@/app/components/button";
+// import Button from "@/app/components/button";
 import { Content } from "@prismicio/client";
 import { PrismicLink, PrismicRichText, SliceComponentProps } from "@prismicio/react";
 
@@ -20,7 +20,7 @@ const Welcome = ({ slice }: WelcomeProps): JSX.Element => {
           </div>
 
           <div className="text-center text-style-12">
-            <Button filled={false} link={slice.primary.button_link} text={slice.primary.button_text} />
+            {/* <Button filled={false} link={slice.primary.button_link} text={slice.primary.button_text} /> */}
           </div>
         </div>
 
