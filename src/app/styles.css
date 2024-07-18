@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+    font-family: 'Outfit';
+    src: url('/fonts/Outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@layer base {
+    * {
+        box-sizing: border-box;
+    }
+    
+    html,
+    body {
+        padding: 0;
+        margin: 0;
+        font-family: 'Outfit', sans-serif;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        object-fit: cover;
+    }
+}
+
 .text-text-gray-on-white strong {
   @apply text-text-black-on-white font-normal;
 }
@@ -119,25 +145,18 @@
   }
 }
 
-
-
-
-
-
 .text-style-2 {
   font-size: 120px;
   font-weight: medium;
 }
 
 .text-style-3 {
-  font-family: Outfit;
   font-size: 120px;
   font-style: normal;
   font-weight: 400;
   line-height: 104.5%; /* 125.4px */
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
@@ -146,14 +165,12 @@
 }
 
 .text-style-4 {
-  font-family: Outfit;
   font-size: 70px;
   font-style: normal;
   font-weight: 400;
   line-height: 74.8px; /* 106.857% */
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 35px;
     font-style: normal;
     font-weight: 400;
@@ -162,14 +179,12 @@
 }
 
 .text-style-5 {
-  font-family: Outfit;
   font-size: 50px;
   font-style: normal;
   font-weight: 400;
   line-height: 59.8px; /* 119.6% */
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 25px;
     font-style: normal;
     font-weight: 400;
@@ -178,7 +193,6 @@
 }
 
 .text-style-6 {
-  font-family: Outfit;
   font-size: 40px;
   font-style: normal;
   font-weight: 500;
@@ -186,7 +200,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -196,7 +209,6 @@
 }
 
 .text-style-6-1 {
-  font-family: Outfit;
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
@@ -204,7 +216,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -214,7 +225,6 @@
 }
 
 .text-style-7 {
-  font-family: Outfit;
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
@@ -222,7 +232,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 20px;
     font-style: normal;
     font-weight: 400;
@@ -232,7 +241,6 @@
 }
 
 .text-style-8 {
-  font-family: Outfit;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
@@ -240,7 +248,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 15px;
     font-style: normal;
     font-weight: 400;
@@ -250,14 +257,12 @@
 }
 
 .text-style-9 {
-  font-family: Outfit;
   font-size: 90px;
   font-style: normal;
   font-weight: 400;
   line-height: 94.8px; /* 105.333% */
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
@@ -266,7 +271,6 @@
 }
 
 .text-style-10 {
-  font-family: Outfit;
   font-size: 20px;
   font-style: normal;
   font-weight: 400;
@@ -274,7 +278,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 13px;
     font-style: normal;
     font-weight: 400;
@@ -284,23 +287,23 @@
 }
 
 .text-style-11 {
-  font-family: Outfit;
   font-size: 90px;
-  font-style: normal;
-  font-weight: 500;
   line-height: 94.8px; /* 105.333% */
 
-  @media (max-width: 768px) {
-    font-family: Outfit;
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  @media (max-width: 991px) {
+    font-size: 60px;
+    line-height: 94.8px; 
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .text-style-11 {
+    font-size: 50px;
+    line-height: 50px; 
   }
 }
 
 .text-style-12 {
-  font-family: Outfit;
   font-size: 21.564px;
   font-style: normal;
   font-weight: 400;
@@ -308,7 +311,6 @@
   letter-spacing: 0.719px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 16.56px;
     font-style: normal;
     font-weight: 400;
@@ -319,14 +321,12 @@
 
 .text-style-13 {
   text-align: center;
-  font-family: Outfit;
   font-size: 311.818px;
   font-style: normal;
   font-weight: 500;
   line-height: 342.584px; /* 109.867% */
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 70px;
     font-style: normal;
     font-weight: 500;
@@ -335,7 +335,6 @@
 }
 
 .text-style-14 {
-  font-family: Outfit;
   font-size: 540px;
   font-style: normal;
   font-weight: 400;
@@ -343,7 +342,6 @@
   letter-spacing: -31px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     letter-spacing: 1px;
     font-size: 200px;
     font-style: normal;
@@ -353,7 +351,6 @@
 }
 
 .text-style-15 {
-  font-family: Outfit;
   font-size: 19px;
   font-style: normal;
   font-weight: 500;
@@ -361,7 +358,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -371,7 +367,6 @@
 }
 
 .text-style-16 {
-  font-family: Outfit;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -379,7 +374,6 @@
   letter-spacing: 1px;
 
   @media (max-width: 768px) {
-    font-family: Outfit;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;

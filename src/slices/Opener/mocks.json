@@ -18,6 +18,11 @@
 				"__TYPE__": "FieldContent",
 				"value": "ago",
 				"type": "Text"
+			},
+			"button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "feathers",
+				"type": "Text"
 			}
 		},
 		"items": []

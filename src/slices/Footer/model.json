@@ -1,0 +1,118 @@
+{
+  "id": "footer",
+  "type": "SharedSlice",
+  "name": "Footer",
+  "description": "Footer",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "logo_svg": {
+          "type": "Link",
+          "config": {
+            "label": "Logo Svg",
+            "placeholder": "",
+            "select": "media"
+          }
+        },
+        "menu": {
+          "type": "Group",
+          "config": {
+            "label": "Menu",
+            "repeat": true,
+            "fields": {
+              "menu_link_1": {
+                "type": "Link",
+                "config": {
+                  "label": "Menu Link 1",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "menu_link_2": {
+                "type": "Link",
+                "config": {
+                  "label": "Menu Link 2",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "menu_link_3": {
+                "type": "Link",
+                "config": {
+                  "label": "Menu Link 3",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "menu_link_4": {
+                "type": "Link",
+                "config": {
+                  "label": "Menu Link 4",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "menu_link_5": {
+                "type": "Link",
+                "config": {
+                  "label": "Menu Link 5",
+                  "placeholder": "",
+                  "select": null
+                }
+              },
+              "menu_label_1": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Label 1",
+                  "placeholder": ""
+                }
+              },
+              "menu_label_2": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Label 2",
+                  "placeholder": ""
+                }
+              },
+              "menu_label_3": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Label 3",
+                  "placeholder": ""
+                }
+              },
+              "menu_label_4": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Label 4",
+                  "placeholder": ""
+                }
+              },
+              "menu_label_5": {
+                "type": "Text",
+                "config": {
+                  "label": "Menu Label 5",
+                  "placeholder": ""
+                }
+              }
+            }
+          }
+        },
+        "copyright": {
+          "type": "Text",
+          "config": {
+            "label": "Copyright",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
