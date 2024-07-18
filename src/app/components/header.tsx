@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from 'react';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+/* import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'; */
 import { PrismicNextLink } from "@prismicio/next";
 import { LinkField, KeyTextField } from "@prismicio/client";
 import gsap from 'gsap';
@@ -55,10 +55,15 @@ const AppHeader: React.FC<HeaderProps> = ({ logoLink, menuItems }) => {
 
                 <div className="md:hidden">
                     <button onClick={toggleMenu} className="focus:outline-none">
-                        {isOpen ? (
+                        {/* {isOpen ? (
                             <XMarkIcon className="h-8 w-8" />
                         ) : (
                             <Bars3Icon className="h-8 w-8" />
+                        )} */}
+                        {isOpen ? (
+                            <p className="h-8 w-8">X</p>
+                        ) : (
+                            <p className="h-8 w-8">=</p>
                         )}
                     </button>
                 </div>
