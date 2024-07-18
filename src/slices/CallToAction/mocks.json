@@ -1,0 +1,19 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"buttonlabel": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Click here"
+			},
+			"buttonLabel": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Goto Product"
+			}
+		},
+		"items": []
+	}
+]

@@ -4,7 +4,64 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+type GotobuttonDocumentDataSlicesSlice = CallToActionSlice;
+
+/**
+ * Content for gotoButton documents
+ */
+interface GotobuttonDocumentData {
+  /**
+   * gotoButtonLabel field in *gotoButton*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gotobutton.gotobuttonlabel
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  gotobuttonlabel: prismic.RichTextField;
+
+  /**
+   * gotoButtonLink field in *gotoButton*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gotobutton.gotobuttonlink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  gotobuttonlink: prismic.LinkToMediaField;
+
+  /**
+   * Slice Zone field in *gotoButton*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: gotobutton.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<GotobuttonDocumentDataSlicesSlice>;
+}
+
+/**
+ * gotoButton document from Prismic
+ *
+ * - **API ID**: `gotobutton`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type GotobuttonDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<GotobuttonDocumentData>,
+    "gotobutton",
+    Lang
+  >;
+
 type PageDocumentDataSlicesSlice =
+  | CallToActionSlice
   | ColorsSlice
   | ChipSlice
   | CtaSlice
@@ -90,7 +147,7 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
-export type AllDocumentTypes = PageDocument;
+export type AllDocumentTypes = GotobuttonDocument | PageDocument;
 
 /**
  * Primary content in *AboutContent → Default → Primary*
@@ -255,6 +312,61 @@ type AboutContentSliceVariation = AboutContentSliceDefault;
 export type AboutContentSlice = prismic.SharedSlice<
   "about_content",
   AboutContentSliceVariation
+>;
+
+/**
+ * Primary content in *CallToAction → Default → Primary*
+ */
+export interface CallToActionSliceDefaultPrimary {
+  /**
+   * buttonLink field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: Redirect URL for CTA button
+   * - **API ID Path**: call_to_action.default.primary.buttonLink
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  buttonLink: prismic.LinkField;
+
+  /**
+   * buttonLabel field in *CallToAction → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Label for CTA button
+   * - **API ID Path**: call_to_action.default.primary.buttonLabel
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  buttonLabel: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for CallToAction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<CallToActionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *CallToAction*
+ */
+type CallToActionSliceVariation = CallToActionSliceDefault;
+
+/**
+ * CallToAction Shared Slice
+ *
+ * - **API ID**: `call_to_action`
+ * - **Description**: CallToAction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type CallToActionSlice = prismic.SharedSlice<
+  "call_to_action",
+  CallToActionSliceVariation
 >;
 
 /**
@@ -1213,6 +1325,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      GotobuttonDocument,
+      GotobuttonDocumentData,
+      GotobuttonDocumentDataSlicesSlice,
       PageDocument,
       PageDocumentData,
       PageDocumentDataSlicesSlice,
@@ -1221,6 +1336,10 @@ declare module "@prismicio/client" {
       AboutContentSliceDefaultPrimary,
       AboutContentSliceVariation,
       AboutContentSliceDefault,
+      CallToActionSlice,
+      CallToActionSliceDefaultPrimary,
+      CallToActionSliceVariation,
+      CallToActionSliceDefault,
       ChipSlice,
       ChipSliceDefaultPrimary,
       ChipSliceVariation,

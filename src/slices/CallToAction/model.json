@@ -1,0 +1,35 @@
+{
+  "id": "call_to_action",
+  "type": "SharedSlice",
+  "name": "CallToAction",
+  "description": "CallToAction",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "buttonLink": {
+          "type": "Link",
+          "config": {
+            "label": "buttonLink",
+            "placeholder": "Redirect URL for CTA button",
+            "allowTargetBlank": true,
+            "select": null
+          }
+        },
+        "buttonLabel": {
+          "type": "Text",
+          "config": {
+            "label": "buttonLabel",
+            "placeholder": "Label for CTA button"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
