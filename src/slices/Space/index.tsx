@@ -40,9 +40,13 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
         </div>
 
         <div className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center distance-top-3 distance-bottom-3">
-          <PrismicLink field={slice.primary.video}>
+          {/* <PrismicLink field={slice.primary.video}>
             Video
-          </PrismicLink>
+          </PrismicLink> */}
+          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline loop muted preload="metadata">
+            <source src="https://player.vimeo.com/progressive_redirect/playback/986526765/rendition/1080p/file.mp4?loc=external&log_user=0&signature=b0e7de04d7beb7f79772637dc22612c7655a13a973ad8cc3ea75ea68f5133ecf" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         <div className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-6-1 text-text-gray-on-white">

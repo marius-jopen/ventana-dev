@@ -29,6 +29,10 @@ const Welcome = ({ slice }: WelcomeProps): JSX.Element => {
             <source src="/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
+          {/* 
+          HERE WE DONT SHOW A VIDEO. WE SHOW THE TWO TILES ON A BLACK BACKGROUND
+          AND WHEN THE USER SCOLLS; THERE IS A PARALAX EFFECT LIKE IN THE DESIGN
+           */}
         </div>
       </div>
     </section>

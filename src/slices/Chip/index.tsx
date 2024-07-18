@@ -53,9 +53,13 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
         </div>
 
         <div className="row-start-2 col-span-24">
-          <PrismicLink field={slice.primary.video}>
+          {/* <PrismicLink field={slice.primary.video}>
             Video
-          </PrismicLink>
+          </PrismicLink> */}
+          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline muted preload="metadata">
+            <source src="https://player.vimeo.com/progressive_redirect/playback/986527050/rendition/1080p/file.mp4?loc=external&log_user=0&signature=3db348965624bfcb96fc5f130ed0e0298ccb2a9102ead227ccd47fdc37b4a891" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         <div className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11">

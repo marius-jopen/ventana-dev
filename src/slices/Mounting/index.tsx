@@ -9,7 +9,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="row-start-1 col-span-24 distance-bottom-4">
           <PrismicLink field={slice.primary.video}>
-            Video
+            Video SCROLLBASED with text on top
           </PrismicLink>
         </div>
 

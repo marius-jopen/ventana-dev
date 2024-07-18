@@ -8,9 +8,13 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
     <section className="bg-black text-white">
       <div className="relative grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max">
         <div className="row-start-1 col-span-12 md:col-span-24">
-          <PrismicLink field={slice.primary.video}>
+          {/* <PrismicLink field={slice.primary.video}>
             Video
-          </PrismicLink>
+          </PrismicLink> */}
+          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline loop muted preload="metadata">
+            <source src="https://player.vimeo.com/progressive_redirect/playback/986526853/rendition/1080p/file.mp4?loc=external&log_user=0&signature=8911b55fe9afea0d8aeed88e9ec633163fd317783b64bc14dee673022902b378" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
 
         <div className="row-start-2 col-start-2 md:col-start-5 col-end-12 md:col-end-23 text-right text-style-3">

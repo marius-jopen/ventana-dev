@@ -44,8 +44,8 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
         </div>
 
         <div className="row-start-3 col-span-12 md:col-span-24">
-          <video ref={videoRef} className="object-cover h-full" poster="/video.jpg"  width="100%" height="100%" playsInline muted preload="metadata">
-            <source src="/video.mp4" type="video/mp4" />
+          <video className="object-cover h-full"  width="100%" height="100%" autoPlay playsInline muted preload="metadata">
+            <source src="https://player.vimeo.com/progressive_redirect/playback/986526922/rendition/2160p/file.mp4?loc=external&log_user=0&signature=64dd1b65120aeef74dae3c4e8b782d2c6e58d448d61707b62c5eef4e1903aa36" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
