@@ -1,0 +1,112 @@
+{
+  "id": "show_case_images",
+  "type": "SharedSlice",
+  "name": "ShowCaseImage",
+  "description": "ShowCaseImages",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_link": {
+          "type": "Image",
+          "config": {
+            "label": "Image Link",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Image Caption",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "showCaseImageRightSmall",
+      "name": "Show Case Image Right Small",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_link": {
+          "type": "Image",
+          "config": {
+            "label": "Image Link",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Image Caption",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "showCaseImageLeftVertical",
+      "name": "Show Case Image Left Vertical",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_link": {
+          "type": "Image",
+          "config": {
+            "label": "Image Link",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Image Caption",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    },
+    {
+      "id": "showCaseImageRightSmallest",
+      "name": "Show Case Image Right Smallest",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "image_link": {
+          "type": "Image",
+          "config": {
+            "label": "Image Link",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_caption": {
+          "type": "Text",
+          "config": {
+            "label": "Image Caption",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

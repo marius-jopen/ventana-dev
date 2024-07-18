@@ -27,7 +27,13 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
-            "call_to_action": {
+            "show_case_images": {
+              "type": "SharedSlice"
+            },
+            "header": {
+              "type": "SharedSlice"
+            },
+            "footer": {
               "type": "SharedSlice"
             },
             "colors": {

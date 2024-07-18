@@ -4,34 +4,12 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type GotobuttonDocumentDataSlicesSlice = CallToActionSlice;
+type GotobuttonDocumentDataSlicesSlice = never;
 
 /**
  * Content for gotoButton documents
  */
 interface GotobuttonDocumentData {
-  /**
-   * gotoButtonLabel field in *gotoButton*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gotobutton.gotobuttonlabel
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  gotobuttonlabel: prismic.RichTextField;
-
-  /**
-   * gotoButtonLink field in *gotoButton*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: gotobutton.gotobuttonlink
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  gotobuttonlink: prismic.LinkToMediaField;
-
   /**
    * Slice Zone field in *gotoButton*
    *
@@ -61,7 +39,9 @@ export type GotobuttonDocument<Lang extends string = string> =
   >;
 
 type PageDocumentDataSlicesSlice =
-  | CallToActionSlice
+  | ShowCaseImagesSlice
+  | HeaderSlice
+  | FooterSlice
   | ColorsSlice
   | ChipSlice
   | CtaSlice
@@ -312,61 +292,6 @@ type AboutContentSliceVariation = AboutContentSliceDefault;
 export type AboutContentSlice = prismic.SharedSlice<
   "about_content",
   AboutContentSliceVariation
->;
-
-/**
- * Primary content in *CallToAction → Default → Primary*
- */
-export interface CallToActionSliceDefaultPrimary {
-  /**
-   * buttonLink field in *CallToAction → Default → Primary*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Redirect URL for CTA button
-   * - **API ID Path**: call_to_action.default.primary.buttonLink
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  buttonLink: prismic.LinkField;
-
-  /**
-   * buttonLabel field in *CallToAction → Default → Primary*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: Label for CTA button
-   * - **API ID Path**: call_to_action.default.primary.buttonLabel
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  buttonLabel: prismic.KeyTextField;
-}
-
-/**
- * Default variation for CallToAction Slice
- *
- * - **API ID**: `default`
- * - **Description**: Default
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CallToActionSliceDefault = prismic.SharedSliceVariation<
-  "default",
-  Simplify<CallToActionSliceDefaultPrimary>,
-  never
->;
-
-/**
- * Slice variation for *CallToAction*
- */
-type CallToActionSliceVariation = CallToActionSliceDefault;
-
-/**
- * CallToAction Shared Slice
- *
- * - **API ID**: `call_to_action`
- * - **Description**: CallToAction
- * - **Documentation**: https://prismic.io/docs/slice
- */
-export type CallToActionSlice = prismic.SharedSlice<
-  "call_to_action",
-  CallToActionSliceVariation
 >;
 
 /**
@@ -753,6 +678,312 @@ export type DoubleTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Item in *Footer → Default → Primary → Menu*
+ */
+export interface FooterSliceDefaultPrimaryMenuItem {
+  /**
+   * Menu Link 1 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_link_1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_1: prismic.LinkField;
+
+  /**
+   * Menu Link 2 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_link_2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_2: prismic.LinkField;
+
+  /**
+   * Menu Link 3 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_link_3
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_3: prismic.LinkField;
+
+  /**
+   * Menu Link 4 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_link_4
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_4: prismic.LinkField;
+
+  /**
+   * Menu Link 5 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_link_5
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_5: prismic.LinkField;
+
+  /**
+   * Menu Label 1 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_label_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_1: prismic.KeyTextField;
+
+  /**
+   * Menu Label 2 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_label_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_2: prismic.KeyTextField;
+
+  /**
+   * Menu Label 3 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_label_3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_3: prismic.KeyTextField;
+
+  /**
+   * Menu Label 4 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_label_4
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_4: prismic.KeyTextField;
+
+  /**
+   * Menu Label 5 field in *Footer → Default → Primary → Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[].menu_label_5
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_5: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Footer → Default → Primary*
+ */
+export interface FooterSliceDefaultPrimary {
+  /**
+   * Logo Svg field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.logo_svg
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  logo_svg: prismic.LinkToMediaField;
+
+  /**
+   * Menu field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.menu[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  menu: prismic.GroupField<Simplify<FooterSliceDefaultPrimaryMenuItem>>;
+
+  /**
+   * Copyright field in *Footer → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.default.primary.copyright
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  copyright: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Footer Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<FooterSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Footer*
+ */
+type FooterSliceVariation = FooterSliceDefault;
+
+/**
+ * Footer Shared Slice
+ *
+ * - **API ID**: `footer`
+ * - **Description**: Footer
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
+
+/**
+ * Item in *Header → Default → Primary → Header Menu*
+ */
+export interface HeaderSliceDefaultPrimaryHeaderMenuItem {
+  /**
+   * Menu Link 1 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_link_1
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_1: prismic.LinkField;
+
+  /**
+   * Menu Link 2 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_link_2
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_2: prismic.LinkField;
+
+  /**
+   * Menu Link 3 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_link_3
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_3: prismic.LinkField;
+
+  /**
+   * Menu Link 4 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_link_4
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  menu_link_4: prismic.LinkField;
+
+  /**
+   * Menu Label 1 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_label_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_1: prismic.KeyTextField;
+
+  /**
+   * Menu Label 2 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_label_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_2: prismic.KeyTextField;
+
+  /**
+   * Menu Label 3 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_label_3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_3: prismic.KeyTextField;
+
+  /**
+   * Menu Label 4 field in *Header → Default → Primary → Header Menu*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[].menu_label_4
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  menu_label_4: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Header → Default → Primary*
+ */
+export interface HeaderSliceDefaultPrimary {
+  /**
+   * Logo Link field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Link to Media
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.logo_svg
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  logo_svg: prismic.LinkToMediaField;
+
+  /**
+   * Header Menu field in *Header → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: header.default.primary.header_menu[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  header_menu: prismic.GroupField<
+    Simplify<HeaderSliceDefaultPrimaryHeaderMenuItem>
+  >;
+}
+
+/**
+ * Default variation for Header Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HeaderSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Header*
+ */
+type HeaderSliceVariation = HeaderSliceDefault;
+
+/**
+ * Header Shared Slice
+ *
+ * - **API ID**: `header`
+ * - **Description**: Header
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HeaderSlice = prismic.SharedSlice<"header", HeaderSliceVariation>;
+
+/**
  * Primary content in *ImageOpener → Default → Primary*
  */
 export interface ImageOpenerSliceDefaultPrimary {
@@ -1005,6 +1236,182 @@ type PowerSliceVariation = PowerSliceDefault;
  * - **Documentation**: https://prismic.io/docs/slice
  */
 export type PowerSlice = prismic.SharedSlice<"power", PowerSliceVariation>;
+
+/**
+ * Primary content in *ShowCaseImage → Default → Primary*
+ */
+export interface ShowCaseImagesSliceDefaultPrimary {
+  /**
+   * Image Link field in *ShowCaseImage → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.default.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_link: prismic.ImageField<never>;
+
+  /**
+   * Image Caption field in *ShowCaseImage → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.default.primary.image_caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image_caption: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ShowCaseImage Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowCaseImagesSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ShowCaseImagesSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Primary content in *ShowCaseImage → Show Case Image Right Small → Primary*
+ */
+export interface ShowCaseImagesSliceShowCaseImageRightSmallPrimary {
+  /**
+   * Image Link field in *ShowCaseImage → Show Case Image Right Small → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.showCaseImageRightSmall.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_link: prismic.ImageField<never>;
+
+  /**
+   * Image Caption field in *ShowCaseImage → Show Case Image Right Small → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.showCaseImageRightSmall.primary.image_caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image_caption: prismic.KeyTextField;
+}
+
+/**
+ * Show Case Image Right Small variation for ShowCaseImage Slice
+ *
+ * - **API ID**: `showCaseImageRightSmall`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowCaseImagesSliceShowCaseImageRightSmall =
+  prismic.SharedSliceVariation<
+    "showCaseImageRightSmall",
+    Simplify<ShowCaseImagesSliceShowCaseImageRightSmallPrimary>,
+    never
+  >;
+
+/**
+ * Primary content in *ShowCaseImage → Show Case Image Left Vertical → Primary*
+ */
+export interface ShowCaseImagesSliceShowCaseImageLeftVerticalPrimary {
+  /**
+   * Image Link field in *ShowCaseImage → Show Case Image Left Vertical → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.showCaseImageLeftVertical.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_link: prismic.ImageField<never>;
+
+  /**
+   * Image Caption field in *ShowCaseImage → Show Case Image Left Vertical → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.showCaseImageLeftVertical.primary.image_caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image_caption: prismic.KeyTextField;
+}
+
+/**
+ * Show Case Image Left Vertical variation for ShowCaseImage Slice
+ *
+ * - **API ID**: `showCaseImageLeftVertical`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowCaseImagesSliceShowCaseImageLeftVertical =
+  prismic.SharedSliceVariation<
+    "showCaseImageLeftVertical",
+    Simplify<ShowCaseImagesSliceShowCaseImageLeftVerticalPrimary>,
+    never
+  >;
+
+/**
+ * Primary content in *ShowCaseImage → Show Case Image Right Smallest → Primary*
+ */
+export interface ShowCaseImagesSliceShowCaseImageRightSmallestPrimary {
+  /**
+   * Image Link field in *ShowCaseImage → Show Case Image Right Smallest → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.showCaseImageRightSmallest.primary.image_link
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_link: prismic.ImageField<never>;
+
+  /**
+   * Image Caption field in *ShowCaseImage → Show Case Image Right Smallest → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: show_case_images.showCaseImageRightSmallest.primary.image_caption
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  image_caption: prismic.KeyTextField;
+}
+
+/**
+ * Show Case Image Right Smallest variation for ShowCaseImage Slice
+ *
+ * - **API ID**: `showCaseImageRightSmallest`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowCaseImagesSliceShowCaseImageRightSmallest =
+  prismic.SharedSliceVariation<
+    "showCaseImageRightSmallest",
+    Simplify<ShowCaseImagesSliceShowCaseImageRightSmallestPrimary>,
+    never
+  >;
+
+/**
+ * Slice variation for *ShowCaseImage*
+ */
+type ShowCaseImagesSliceVariation =
+  | ShowCaseImagesSliceDefault
+  | ShowCaseImagesSliceShowCaseImageRightSmall
+  | ShowCaseImagesSliceShowCaseImageLeftVertical
+  | ShowCaseImagesSliceShowCaseImageRightSmallest;
+
+/**
+ * ShowCaseImage Shared Slice
+ *
+ * - **API ID**: `show_case_images`
+ * - **Description**: ShowCaseImages
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ShowCaseImagesSlice = prismic.SharedSlice<
+  "show_case_images",
+  ShowCaseImagesSliceVariation
+>;
 
 /**
  * Primary content in *Space → Default → Primary*
@@ -1336,10 +1743,6 @@ declare module "@prismicio/client" {
       AboutContentSliceDefaultPrimary,
       AboutContentSliceVariation,
       AboutContentSliceDefault,
-      CallToActionSlice,
-      CallToActionSliceDefaultPrimary,
-      CallToActionSliceVariation,
-      CallToActionSliceDefault,
       ChipSlice,
       ChipSliceDefaultPrimary,
       ChipSliceVariation,
@@ -1360,6 +1763,16 @@ declare module "@prismicio/client" {
       DoubleTextSliceDefaultPrimary,
       DoubleTextSliceVariation,
       DoubleTextSliceDefault,
+      FooterSlice,
+      FooterSliceDefaultPrimaryMenuItem,
+      FooterSliceDefaultPrimary,
+      FooterSliceVariation,
+      FooterSliceDefault,
+      HeaderSlice,
+      HeaderSliceDefaultPrimaryHeaderMenuItem,
+      HeaderSliceDefaultPrimary,
+      HeaderSliceVariation,
+      HeaderSliceDefault,
       ImageOpenerSlice,
       ImageOpenerSliceDefaultPrimary,
       ImageOpenerSliceVariation,
@@ -1376,6 +1789,16 @@ declare module "@prismicio/client" {
       PowerSliceDefaultPrimary,
       PowerSliceVariation,
       PowerSliceDefault,
+      ShowCaseImagesSlice,
+      ShowCaseImagesSliceDefaultPrimary,
+      ShowCaseImagesSliceShowCaseImageRightSmallPrimary,
+      ShowCaseImagesSliceShowCaseImageLeftVerticalPrimary,
+      ShowCaseImagesSliceShowCaseImageRightSmallestPrimary,
+      ShowCaseImagesSliceVariation,
+      ShowCaseImagesSliceDefault,
+      ShowCaseImagesSliceShowCaseImageRightSmall,
+      ShowCaseImagesSliceShowCaseImageLeftVertical,
+      ShowCaseImagesSliceShowCaseImageRightSmallest,
       SpaceSlice,
       SpaceSliceDefaultPrimary,
       SpaceSliceVariation,

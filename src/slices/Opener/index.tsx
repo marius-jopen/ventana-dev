@@ -1,9 +1,8 @@
 "use client";
 import { Content } from "@prismicio/client";
-import { PrismicNextLink } from "@prismicio/next";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { useEffect, useState } from "react";
-import CallToAction from "../../slices/CallToAction";
+import CommonButton from "@/app/components/CommonButton";
 
 export type OpenerProps = SliceComponentProps<Content.OpenerSlice>;
 
@@ -24,26 +23,12 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
     return () => clearInterval(interval);
   }, [isHovering, words.length]);
 
-  // Log the slice to check its structure
-  console.log("Opener slice:", slice);
-
-  // Find the CallToAction slice data
-  const callToActionSlice = slice.items.find(item => item.slice_type === 'call_to_action');
-
-  // Log the CallToAction slice data
-  console.log("CallToAction slice data:", callToActionSlice);
-
   return (
     <section className="relative text-white h-screen overflow-hidden">
       <div className="flex flex-col items-center justify-center h-full text-center relative z-10">
         <div className="text-style-5 mt-4">
           <PrismicRichText field={slice.primary.subheadline} />
         </div>
-        {callToActionSlice ? (
-          <CallToAction slice={callToActionSlice} index={0} slices={[]} context={undefined} />
-        ) : (
-          <p>No Call to Action slice found</p>
-        )}
       </div>
       <div className="inset-0 -z-10">
         <video className="object-cover w-full h-full" loop playsInline autoPlay muted preload="none">

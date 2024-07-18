@@ -145,11 +145,6 @@
   }
 }
 
-
-
-
-
-
 .text-style-2 {
   font-size: 120px;
   font-weight: medium;
@@ -293,15 +288,18 @@
 
 .text-style-11 {
   font-size: 90px;
-  font-style: normal;
-  font-weight: 500;
   line-height: 94.8px; /* 105.333% */
 
-  @media (max-width: 768px) {
-    font-size: 34px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+  @media (max-width: 991px) {
+    font-size: 60px;
+    line-height: 94.8px; 
+  }
+}
+
+@media screen and (max-width: 469px) {
+  .text-style-11 {
+    font-size: 50px;
+    line-height: 50px; 
   }
 }
 

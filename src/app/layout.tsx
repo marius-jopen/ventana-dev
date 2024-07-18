@@ -1,5 +1,3 @@
-import Footer from "./components/footer";
-import Header from "./components/header";
 import Grid from "./components/grid";
 import '@/app/styles.css';
 import Head from 'next/head'; // Import the Head component
@@ -21,10 +19,8 @@ export default function RootLayout({
             <meta name="description" content={metadata.description} />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
         </Head>
-        <body className="antialiased font-outfit">
-            <Header />
+        <body className="antialiased font-outfit bg-slate-50">
             {children}
-            <Footer />
             {/* <Grid /> Optionally uncomment this if you need the Grid component */}
         </body>
         </html>
