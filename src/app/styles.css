@@ -23,6 +23,14 @@
   @apply border-t border-text-gray-on-black pt-4;
 }
 
+.distance-top-0 {
+  padding-top: 0px;
+}
+
+.distance-bottom-0 {
+  padding-bottom: 0px;
+}
+
 .distance-top-1 {
   padding-top: 36px;
 }
