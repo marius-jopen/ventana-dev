@@ -136,6 +136,14 @@
   font-weight: 400;
   line-height: 104.5%; /* 125.4px */
 
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 104.5%; /* 125.4px */
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 35px;
@@ -151,6 +159,14 @@
   font-style: normal;
   font-weight: 400;
   line-height: 74.8px; /* 106.857% */
+
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 56px; /* 106.857% */
+  }
 
   @media (max-width: 768px) {
     font-family: Outfit;
@@ -168,6 +184,14 @@
   font-weight: 400;
   line-height: 59.8px; /* 119.6% */
 
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37px; /* 119.6% */
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 25px;
@@ -184,6 +208,15 @@
   font-weight: 500;
   line-height: 130.5%; /* 52.2px */
   letter-spacing: 1px;
+
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 125%; /* 52.2px */
+    letter-spacing: 1px;
+  }
 
   @media (max-width: 768px) {
     font-family: Outfit;
@@ -203,6 +236,15 @@
   line-height: 130.5%; /* 52.2px */
   letter-spacing: 1px;
 
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 52.2px */
+    letter-spacing: 1px;
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 20px;
@@ -221,6 +263,15 @@
   line-height: 122.5%; /* 42.875px */
   letter-spacing: 1px;
 
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%; /* 52.2px */
+    letter-spacing: 1px;
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 20px;
@@ -238,6 +289,15 @@
   font-weight: 400;
   line-height: 130.5%; /* 32.625px */
   letter-spacing: 1px;
+
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 127.5%; /* 32.625px */
+    letter-spacing: 1px;
+  }
 
   @media (max-width: 768px) {
     font-family: Outfit;
@@ -290,6 +350,14 @@
   font-weight: 500;
   line-height: 94.8px; /* 105.333% */
 
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 70.8px; /* 105.333% */
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 34px;
@@ -325,6 +393,15 @@
   font-weight: 500;
   line-height: 342.584px; /* 109.867% */
 
+  @media (max-width: 1300px) {
+    text-align: center;
+    font-family: Outfit;
+    font-size: 211.818px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 342.584px; /* 109.867% */
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 70px;
@@ -359,6 +436,15 @@
   font-weight: 500;
   line-height: 130.5%; /* 24.795px */
   letter-spacing: 1px;
+
+  @media (max-width: 1300px) {
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130.5%; /* 24.795px */
+    letter-spacing: 1px;
+  }
 
   @media (max-width: 768px) {
     font-family: Outfit;
