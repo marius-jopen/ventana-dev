@@ -1,31 +1,159 @@
+"use client";
 import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { useEffect, useRef, useState } from "react";
 
 export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 
 const Colors = ({ slice }: ColorsProps): JSX.Element => {
+  const canvasRef = useRef(null);
+  const containerRef = useRef(null);
+  const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+  const [startAnimation, setStartAnimation] = useState(false);
+  const [frameNumber, setFrameNumber] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setCanvasSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+
+      const canvas = canvasRef.current;
+      const context = canvas.getContext("2d");
+      const frameCount = 351;
+
+      const currentFrame = (index) => (
+        `/colors-images/VENTANA_COLOR_R10_01C_${index.toString().padStart(5, "0")}.jpg`
+      );
+
+      const img = new Image();
+      img.src = currentFrame(0);
+      img.onload = function () {
+        drawImageCover(context, img, canvas);
+      };
+
+      const preloadImages = () => {
+        Array.from({ length: frameCount }, (_, i) => {
+          const img = new Image();
+          img.src = currentFrame(i);
+        });
+      };
+
+      const updateImage = (index) => {
+        const newImg = new Image();
+        newImg.src = currentFrame(index);
+        newImg.onload = function () {
+          drawImageCover(context, newImg, canvas);
+        };
+      };
+
+      const handleScroll = () => {
+        if (!startAnimation) return;
+
+        const html = document.documentElement;
+        const wrap = containerRef.current;
+        const scrollTop = html.scrollTop - wrap.offsetTop;
+        const maxScrollTop = wrap.scrollHeight - window.innerHeight;
+        const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScrollTop));
+        const frameIndex = Math.min(
+          frameCount - 1,
+          Math.floor(scrollFraction * frameCount)
+        );
+        setFrameNumber(frameIndex);
+        requestAnimationFrame(() => updateImage(frameIndex));
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setIsInView(true);
+              setStartAnimation(true);
+              window.addEventListener("scroll", handleScroll);
+            } else if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
+              setIsInView(false);
+              setStartAnimation(false);
+              window.removeEventListener("scroll", handleScroll);
+            }
+          });
+        },
+        { threshold: 0 }
+      );
+
+      observer.observe(containerRef.current);
+      preloadImages();
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        observer.disconnect();
+      };
+    }
+  }, [startAnimation]);
+
+  const drawImageCover = (context, img, canvas) => {
+    const imgAspectRatio = img.width / img.height;
+    const canvasAspectRatio = canvas.width / canvas.height;
+    let renderableWidth, renderableHeight, xStart, yStart;
+
+    if (imgAspectRatio < canvasAspectRatio) {
+      renderableWidth = canvas.width;
+      renderableHeight = renderableWidth / imgAspectRatio;
+      xStart = 0;
+      yStart = (canvas.height - renderableHeight) / 2;
+    } else if (imgAspectRatio > canvasAspectRatio) {
+      renderableHeight = canvas.height;
+      renderableWidth = renderableHeight * imgAspectRatio;
+      xStart = (canvas.width - renderableWidth) / 2;
+      yStart = 0;
+    } else {
+      renderableWidth = canvas.width;
+      renderableHeight = canvas.height;
+      xStart = 0;
+      yStart = 0;
+    }
+
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(img, xStart, yStart, renderableWidth, renderableHeight);
+  };
+
   return (
     <section className="bg-offWhite">
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
-        <div className="row-start-1 col-span-24 distance-bottom-4">
-          {/* <PrismicLink field={slice.primary.video}>
-            !!!!! Video SCROLLBASED with text on top
-            THE VIDEO IS ONLY HERE FOR DEMONSTRATION
-          </PrismicLink> */}
-          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline loop muted preload="metadata">
-            <source src="https://player.vimeo.com/progressive_redirect/playback/986527097/rendition/1080p/file.mp4?loc=external&log_user=0&signature=e05c4175235c833f462dc6a777c7697c08aa15b5dd556551aceaf1dc45abcce6" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="row-start-1 col-span-24" ref={containerRef}>
+          <div className="png__sequence">
+            <canvas
+              ref={canvasRef}
+              width={canvasSize.width}
+              height={canvasSize.height}
+              className="png__sequence__canvas"
+              id="canvas"
+            ></canvas>
+          </div>
         </div>
 
-        <div className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
+        <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-offWhite h-64 z-20 -mt-64"></div>
+
+        <div className="distance-top-4 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>
+      {/* <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        backgroundColor: 'yellow',
+        padding: '10px',
+        zIndex: 1000
+      }}>
+        <p>PNG Sequence in View: {isInView ? 'Yes' : 'No'}</p>
+        <p>Frame Number: {frameNumber}</p>
+      </div> */}
     </section>
   );
 };
