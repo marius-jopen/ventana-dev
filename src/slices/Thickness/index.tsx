@@ -53,16 +53,17 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
 
         <div className="row-start-3 col-span-12 md:col-span-24">
           <video
-            poster={slice.primary.video_poster.url}
-            className="object-cover h-full"
+            poster={slice.primary.video_poster?.url || ''}
+            className="w-full h-auto"
             width="100%"
             height="100%"
             autoPlay
+            loop
             playsInline
             muted
             preload="metadata"
           >
-            <source src={slice.primary.video_url} type="video/mp4" />
+            <source src={slice.primary.video_url || ''} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
