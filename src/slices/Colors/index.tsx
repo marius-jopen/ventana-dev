@@ -165,6 +165,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
         </div>
       </div>
 
+
       {/* <div className="text-style-2 text-red-200 text-center z-30 fixed w-full top-0 left-0 h-full flex justify-center flex-col">
         WORD
       </div> */}
