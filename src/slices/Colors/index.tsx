@@ -8,8 +8,8 @@ import 'aos/dist/aos.css';
 export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 
 const Colors = ({ slice }: ColorsProps): JSX.Element => {
-  const canvasRef = useRef(null);
-  const containerRef = useRef(null);
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [startAnimation, setStartAnimation] = useState(false);
   const [frameNumber, setFrameNumber] = useState(0);
@@ -30,78 +30,84 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
       });
 
       const canvas = canvasRef.current;
-      const context = canvas.getContext("2d");
-      const frameCount = 351;
+      if (canvas) {
+        const context = canvas.getContext("2d");
+        if (context) {
+          const frameCount = 351;
 
-      const currentFrame = (index) => (
-        `/colors-images/VENTANA_COLOR_R10_01C_${index.toString().padStart(5, "0")}.jpg`
-      );
+          const currentFrame = (index: number) => (
+            `/colors-images/VENTANA_COLOR_R10_01C_${index.toString().padStart(5, "0")}.jpg`
+          );
 
-      const img = new Image();
-      img.src = currentFrame(0);
-      img.onload = function () {
-        drawImageCover(context, img, canvas);
-      };
-
-      const preloadImages = () => {
-        Array.from({ length: frameCount }, (_, i) => {
           const img = new Image();
-          img.src = currentFrame(i);
-        });
-      };
+          img.src = currentFrame(0);
+          img.onload = function () {
+            drawImageCover(context, img, canvas);
+          };
 
-      const updateImage = (index) => {
-        const newImg = new Image();
-        newImg.src = currentFrame(index);
-        newImg.onload = function () {
-          drawImageCover(context, newImg, canvas);
-        };
-      };
+          const preloadImages = () => {
+            Array.from({ length: frameCount }, (_, i) => {
+              const img = new Image();
+              img.src = currentFrame(i);
+            });
+          };
 
-      const handleScroll = () => {
-        if (!startAnimation) return;
+          const updateImage = (index: number) => {
+            const newImg = new Image();
+            newImg.src = currentFrame(index);
+            newImg.onload = function () {
+              drawImageCover(context, newImg, canvas);
+            };
+          };
 
-        const html = document.documentElement;
-        const wrap = containerRef.current;
-        const scrollTop = html.scrollTop - wrap.offsetTop;
-        const maxScrollTop = wrap.scrollHeight - window.innerHeight;
-        const scrollFraction = Math.max(0, Math.min(1, scrollTop / (maxScrollTop * scrollSpeed)));
-        const frameIndex = Math.min(
-          frameCount - 1,
-          Math.floor(scrollFraction * frameCount)
-        );
-        setFrameNumber(frameIndex);
-        requestAnimationFrame(() => updateImage(frameIndex));
-      };
+          const handleScroll = () => {
+            if (!startAnimation) return;
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setIsInView(true);
-              setStartAnimation(true);
-              window.addEventListener("scroll", handleScroll);
-            } else if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
-              setIsInView(false);
-              setStartAnimation(false);
-              window.removeEventListener("scroll", handleScroll);
+            const html = document.documentElement;
+            const wrap = containerRef.current;
+            if (wrap) {
+              const scrollTop = html.scrollTop - wrap.offsetTop;
+              const maxScrollTop = wrap.scrollHeight - window.innerHeight;
+              const scrollFraction = Math.max(0, Math.min(1, scrollTop / (maxScrollTop * scrollSpeed)));
+              const frameIndex = Math.min(
+                frameCount - 1,
+                Math.floor(scrollFraction * frameCount)
+              );
+              setFrameNumber(frameIndex);
+              requestAnimationFrame(() => updateImage(frameIndex));
             }
-          });
-        },
-        { threshold: 0 }
-      );
+          };
 
-      observer.observe(containerRef.current);
-      preloadImages();
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  setIsInView(true);
+                  setStartAnimation(true);
+                  window.addEventListener("scroll", handleScroll);
+                } else if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
+                  setIsInView(false);
+                  setStartAnimation(false);
+                  window.removeEventListener("scroll", handleScroll);
+                }
+              });
+            },
+            { threshold: 0 }
+          );
 
-      return () => {
-        window.removeEventListener("scroll", handleScroll);
-        observer.disconnect();
-      };
+          observer.observe(containerRef.current);
+          preloadImages();
+
+          return () => {
+            window.removeEventListener("scroll", handleScroll);
+            observer.disconnect();
+          };
+        }
+      }
     }
   }, [startAnimation, scrollSpeed]);
 
-  const drawImageCover = (context, img, canvas) => {
+  const drawImageCover = (context: CanvasRenderingContext2D, img: HTMLImageElement, canvas: HTMLCanvasElement) => {
     const imgAspectRatio = img.width / img.height;
     const canvasAspectRatio = canvas.width / canvas.height;
     let renderableWidth, renderableHeight, xStart, yStart;
