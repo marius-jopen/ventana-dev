@@ -31,7 +31,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
 
       const canvas = canvasRef.current;
       if (canvas) {
-        const context = canvas.getContext("2d");
+        const context = canvas?.getContext("2d");
         if (context) {
           const frameCount = 351;
 
