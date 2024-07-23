@@ -12,14 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "video": {
-          "type": "Link",
-          "config": {
-            "label": "Video",
-            "placeholder": "",
-            "select": "media"
-          }
-        },
         "text_1": {
           "type": "StructuredText",
           "config": {
@@ -33,6 +25,15 @@
           "type": "StructuredText",
           "config": {
             "label": "Text 2",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "text_3": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Text 3",
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"

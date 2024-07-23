@@ -12,14 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "video": {
-          "type": "Link",
-          "config": {
-            "label": "Video",
-            "placeholder": "",
-            "select": "media"
-          }
-        },
         "headline": {
           "type": "StructuredText",
           "config": {
@@ -63,6 +55,21 @@
             "placeholder": "",
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
+          }
+        },
+        "video_url": {
+          "type": "Text",
+          "config": {
+            "label": "Video Url",
+            "placeholder": ""
+          }
+        },
+        "video_poster": {
+          "type": "Image",
+          "config": {
+            "label": "Video Poster",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

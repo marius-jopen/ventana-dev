@@ -1,57 +1,164 @@
-"use client"
-import React, { useRef, useEffect } from 'react';
+"use client";
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { useEffect, useRef, useState } from "react";
 
-export type ThicknessProps = SliceComponentProps<Content.ThicknessSlice>;
+export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 
-const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+const Colors = ({ slice }: ColorsProps): JSX.Element => {
+  const canvasRef = useRef(null);
+  const containerRef = useRef(null);
+  const wordRef = useRef(null);
+  const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
+  const [startAnimation, setStartAnimation] = useState(false);
+  const [frameNumber, setFrameNumber] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const scrollSpeed = 1; // Variable to control the speed of the animation
 
   useEffect(() => {
-    const videoElement = videoRef.current;
-    let hasPlayed = false;
+    if (typeof window !== "undefined") {
+      setCanvasSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
 
-    const observer = new IntersectionObserver((entries) => {
-      const [entry] = entries;
-      // Check if the video is in view and has not played before
-      if (entry.isIntersecting && !hasPlayed) {
-        videoElement?.play();
-        hasPlayed = true; // Mark as played
-      }
-    }, {
-      threshold: 0.5 // Trigger when 50% of the video is visible
-    });
+      const canvas = canvasRef.current;
+      const context = canvas.getContext("2d");
+      const frameCount = 351;
 
-    if (videoElement) {
-      observer.observe(videoElement);
+      const currentFrame = (index) =>
+        `/colors-images/VENTANA_COLOR_R10_01C_${index.toString().padStart(5, "0")}.jpg`;
+
+      const img = new Image();
+      img.src = currentFrame(0);
+      img.onload = function () {
+        drawImageCover(context, img, canvas);
+      };
+
+      const preloadImages = () => {
+        Array.from({ length: frameCount }, (_, i) => {
+          const img = new Image();
+          img.src = currentFrame(i);
+        });
+      };
+
+      const updateImage = (index) => {
+        const newImg = new Image();
+        newImg.src = currentFrame(index);
+        newImg.onload = function () {
+          drawImageCover(context, newImg, canvas);
+        };
+      };
+
+      const handleScroll = () => {
+        if (!startAnimation) return;
+
+        const html = document.documentElement;
+        const wrap = containerRef.current;
+        const scrollTop = html.scrollTop - wrap.offsetTop;
+        const maxScrollTop = wrap.scrollHeight - window.innerHeight;
+        const scrollFraction = Math.max(0, Math.min(1, scrollTop / (maxScrollTop * scrollSpeed)));
+        const frameIndex = Math.min(
+          frameCount - 1,
+          Math.floor(scrollFraction * frameCount)
+        );
+        setFrameNumber(frameIndex);
+        requestAnimationFrame(() => updateImage(frameIndex));
+
+        // Handle fade-in effect for the WORD div
+        const fadeSpeed = 200; // Adjust this value for desired fade speed
+        const opacity = Math.min(1, scrollTop / fadeSpeed);
+        wordRef.current.style.opacity = opacity;
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setIsInView(true);
+              setStartAnimation(true);
+              window.addEventListener("scroll", handleScroll);
+            } else if (!entry.isIntersecting && entry.boundingClientRect.top > window.innerHeight) {
+              setIsInView(false);
+              setStartAnimation(false);
+              window.removeEventListener("scroll", handleScroll);
+            }
+          });
+        },
+        { threshold: 0 }
+      );
+
+      observer.observe(containerRef.current);
+      preloadImages();
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        observer.disconnect();
+      };
+    }
+  }, [startAnimation, scrollSpeed]);
+
+  const drawImageCover = (context, img, canvas) => {
+    const imgAspectRatio = img.width / img.height;
+    const canvasAspectRatio = canvas.width / canvas.height;
+    let renderableWidth, renderableHeight, xStart, yStart;
+
+    if (imgAspectRatio < canvasAspectRatio) {
+      renderableWidth = canvas.width;
+      renderableHeight = renderableWidth / imgAspectRatio;
+      xStart = 0;
+      yStart = (canvas.height - renderableHeight) / 2;
+    } else if (imgAspectRatio > canvasAspectRatio) {
+      renderableHeight = canvas.height;
+      renderableWidth = renderableHeight * imgAspectRatio;
+      xStart = (canvas.width - renderableWidth) / 2;
+      yStart = 0;
+    } else {
+      renderableWidth = canvas.width;
+      renderableHeight = canvas.height;
+      xStart = 0;
+      yStart = 0;
     }
 
-    return () => {
-      observer.disconnect(); // Cleanup observer when the component unmounts
-    };
-  }, []);
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.drawImage(img, xStart, yStart, renderableWidth, renderableHeight);
+  };
 
   return (
-    <section className='w-full overflow-x-hidden'>
-      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max">
-        <div className="row-start-1 col-start-3 col-end-12 md:col-end-23 text-center text-style-4 text-black-on-white distance-top-4">
-          <PrismicRichText field={slice.primary.headline} />
+    <section className="bg-offWhite">
+      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
+        <div className="bg-black row-start-1 col-span-24" ref={containerRef}>
+          <div className="png__sequence">
+            <canvas
+              ref={canvasRef}
+              width={canvasSize.width}
+              height={canvasSize.height}
+              className="png__sequence__canvas"
+              id="canvas"
+            ></canvas>
+          </div>
         </div>
 
-        <div className="row-start-2 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white distance-top-4 distance-bottom-3">
-          <PrismicRichText field={slice.primary.text} />
+        <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-offWhite h-64 z-20 -mt-64"></div>
+
+        <div className="distance-top-4 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
+          <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="row-start-3 col-span-12 md:col-span-24">
-          <video className="object-cover h-full"  width="100%" height="100%" autoPlay playsInline muted preload="metadata">
-            <source src="https://player.vimeo.com/progressive_redirect/playback/988817627/rendition/1080p/file.mp4?loc=external&log_user=0&signature=5b3c7bc5e281ead86c82796f0e11021fa60e433e48ab0fe8d7769c2952e4f3ca" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+        <div className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+          <PrismicRichText field={slice.primary.text_2} />
         </div>
+      </div>
+
+      <div
+        className="text-style-2 text-red-200 text-center z-30 fixed w-full top-0 left-0 h-full flex justify-center flex-col"
+        style={{ opacity: 0 }}
+        ref={wordRef}
+      >
+        WORD
       </div>
     </section>
   );
 };
 
-export default Thickness;
+export default Colors;

@@ -2,6 +2,8 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
 import { useEffect, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 export type SpaceProps = SliceComponentProps<Content.SpaceSlice>;
 
@@ -11,6 +13,12 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
   const words = slice.primary.headline ? slice.primary.headline.split(", ") : [""];
 
   useEffect(() => {
+    AOS.init({
+      offset: 30,
+      once: true,
+      duration: 1400, 
+    });
+
     if (words[0] === "") return; // Avoid running the interval if no words are available
 
     const interval = setInterval(() => {
@@ -25,8 +33,9 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
   return (
     <section className="w-full overflow-x-hidden">
       <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-6 grid-flow-row auto-rows-max">
-        <div className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white distance-top-4 text-black-on-white">
+        <div className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white distance-top-3 text-black-on-white">
           <div 
+          data-aos="zoom-out"
           className="text-style-3"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -34,23 +43,33 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
             {words[currentWordIndex]}  {/* Show current word from the headline */}
           </div>
           
-          <div className="text-style-5">
+          <div data-aos="zoom-out" className="text-style-5 distance-top-05">
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
         </div>
 
         <div className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center distance-top-3 distance-bottom-3">
-          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline loop muted preload="metadata">
-            <source src="https://player.vimeo.com/progressive_redirect/playback/986526765/rendition/1080p/file.mp4?loc=external&log_user=0&signature=b0e7de04d7beb7f79772637dc22612c7655a13a973ad8cc3ea75ea68f5133ecf" type="video/mp4" />
+          <video
+            poster={slice.primary.video_poster.url}
+            className="w-full h-auto"
+            width="100%"
+            height="100%"
+            autoPlay
+            playsInline
+            muted
+            loop
+            preload="metadata"
+          >
+            <source src={slice.primary.video_url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
-        <div className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white">
+        <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         
-        <div className="mt-[-50px] row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos="fade-up" className="mt-[-50px] row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>

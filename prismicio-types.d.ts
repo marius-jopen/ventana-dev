@@ -312,14 +312,24 @@ export interface ChipSliceDefaultPrimary {
   text: prismic.RichTextField;
 
   /**
-   * Video field in *Chip → Default → Primary*
+   * Video Url field in *Chip → Default → Primary*
    *
-   * - **Field Type**: Link to Media
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: chip.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: chip.default.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  video: prismic.LinkToMediaField;
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Video Poster field in *Chip → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: chip.default.primary.video_poster
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_poster: prismic.ImageField<never>;
 }
 
 /**
@@ -354,16 +364,6 @@ export type ChipSlice = prismic.SharedSlice<"chip", ChipSliceVariation>;
  */
 export interface ColorsSliceDefaultPrimary {
   /**
-   * Video field in *Colors → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: colors.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
-
-  /**
    * Text 1 field in *Colors → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -382,6 +382,16 @@ export interface ColorsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_2: prismic.RichTextField;
+
+  /**
+   * Text 3 field in *Colors → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.default.primary.text_3
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text_3: prismic.RichTextField;
 }
 
 /**
@@ -498,16 +508,6 @@ export type CtaSlice = prismic.SharedSlice<"cta", CtaSliceVariation>;
  */
 export interface DarkerSliceDefaultPrimary {
   /**
-   * Video field in *Darker → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: darker.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
-
-  /**
    * Headline field in *Darker → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -556,6 +556,26 @@ export interface DarkerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_3: prismic.RichTextField;
+
+  /**
+   * Video Url field in *Darker → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: darker.default.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Video Poster field in *Darker → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: darker.default.primary.video_poster
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_poster: prismic.ImageField<never>;
 }
 
 /**
@@ -700,16 +720,6 @@ export type ImageOpenerSlice = prismic.SharedSlice<
  */
 export interface MountingSliceDefaultPrimary {
   /**
-   * Video field in *Mounting → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: mounting.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
-
-  /**
    * Text 1 field in *Mounting → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -728,6 +738,26 @@ export interface MountingSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_2: prismic.RichTextField;
+
+  /**
+   * Video Url field in *Mounting → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mounting.default.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Video Poster field in *Mounting → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mounting.default.primary.video_poster
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_poster: prismic.ImageField<never>;
 }
 
 /**
@@ -847,16 +877,6 @@ export type OpenerSlice = prismic.SharedSlice<"opener", OpenerSliceVariation>;
  */
 export interface PowerSliceDefaultPrimary {
   /**
-   * Video field in *Power → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: power.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
-
-  /**
    * Sub Headline field in *Power → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -949,16 +969,6 @@ export interface SpaceSliceDefaultPrimary {
   sub_headline: prismic.RichTextField;
 
   /**
-   * Video field in *Space → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: space.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
-
-  /**
    * Text 1 field in *Space → Default → Primary*
    *
    * - **Field Type**: Rich Text
@@ -977,6 +987,26 @@ export interface SpaceSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_2: prismic.RichTextField;
+
+  /**
+   * Video Url field in *Space → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: space.default.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Video Poster field in *Space → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: space.default.primary.video_poster
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_poster: prismic.ImageField<never>;
 }
 
 /**
@@ -1054,6 +1084,16 @@ export interface SpecsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#group
    */
   table: prismic.GroupField<Simplify<SpecsSliceDefaultPrimaryTableItem>>;
+
+  /**
+   * Image field in *Specs → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: specs.default.primary.image
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
 }
 
 /**
@@ -1108,14 +1148,24 @@ export interface ThicknessSliceDefaultPrimary {
   text: prismic.RichTextField;
 
   /**
-   * Video field in *Thickness → Default → Primary*
+   * Video Url field in *Thickness → Default → Primary*
    *
-   * - **Field Type**: Link to Media
+   * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: thickness.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   * - **API ID Path**: thickness.default.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  video: prismic.LinkToMediaField;
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Video Poster field in *Thickness → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: thickness.default.primary.video_poster
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_poster: prismic.ImageField<never>;
 }
 
 /**
@@ -1152,16 +1202,6 @@ export type ThicknessSlice = prismic.SharedSlice<
  * Primary content in *Welcome → Default → Primary*
  */
 export interface WelcomeSliceDefaultPrimary {
-  /**
-   * Video field in *Welcome → Default → Primary*
-   *
-   * - **Field Type**: Link to Media
-   * - **Placeholder**: *None*
-   * - **API ID Path**: welcome.default.primary.video
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  video: prismic.LinkToMediaField;
-
   /**
    * Headline field in *Welcome → Default → Primary*
    *
@@ -1201,6 +1241,26 @@ export interface WelcomeSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   button_link: prismic.LinkField;
+
+  /**
+   * Video Url field in *Welcome → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: welcome.default.primary.video_url
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  video_url: prismic.KeyTextField;
+
+  /**
+   * Video Poster field in *Welcome → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: welcome.default.primary.video_poster
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  video_poster: prismic.ImageField<never>;
 }
 
 /**

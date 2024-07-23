@@ -2,6 +2,8 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { useEffect, useRef, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 
@@ -15,6 +17,12 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   const scrollSpeed = 1; // Variable to control the speed of the animation
 
   useEffect(() => {
+    AOS.init({
+      offset: 30,
+      once: true,
+      duration: 1400, 
+    });
+    
     if (typeof window !== "undefined") {
       setCanvasSize({
         width: window.innerWidth,
@@ -136,12 +144,16 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
 
         <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-white h-64 z-20 -mt-64"></div>
 
-        <div className="distance-top-4 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
+        <div data-aos="fade-up" className="distance-top-4 distance-bottom-1  row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="mt-[-50px] row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_2} />
+        </div>
+
+        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+          <PrismicRichText field={slice.primary.text_3} />
         </div>
       </div>
 

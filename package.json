@@ -18,13 +18,17 @@
     "@prismicio/next": "^1.6.0",
     "@prismicio/react": "^2.8.0",
     "animejs": "^3.2.2",
+    "aos": "^3.0.0-beta.6",
+    "framer-motion": "^11.3.9",
     "next": "^14.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.13.0",
     "react-scroll-motion": "^0.3.3"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.42",
+    "@types/animejs": "^3.1.12",
     "@types/node": "^20.14.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

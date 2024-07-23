@@ -12,14 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "video": {
-          "type": "Link",
-          "config": {
-            "label": "Video",
-            "placeholder": "",
-            "select": "media"
-          }
-        },
         "sub_headline": {
           "type": "StructuredText",
           "config": {

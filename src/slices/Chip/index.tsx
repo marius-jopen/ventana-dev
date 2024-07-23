@@ -2,6 +2,8 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText, PrismicLink } from "@prismicio/react";
 import { useEffect, useRef, useState } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 
 export type ChipProps = SliceComponentProps<Content.ChipSlice>;
 
@@ -13,6 +15,12 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
   const ref = useRef(null);
 
   useEffect(() => {
+    AOS.init({
+      offset: 30,
+      once: true,
+      duration: 1400, 
+    });
+
     const observer = new IntersectionObserver(entries => {
       if (entries[0].isIntersecting && !hasAnimated.current) {
         hasAnimated.current = true;
@@ -40,7 +48,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
   }, [maxNumber]);
 
   return (
-    <section className="bg-black text-white grid-flow-row auto-rows-max w-full overflow-x-hidden">
+    <section className="bg-black text-white grid-flow-row auto-rows-max w-full overflow-x-hidden overflow-y-hidden">
       <div className="grid grid-cols-12 md:grid-cols-24">
         <div className="row-start-1 col-start-2 col-end-24 text-left ml-[50%] relative translate-x-[-300px]" ref={ref}>
           <div className="text-style-14">
@@ -53,27 +61,36 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
         </div>
 
         <div className="row-start-2 col-span-24">
-          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline muted preload="metadata">
-            <source src="https://player.vimeo.com/progressive_redirect/playback/986527050/rendition/1080p/file.mp4?loc=external&log_user=0&signature=3db348965624bfcb96fc5f130ed0e0298ccb2a9102ead227ccd47fdc37b4a891" type="video/mp4" />
+          <video
+            poster={slice.primary.video_poster.url}
+            className="w-full h-auto"
+            width="100%"
+            height="100%"
+            autoPlay
+            playsInline
+            muted
+            preload="metadata"
+          >
+            <source src={slice.primary.video_url} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
 
-        <div className="row-start-3 col-span-24 text-style-5 bg-gradient-to-t from-black h-48 z-20 -mt-48"></div>
+        <div data-aos="fade-up" className="row-start-3 col-span-24 text-style-5 bg-gradient-to-t from-black h-48 z-20 -mt-48"></div>
 
-        <div className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-11 distance-bottom-1  distance-top-2">
+        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-11 distance-bottom-1  distance-top-2">
           <div className="text-style-4">
             <PrismicRichText field={slice.primary.headline} />
           </div>
         </div>
 
         <div className="row-start-5 col-start-2 md:col-start-3 col-end-12 md:col-end-11">
-          <div className="text-style-7 text-text-gray-on-black">
+          <div data-aos="fade-up" className="text-style-7 text-text-gray-on-black">
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
         </div>
 
-        <div className="row-start-5 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+        <div data-aos="fade-up" className="row-start-5 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
           <PrismicRichText field={slice.primary.text} />
         </div>
       </div>

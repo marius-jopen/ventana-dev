@@ -12,14 +12,6 @@
       "description": "Default",
       "imageUrl": "",
       "primary": {
-        "video": {
-          "type": "Link",
-          "config": {
-            "label": "Video",
-            "placeholder": "",
-            "select": "media"
-          }
-        },
         "headline": {
           "type": "StructuredText",
           "config": {
@@ -50,6 +42,21 @@
             "label": "Button Link",
             "placeholder": "",
             "select": null
+          }
+        },
+        "video_url": {
+          "type": "Text",
+          "config": {
+            "label": "Video Url",
+            "placeholder": ""
+          }
+        },
+        "video_poster": {
+          "type": "Image",
+          "config": {
+            "label": "Video Poster",
+            "constraint": {},
+            "thumbnails": []
           }
         }
       },

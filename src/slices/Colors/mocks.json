@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"video": {
-				"__TYPE__": "LinkContent",
-				"value": {
-					"id": "mock_Media_link",
-					"kind": "image/jpeg",
-					"name": "mock_name",
-					"url": "https://source.unsplash.com/daily",
-					"size": "0",
-					"__TYPE__": "FileLink"
-				}
-			},
 			"text_1": {
 				"__TYPE__": "StructuredTextContent",
 				"value": [
@@ -32,6 +21,17 @@
 						"type": "paragraph",
 						"content": {
 							"text": "Minim enim incididunt id et reprehenderit incididunt elit irure velit nulla mollit occaecat. Fugiat duis pariatur cupidatat sit consequat anim ullamco in."
+						}
+					}
+				]
+			},
+			"text_3": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolor aute qui est commodo reprehenderit eu elit est voluptate sit irure exercitation occaecat commodo eu. Aute qui elit esse officia adipisicing incididunt eu culpa. Laborum esse sit elit nulla ea."
 						}
 					}
 				]

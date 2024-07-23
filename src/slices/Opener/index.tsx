@@ -24,7 +24,7 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
   }, [isHovering, words.length]);
 
   return (
-    <section className="text-white w-full overflow-x-hidden">
+    <section className="text-white">
       <div className="relative h-[60vw]">
         <div className="flex flex-col justify-center h-full text-center">
           <div 
@@ -35,7 +35,7 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
             {words[currentWordIndex]}
           </div>
 
-          <div className="text-style-5">
+          <div className="text-style-5 -mt-[2vw]">
             <PrismicRichText field={slice.primary.subheadline} />
           </div>
         </div>
