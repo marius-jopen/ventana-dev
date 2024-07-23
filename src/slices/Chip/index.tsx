@@ -72,7 +72,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
             muted
             preload="metadata"
           >
-            <source src={slice.primary.video_url} type="video/mp4" />
+            <source src={slice.primary.video_url || ''} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
