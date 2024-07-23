@@ -95,7 +95,9 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
             { threshold: 0 }
           );
 
-          observer.observe(containerRef.current);
+          if (containerRef.current) {
+            observer.observe(containerRef.current);
+          }
           preloadImages();
 
           return () => {
