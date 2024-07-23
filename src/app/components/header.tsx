@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = (): JSX.Element => {
   return (
-    <div className="flex justify-between top-0 left-0 w-full fixed z-50">
+    <div className="flex justify-between top-0 left-0 w-full fixed z-50 text-gray-400">
       <div>Ventana</div>
       
       <div className="flex gap-4 text-style-16">

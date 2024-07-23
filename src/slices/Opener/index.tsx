@@ -1,6 +1,6 @@
 "use client"
 import { Content } from "@prismicio/client";
-import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
+import { SliceComponentProps, PrismicRichText, PrismicImage } from "@prismicio/react";
 import { useEffect, useState } from "react";
 
 export type OpenerProps = SliceComponentProps<Content.OpenerSlice>;
@@ -24,11 +24,11 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
   }, [isHovering, words.length]);
 
   return (
-    <section className="text-white">
+    <section className="text-white w-full overflow-x-hidden">
       <div className="relative h-[60vw]">
         <div className="flex flex-col justify-center h-full text-center">
           <div 
-          className="text-style-13"
+          className="text-style-13 -mt-[5vw]"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
           >
@@ -41,10 +41,10 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
         </div>
 
         <div className="absolute h-full w-full top-0 left-0 -z-10">
-          <video className="object-cover h-full" width="100%" height="100%" loop playsInline autoPlay muted preload="none">
-            <source src="/video.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
+          <div className="h-[60vw] bg-black">
+            <PrismicImage className="absolute h-[60vw] w-auto left-[-15.5vw] translate-y-[-3vw]" field={slice.primary.image_1} />
+            <PrismicImage className="absolute h-[60vw] w-auto right-[-15.5vw] translate-y-[3vw]" field={slice.primary.image_2} />
+          </div>
         </div>
       </div>
     </section>

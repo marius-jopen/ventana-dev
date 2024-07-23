@@ -27,6 +27,30 @@
             "allowTargetBlank": true,
             "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl"
           }
+        },
+        "image_1": {
+          "type": "Image",
+          "config": {
+            "label": "Image 1",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_2": {
+          "type": "Image",
+          "config": {
+            "label": "Image 2",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "image_background": {
+          "type": "Image",
+          "config": {
+            "label": "Image Background",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {}

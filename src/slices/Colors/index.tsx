@@ -12,6 +12,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   const [startAnimation, setStartAnimation] = useState(false);
   const [frameNumber, setFrameNumber] = useState(0);
   const [isInView, setIsInView] = useState(false);
+  const scrollSpeed = 1; // Variable to control the speed of the animation
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -56,7 +57,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
         const wrap = containerRef.current;
         const scrollTop = html.scrollTop - wrap.offsetTop;
         const maxScrollTop = wrap.scrollHeight - window.innerHeight;
-        const scrollFraction = Math.max(0, Math.min(1, scrollTop / maxScrollTop));
+        const scrollFraction = Math.max(0, Math.min(1, scrollTop / (maxScrollTop * scrollSpeed)));
         const frameIndex = Math.min(
           frameCount - 1,
           Math.floor(scrollFraction * frameCount)
@@ -90,7 +91,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
         observer.disconnect();
       };
     }
-  }, [startAnimation]);
+  }, [startAnimation, scrollSpeed]);
 
   const drawImageCover = (context, img, canvas) => {
     const imgAspectRatio = img.width / img.height;
@@ -119,9 +120,9 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   };
 
   return (
-    <section className="bg-offWhite">
+    <section className="">
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
-        <div className="row-start-1 col-span-24" ref={containerRef}>
+        <div className="bg-black row-start-1 col-span-24" ref={containerRef}>
           <div className="png__sequence">
             <canvas
               ref={canvasRef}
@@ -133,26 +134,19 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
           </div>
         </div>
 
-        <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-offWhite h-64 z-20 -mt-64"></div>
+        <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-white h-64 z-20 -mt-64"></div>
 
-        <div className="distance-top-4 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
+        <div className="distance-top-4 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div className="mt-[-50px] row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>
-      {/* <div style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        backgroundColor: 'yellow',
-        padding: '10px',
-        zIndex: 1000
-      }}>
-        <p>PNG Sequence in View: {isInView ? 'Yes' : 'No'}</p>
-        <p>Frame Number: {frameNumber}</p>
+
+      {/* <div className="text-style-2 text-red-200 text-center z-30 fixed w-full top-0 left-0 h-full flex justify-center flex-col">
+        WORD
       </div> */}
     </section>
   );

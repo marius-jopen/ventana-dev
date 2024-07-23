@@ -31,6 +31,14 @@
   padding-bottom: 0px;
 }
 
+.distance-top-05 {
+  padding-top: 18px;
+}
+
+.distance-bottom-05 {
+  padding-bottom: 18px;
+}
+
 .distance-top-1 {
   padding-top: 36px;
 }
@@ -479,6 +487,24 @@
     font-weight: 500;
     line-height: 130.5%; /* 20.88px */
     letter-spacing: 1px;    
+  }
+}
+
+.text-style-17 {
+  font-family: Outfit;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+
+  @media (max-width: 768px) {
+    font-family: Outfit;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130.5%; /* 20.88px */
+  
   }
 }
 

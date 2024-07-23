@@ -783,6 +783,36 @@ export interface OpenerSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   subheadline: prismic.RichTextField;
+
+  /**
+   * Image 1 field in *Opener → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opener.default.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *Opener → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opener.default.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image Background field in *Opener → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: opener.default.primary.image_background
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_background: prismic.ImageField<never>;
 }
 
 /**

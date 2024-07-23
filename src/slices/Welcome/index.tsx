@@ -6,7 +6,7 @@ export type WelcomeProps = SliceComponentProps<Content.WelcomeSlice>;
 
 const Welcome = ({ slice }: WelcomeProps): JSX.Element => {
   return (
-    <section className="text-white">
+    <section className="text-white w-full overflow-x-hidden">
       <div className="relative h-[60vw] overflow-hidden">
         <div className="flex flex-col justify-center h-full">
           <div className="flex justify-center distance-bottom-1">

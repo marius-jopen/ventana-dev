@@ -33,19 +33,19 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
   }, []);
 
   return (
-    <section>
+    <section className='w-full overflow-x-hidden'>
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max">
-        <div className="row-start-1 col-start-2 col-end-12 md:col-end-24 text-center text-style-4 text-black-on-white distance-top-4">
+        <div className="row-start-1 col-start-3 col-end-12 md:col-end-23 text-center text-style-4 text-black-on-white distance-top-4">
           <PrismicRichText field={slice.primary.headline} />
         </div>
 
-        <div className="row-start-2 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white distance-top-4 distance-bottom-4">
+        <div className="row-start-2 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white distance-top-4 distance-bottom-3">
           <PrismicRichText field={slice.primary.text} />
         </div>
 
         <div className="row-start-3 col-span-12 md:col-span-24">
           <video className="object-cover h-full"  width="100%" height="100%" autoPlay playsInline muted preload="metadata">
-            <source src="https://player.vimeo.com/progressive_redirect/playback/986526922/rendition/2160p/file.mp4?loc=external&log_user=0&signature=64dd1b65120aeef74dae3c4e8b782d2c6e58d448d61707b62c5eef4e1903aa36" type="video/mp4" />
+            <source src="https://player.vimeo.com/progressive_redirect/playback/988817627/rendition/1080p/file.mp4?loc=external&log_user=0&signature=5b3c7bc5e281ead86c82796f0e11021fa60e433e48ab0fe8d7769c2952e4f3ca" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
