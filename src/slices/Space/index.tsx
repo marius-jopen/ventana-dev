@@ -50,7 +50,8 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
 
         <div className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center distance-top-3 distance-bottom-3">
           <video
-            poster={slice.primary.video_poster.url}
+            poster={slice.primary.video_poster?.url || ''}
+
             className="w-full h-auto"
             width="100%"
             height="100%"

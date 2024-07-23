@@ -62,7 +62,8 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
 
         <div className="row-start-2 col-span-24">
           <video
-            poster={slice.primary.video_poster.url}
+            poster={slice.primary.video_poster?.url || ''}
+
             className="w-full h-auto"
             width="100%"
             height="100%"

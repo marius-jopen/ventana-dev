@@ -21,7 +21,8 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
       <div className="overflow-hidden relative grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-top-2">
         <div className="row-start-1 col-span-12 md:col-span-24">
           <video
-            poster={slice.primary.video_poster.url}
+            poster={slice.primary.video_poster?.url || ''}
+
             className="w-full h-auto"
             width="100%"
             height="100%"

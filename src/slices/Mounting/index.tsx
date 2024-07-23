@@ -21,7 +21,8 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="row-start-1 col-span-24 distance-bottom-4">
           <video
-            poster={slice.primary.video_poster.url}
+            poster={slice.primary.video_poster?.url || ''}
+
             className="w-full h-auto"
             width="100%"
             height="100%"
