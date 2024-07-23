@@ -4,7 +4,7 @@ import Footer from "./components/footer";
 import Header from "./components/header";
 import Grid from "./components/grid";
 import '@/app/styles.css';
-import Head from 'next/head'; // Import the Head component
+import Head from 'next/head';
 
 export default function RootLayout({
   children,
@@ -22,6 +22,9 @@ export default function RootLayout({
       Array.from({ length: frameCount }, (_, i) => {
         const img = new Image();
         img.src = currentFrame(i);
+        img.onload = () => {
+          // Optionally log or track that the image has been loaded
+        };
       });
     };
 
