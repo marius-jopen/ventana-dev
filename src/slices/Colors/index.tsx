@@ -109,7 +109,9 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
     }
   }, [startAnimation, scrollSpeed]);
 
-  const drawImageCover = (context: CanvasRenderingContext2D, img: HTMLImageElement, canvas: HTMLCanvasElement) => {
+  const drawImageCover = (context: CanvasRenderingContext2D | null, img: HTMLImageElement, canvas: HTMLCanvasElement) => {
+    if (!context) return;
+    
     const imgAspectRatio = img.width / img.height;
     const canvasAspectRatio = canvas.width / canvas.height;
     let renderableWidth, renderableHeight, xStart, yStart;
