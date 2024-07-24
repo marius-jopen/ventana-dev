@@ -10,7 +10,7 @@ const Specs = ({ slice }: SpecsProps): JSX.Element => {
     slice-name="specs"
     data-slice="style-black"
     >
-      <div className="grid grid-cols-12 md:grid-cols-24 distance-top-4 grid-flow-row auto-rows-max distance-bottom-5">
+      <div className="grid grid-cols-12 md:grid-cols-24 distance-top-3 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="row-start-1 col-start-2 col-end-12 text-style-4">
           <PrismicRichText field={slice.primary.headline} />
           <div className="distance-top-2">
