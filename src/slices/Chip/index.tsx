@@ -48,7 +48,11 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
   }, [maxNumber]);
 
   return (
-    <section className="bg-black text-white grid-flow-row auto-rows-max w-full overflow-x-hidden overflow-y-hidden">
+    <section 
+    data-slice="style-black"
+    slice-name="chip"
+    className="block h-full bg-black text-white grid-flow-row auto-rows-max w-full overflow-x-hidden overflow-y-hidden"
+    >
       <div className="grid grid-cols-12 md:grid-cols-24">
         <div className="row-start-1 col-start-2 col-end-24 text-left ml-[50%] relative translate-x-[-300px]" ref={ref}>
           <div className="text-style-14">

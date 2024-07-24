@@ -138,7 +138,11 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   };
 
   return (
-    <section className="">
+    <section 
+    className="block h-full" 
+    data-slice="style-white" 
+    slice-name="colors"
+    >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="bg-black row-start-1 col-span-24" ref={containerRef}>
           <div className="png__sequence">

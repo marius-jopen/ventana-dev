@@ -31,7 +31,11 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
   }, [isHovering, words.length]);
 
   return (
-    <section className="w-full overflow-x-hidden">
+    <section 
+    className="hj-full block w-full overflow-x-hidden" 
+    data-slice="style-white"
+    slice-name="space"
+    >
       <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-6 grid-flow-row auto-rows-max">
         <div className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white distance-top-3 text-black-on-white">
           <div 
@@ -66,7 +70,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
           </video>
         </div>
 
-        <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white">
+        <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white" data-slice="style-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         

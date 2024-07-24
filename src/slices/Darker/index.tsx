@@ -17,7 +17,11 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
   }, []);
 
   return (
-    <section className="bg-black text-white w-full overflow-x-hidden overflow-hidden">
+    <section 
+    className="bg-black text-white w-full overflow-x-hidden overflow-hidden block h-full" 
+    data-slice="style-black"
+    slice-name="darker"
+    >
       <div className="overflow-hidden relative grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-top-2">
         <div className="row-start-1 col-span-12 md:col-span-24">
           <video

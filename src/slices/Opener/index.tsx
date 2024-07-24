@@ -8,23 +8,26 @@ export type OpenerProps = SliceComponentProps<Content.OpenerSlice>;
 const Opener = ({ slice }: OpenerProps): JSX.Element => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isHovering, setIsHovering] = useState(false);
-  // Ensure that words is never null or undefined
   const words = slice.primary.headline ? slice.primary.headline.split(", ") : [""];
 
   useEffect(() => {
-    if (words[0] === "") return;  // If there are no words, do not run the interval
+    if (words[0] === "") return;
 
     const interval = setInterval(() => {
       if (!isHovering) {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
-    }, 300); // Change word every 1 second
+    }, 300);
 
     return () => clearInterval(interval);
   }, [isHovering, words.length]);
 
   return (
-    <section className="text-white">
+    <section 
+    className="block text-white h-full" 
+    data-slice="style-black" 
+    slice-name="opener"
+    >
       <div className="relative h-[60vw]">
         <div className="flex flex-col justify-center h-full text-center">
           <div 

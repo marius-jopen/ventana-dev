@@ -17,7 +17,11 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
   }, []);
 
   return (
-    <section className="w-full overflow-x-hidden">
+    <section 
+    className="h-full block w-full overflow-x-hidden" 
+    data-slice="style-white"
+    slice-name="power"
+    >
       <div className="grid grid-cols-12 grid-flow-row auto-rows-max md:grid-cols-24 distance-bottom-5">
         <div className="row-start-1 col-span-24">
           <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline muted preload="metadata">

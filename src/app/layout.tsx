@@ -2,33 +2,41 @@
 import { useEffect } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
-import Grid from "./components/grid";
 import '@/app/styles.css';
 import Head from 'next/head';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const frameCount = 351;
+    const slices = document.querySelectorAll("section[data-slice]");
+    console.log("Slices found:", slices);
 
-    const currentFrame = (index: number) => (
-      `/colors-images/VENTANA_COLOR_R10_01C_${index.toString().padStart(5, "0")}.jpg`
-    );
+    let lastKnownSlice = null;
 
-    const preloadImages = () => {
-      Array.from({ length: frameCount }, (_, i) => {
-        const img = new Image();
-        img.src = currentFrame(i);
-        img.onload = () => {
-          // Optionally log or track that the image has been loaded
-        };
+    const updateHeaderColor = (sliceClass) => {
+      if (sliceClass !== lastKnownSlice) {
+        console.log("Updating header color to:", sliceClass);
+        lastKnownSlice = sliceClass;
+        const event = new CustomEvent("headerColorChange", { detail: { color: sliceClass } });
+        window.dispatchEvent(event);
+      }
+    };
+
+    const checkSlicesPosition = () => {
+      slices.forEach(slice => {
+        const rect = slice.getBoundingClientRect();
+        if (rect.top <= 50 && rect.bottom >= 50) { // Adjust this value based on header height
+          const sliceClass = slice.getAttribute("data-slice");
+          console.log("Slice at top:", sliceClass);
+          updateHeaderColor(sliceClass);
+        }
       });
     };
 
-    preloadImages();
+    window.addEventListener("scroll", checkSlicesPosition);
+
+    return () => {
+      window.removeEventListener("scroll", checkSlicesPosition);
+    };
   }, []);
 
   return (
@@ -42,7 +50,6 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
-        {/* <Grid /> Optionally uncomment this if you need the Grid component */}
       </body>
     </html>
   );

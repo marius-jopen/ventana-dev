@@ -22,13 +22,12 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
 
     const observer = new IntersectionObserver((entries) => {
       const [entry] = entries;
-      // Check if the video is in view and has not played before
       if (entry.isIntersecting && !hasPlayed) {
         videoElement?.play();
-        hasPlayed = true; // Mark as played
+        hasPlayed = true;
       }
     }, {
-      threshold: 0.5 // Trigger when 50% of the video is visible
+      threshold: 0.5
     });
 
     if (videoElement) {
@@ -36,12 +35,16 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
     }
 
     return () => {
-      observer.disconnect(); // Cleanup observer when the component unmounts
+      observer.disconnect();
     };
   }, []);
 
   return (
-    <section className='w-full overflow-x-hidden'>
+    <section 
+    className='h-full block w-full overflow-x-hidden style-white' 
+    data-slice="style-white" 
+    slice-name="thickness"
+    >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max">
         <div data-aos="fade-up" className="row-start-1 col-start-5 col-end-12 md:col-end-21 text-center text-style-4 text-black-on-white distance-top-4">
           <PrismicRichText field={slice.primary.headline} />

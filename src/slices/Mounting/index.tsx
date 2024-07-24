@@ -17,7 +17,11 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
   }, []);
 
   return (
-    <section className="bg-black text-white w-full overflow-x-hidden">
+    <section 
+    className="block h-full bg-black text-white w-full overflow-x-hidden" 
+    data-slice="style-black"
+    slice-name="mounting"
+    >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="row-start-1 col-span-24 distance-bottom-4">
           <video
