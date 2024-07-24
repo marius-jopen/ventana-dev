@@ -332,6 +332,14 @@
   font-weight: 400;
   line-height: 94.8px; /* 105.333% */
 
+  @media (max-width: 1500px) {
+    font-family: Outfit;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 85px; /* 105.333% */
+  }
+
   @media (max-width: 768px) {
     font-family: Outfit;
     font-size: 40px;

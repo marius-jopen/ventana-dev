@@ -1213,16 +1213,6 @@ export interface WelcomeSliceDefaultPrimary {
   headline: prismic.RichTextField;
 
   /**
-   * Image field in *Welcome → Default → Primary*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: welcome.default.primary.image
-   * - **Documentation**: https://prismic.io/docs/field#image
-   */
-  image: prismic.ImageField<never>;
-
-  /**
    * Button Text field in *Welcome → Default → Primary*
    *
    * - **Field Type**: Text

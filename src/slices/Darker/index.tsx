@@ -18,7 +18,7 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
 
   return (
     <section 
-    className="bg-black text-white w-full overflow-x-hidden overflow-hidden block h-full" 
+    className="bg-black text-white w-full overflow-x-hidden overflow-hidden block h-full mt-[-1px]" 
     data-slice="style-black"
     slice-name="darker"
     >
