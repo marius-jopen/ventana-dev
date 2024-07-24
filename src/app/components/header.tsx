@@ -7,19 +7,20 @@ const Header = (): JSX.Element => {
   const [logoColor, setLogoColor] = useState("white");
 
   useEffect(() => {
-    const handleColorChange = (event: CustomEvent) => {
-      console.log("Header color change event received:", event.detail.color);
-      setHeaderColor(event.detail.color === "style-white" ? "text-black" : "text-white");
-      setLogoColor(event.detail.color === "style-white" ? "black" : "white");
+    const handleColorChange = (event: Event) => {
+      const customEvent = event as CustomEvent<{ color: string }>;
+      console.log("Header color change event received:", customEvent.detail.color);
+      setHeaderColor(customEvent.detail.color === "style-white" ? "text-black" : "text-white");
+      setLogoColor(customEvent.detail.color === "style-white" ? "black" : "white");
     };
 
-    window.addEventListener("headerColorChange", handleColorChange);
+    window.addEventListener("headerColorChange", handleColorChange as EventListener);
 
     return () => {
-      window.removeEventListener("headerColorChange", handleColorChange);
+      window.removeEventListener("headerColorChange", handleColorChange as EventListener);
     };
   }, []);
-
+  
   return (
     <div
       className={`flex justify-between top-0 left-0 w-full fixed z-50 px-8 pt-4 ${headerColor} `}
