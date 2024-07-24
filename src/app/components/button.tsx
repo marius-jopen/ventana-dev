@@ -1,6 +1,13 @@
 import { PrismicLink } from "@prismicio/react";
+import { LinkField } from "@prismicio/types";
 
-const Button = ({ link, text, filled }: { link: string, text: string, filled: boolean }): JSX.Element => {
+interface ButtonProps {
+  link: LinkField;
+  text: string;
+  filled: boolean;
+}
+
+const Button = ({ link, text, filled }: ButtonProps): JSX.Element => {
   return (
     <PrismicLink 
       className={`px-8 py-2 w-full text-center border ${filled ? "bg-text-gray-on-white text-white" : ""}`} 
