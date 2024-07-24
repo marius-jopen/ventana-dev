@@ -61,6 +61,7 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
             width="100%"
             height="100%"
             autoPlay
+            loop
             playsInline
             muted
             preload="metadata"
