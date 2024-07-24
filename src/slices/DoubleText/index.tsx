@@ -5,7 +5,9 @@ export type DoubleTextProps = SliceComponentProps<Content.DoubleTextSlice>;
 
 const DoubleText = ({ slice }: DoubleTextProps): JSX.Element => {
   return (
-    <section>
+    <section 
+    className="h-full block bg-white"
+    >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-top-3 distance-bottom-5">
         <div className="row-start-1 col-start-2 col-end-12 bg-white/30 text-style-11 text-text-gray-on-black">
           <PrismicRichText field={slice.primary.headline} />
