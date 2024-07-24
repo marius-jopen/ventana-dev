@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect } from "react";
 import Footer from "./components/footer";
 import Header from "./components/header";
@@ -10,9 +10,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     const slices = document.querySelectorAll("section[data-slice]");
     console.log("Slices found:", slices);
 
-    let lastKnownSlice = null;
+    let lastKnownSlice: string | null = null;
 
-    const updateHeaderColor = (sliceClass) => {
+    const updateHeaderColor = (sliceClass: string | null) => {
       if (sliceClass !== lastKnownSlice) {
         console.log("Updating header color to:", sliceClass);
         lastKnownSlice = sliceClass;
