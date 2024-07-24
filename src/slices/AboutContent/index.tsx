@@ -5,13 +5,17 @@ export type AboutContentProps = SliceComponentProps<Content.AboutContentSlice>;
 
 const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
   return (
-    <section className="bg-white h-full block w-full overflow-x-hidden">
-      <div className="grid grid-cols-12 grid-flow-row auto-rows-max md:grid-cols-24 distance-top-4 distance-bottom-5">
+    <section 
+    className="bg-white h-full block w-full overflow-x-hidden"
+    slice-name="chip"
+    data-slice="style-white"
+    >
+      <div className="grid grid-cols-12 grid-flow-row auto-rows-max md:grid-cols-24 distance-top-3 distance-bottom-4">
         <div className="row-start-1 col-start-2 col-end-12 md:col-end-13 text-style-7 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div className="row-start-2 md:row-start-2 col-start-1 md:col-start-2 col-end-12">
+        <div className="-mt-32 row-start-2 md:row-start-2 col-start-1 md:col-start-2 col-end-12">
           <PrismicImage field={slice.primary.image_1} />
           
           {slice.primary.caption_1 && (
@@ -31,7 +35,7 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
           )}
         </div>
 
-        <div className="row-start-4 md:row-start-3 col-start-2 col-end-12 md:col-end-20 text-style-4 text-text-gray-on-white distance-top-1 distance-bottom-1">
+        <div className="-mt-6 row-start-4 md:row-start-3 col-start-2 col-end-12 md:col-end-20 text-style-4 text-text-gray-on-white distance-top-2 distance-bottom-2">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
 
@@ -45,11 +49,11 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
           )}
         </div>
 
-        <div className="row-start-6 md:row-start-4 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white">
+        <div className="-mt-2 row-start-6 md:row-start-4 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_3} />
         </div>
 
-        <div className="row-start-7 md:row-start-5 col-start-1 md:col-start-12 col-end-12 md:col-end-23">
+        <div className="-mt-80 row-start-7 md:row-start-5 col-start-1 md:col-start-12 col-end-12 md:col-end-23">
           <PrismicImage field={slice.primary.image_4} />
 
           {slice.primary.caption_4 && (
@@ -59,7 +63,7 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
           )}
         </div>
 
-        <div className="row-start-8 md:row-start-6 col-start-2 col-end-13 md:col-end-10">
+        <div className="-mt-32 row-start-8 md:row-start-6 col-start-2 col-end-13 md:col-end-10">
           <PrismicImage field={slice.primary.image_5} />
 
           {slice.primary.caption_5 && (

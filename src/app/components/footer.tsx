@@ -10,11 +10,11 @@ const Footer = (): JSX.Element => {
       </Link>
       
       <div className="flex gap-4">
-        <Link href="/">Home</Link>
-        <Link href="/product">Product</Link>
-        <Link href="/company">Company</Link>
-        <Link href="/legal">Legal</Link>
-        <Link href="/contact">Contact</Link>
+        <Link className="hover:text-darkGray transition duration-300" href="/">Home</Link>
+        <Link className="hover:text-darkGray transition duration-300" href="/product">Product</Link>
+        <Link className="hover:text-darkGray transition duration-300" href="/company">Company</Link>
+        <Link className="hover:text-darkGray transition duration-300" href="/legal">Legal</Link>
+        <Link className="hover:text-darkGray transition duration-300" href="/contact">Contact</Link>
       </div>
     </div>
   );
