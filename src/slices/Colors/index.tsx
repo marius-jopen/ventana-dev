@@ -139,7 +139,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
 
   return (
     <section 
-    className="block h-full" 
+    className="block h-full bg-white" 
     data-slice="style-white" 
     slice-name="colors"
     >

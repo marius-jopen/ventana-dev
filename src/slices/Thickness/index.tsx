@@ -41,7 +41,7 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
 
   return (
     <section 
-    className='h-full block w-full overflow-x-hidden style-white' 
+    className='h-full block w-full overflow-x-hidden bg-white' 
     data-slice="style-white" 
     slice-name="thickness"
     >

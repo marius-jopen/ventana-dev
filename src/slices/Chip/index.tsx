@@ -90,12 +90,12 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
         </div>
 
         <div className="row-start-5 col-start-2 md:col-start-3 col-end-12 md:col-end-11">
-          <div data-aos="fade-up" className="text-style-7 text-text-gray-on-black">
+          <div data-aos-delay="250" data-aos="fade-up" className="text-style-7 text-text-gray-on-black">
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
         </div>
 
-        <div data-aos="fade-up" className="mt-[12px] row-start-5 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+        <div data-aos-delay="500" data-aos="fade-up" className="mt-[12px] row-start-5 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
           <PrismicRichText field={slice.primary.text} />
         </div>
       </div>

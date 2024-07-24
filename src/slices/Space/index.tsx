@@ -32,14 +32,13 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
 
   return (
     <section 
-    className="hj-full block w-full overflow-x-hidden" 
+    className="h-full block w-full overflow-x-hidden bg-white" 
     data-slice="style-white"
     slice-name="space"
     >
       <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-6 grid-flow-row auto-rows-max">
-        <div className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white distance-top-3 text-black-on-white">
+        <div data-aos="zoom-out" className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white distance-top-3 text-black-on-white">
           <div 
-          data-aos="zoom-out"
           className="text-style-3"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -47,7 +46,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
             {words[currentWordIndex]}  {/* Show current word from the headline */}
           </div>
           
-          <div data-aos="zoom-out" className="text-style-5 distance-top-05">
+          <div className="text-style-5 distance-top-05">
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
         </div>
