@@ -45,9 +45,15 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
 
         <div className="absolute h-full w-full top-0 left-0 -z-10">
           <div className="h-[60vw] bg-black">
-            <PrismicImage className="absolute h-[60vw] w-auto left-[-15.5vw] translate-y-[-3vw]" field={slice.primary.image_1} />
-            <PrismicImage className="absolute h-[60vw] w-auto right-[-15.5vw] translate-y-[3vw]" field={slice.primary.image_2} />
-          </div>
+              <PrismicImage 
+                className="absolute h-[60vw] w-auto left-[-15.5vw] animate-updown" 
+                field={slice.primary.image_1} 
+              />
+              <PrismicImage 
+                className="absolute h-[60vw] w-auto right-[-15.5vw] animate-downup" 
+                field={slice.primary.image_2} 
+              />          
+            </div>
         </div>
       </div>
     </section>

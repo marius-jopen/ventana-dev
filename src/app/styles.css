@@ -548,3 +548,35 @@ body {
   max-height: 100vh;
   z-index: 1;
 }
+
+@keyframes updown {
+  0% {
+    transform: translateY(1vw);
+  }
+  50% {
+    transform: translateY(-2vw);
+  }
+  100% {
+    transform: translateY(1vw);
+  }
+}
+
+@keyframes downup {
+  0% {
+    transform: translateY(-2vw);
+  }
+  50% {
+    transform: translateY(1vw);
+  }
+  100% {
+    transform: translateY(-2vw);
+  }
+}
+
+.animate-updown {
+  animation: updown 25s ease-in-out infinite;
+}
+
+.animate-downup {
+  animation: downup 25s ease-in-out infinite;
+}
