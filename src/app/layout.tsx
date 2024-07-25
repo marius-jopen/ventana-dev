@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
-import { usePathname } from "next/navigation"; // Use for route changes in App Router
-import Footer from "./components/footer";
-import Header from "./components/header";
-import '@/app/styles.css';
+import { usePathname } from "next/navigation";
+import Footer from "@/app/components/footer"; // Ensure correct import path
+import Header from "@/app/components/header"; // Ensure correct import path
+import '@/app/styles.css'; // Ensure correct import path
 import Head from 'next/head';
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -11,13 +11,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   useEffect(() => {
     const slices = document.querySelectorAll("section[data-slice]");
-    // console.log("Slices found:", slices);
+    console.log("Slices found:", slices);
 
     let lastKnownSlice: string | null = null;
 
     const updateHeaderColor = (sliceClass: string | null) => {
       if (sliceClass !== lastKnownSlice) {
-        // console.log("Updating header color to:", sliceClass);
+        console.log("Updating header color to:", sliceClass);
         lastKnownSlice = sliceClass;
         const event = new CustomEvent("headerColorChange", { detail: { color: sliceClass } });
         window.dispatchEvent(event);
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         const rect = slice.getBoundingClientRect();
         if (rect.top <= 50 && rect.bottom >= 50) { // Adjust this value based on header height
           const sliceClass = slice.getAttribute("data-slice");
-          // console.log("Slice at top:", sliceClass);
+          console.log("Slice at top:", sliceClass);
           updateHeaderColor(sliceClass);
         }
       });

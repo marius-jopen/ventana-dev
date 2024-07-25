@@ -9,7 +9,6 @@ const Header = (): JSX.Element => {
   useEffect(() => {
     const handleColorChange = (event: Event) => {
       const customEvent = event as CustomEvent<{ color: string }>;
-      // console.log("Header color change event received:", customEvent.detail.color);
       setHeaderColor(customEvent.detail.color === "style-white" ? "text-black" : "text-white");
       setLogoColor(customEvent.detail.color === "style-white" ? "black" : "white");
     };
