@@ -2,13 +2,13 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import AOS from 'aos';
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef, MutableRefObject } from "react";
 import 'aos/dist/aos.css'; 
 
 export type MountingProps = SliceComponentProps<Content.MountingSlice>;
 
 const Mounting = ({ slice }: MountingProps): JSX.Element => {
-  const textRefs = useRef<HTMLDivElement[]>([]);
+  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
@@ -75,7 +75,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
             {["Simple to install.", "Hard to stop watching.", "Pur pugs make up a magnetic grid."].map((text, index) => (
               <div
                 key={index}
-                ref={el => textRefs.current[index] = el}
+                ref={(el) => (textRefs.current[index] = el)}
                 className={`text-fx-item transition-opacity duration-500 ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
               >
                 {text}
