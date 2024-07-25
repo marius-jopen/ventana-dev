@@ -2,7 +2,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import AOS from 'aos';
-import { useEffect, useState, useRef, MutableRefObject } from "react";
+import { useEffect, useState, useRef } from "react";
 import 'aos/dist/aos.css'; 
 
 export type MountingProps = SliceComponentProps<Content.MountingSlice>;
