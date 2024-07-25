@@ -9,9 +9,7 @@ export type MountingProps = SliceComponentProps<Content.MountingSlice>;
 
 const Mounting = ({ slice }: MountingProps): JSX.Element => {
   const textRefs = useRef<HTMLDivElement[]>([]);
-  const videoRef = useRef<HTMLVideoElement>(null);
   const [activeIndex, setActiveIndex] = useState(0);
-  const [isVideoSticky, setIsVideoSticky] = useState(false);
 
   useEffect(() => {
     AOS.init({
@@ -49,30 +47,6 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
     };
   }, []);
 
-  useEffect(() => {
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.target === videoRef.current) {
-          setIsVideoSticky(entry.intersectionRatio < 1);
-        }
-      });
-    };
-
-    const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [1],
-    });
-
-    if (videoRef.current) {
-      observer.observe(videoRef.current);
-    }
-
-    return () => {
-      if (videoRef.current) {
-        observer.unobserve(videoRef.current);
-      }
-    };
-  }, []);
-
   return (
     <section 
       className="block h-full bg-black text-white w-full overflow-x-hidden" 
@@ -81,9 +55,8 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
     >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="row-start-1 col-span-24 distance-bottom-4 relative">
-          <div className={`video-container ${isVideoSticky ? 'sticky' : ''}`}>
+          <div className="video-container">
             <video
-              ref={videoRef}
               poster={slice.primary.video_poster?.url || ''}
               className="w-full object-cover h-[100vh]"
               width="100%"

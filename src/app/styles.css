@@ -590,16 +590,3 @@ body {
 .text-fx-item {
   padding-bottom: 30vh;
 }
-
-.video-container {
-  position: relative;
-}
-
-.video-container.is-sticky video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
