@@ -5,6 +5,8 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 type PageDocumentDataSlicesSlice =
+  | ContactSlice
+  | LegalSlice
   | ColorsSlice
   | ChipSlice
   | CtaSlice
@@ -422,6 +424,61 @@ type ColorsSliceVariation = ColorsSliceDefault;
 export type ColorsSlice = prismic.SharedSlice<"colors", ColorsSliceVariation>;
 
 /**
+ * Primary content in *Contact → Default → Primary*
+ */
+export interface ContactSliceDefaultPrimary {
+  /**
+   * Headline field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Text field in *Contact → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: contact.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Contact Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ContactSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Contact*
+ */
+type ContactSliceVariation = ContactSliceDefault;
+
+/**
+ * Contact Shared Slice
+ *
+ * - **API ID**: `contact`
+ * - **Description**: Contact
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ContactSlice = prismic.SharedSlice<
+  "contact",
+  ContactSliceVariation
+>;
+
+/**
  * Primary content in *Cta → Default → Primary*
  */
 export interface CtaSliceDefaultPrimary {
@@ -714,6 +771,58 @@ export type ImageOpenerSlice = prismic.SharedSlice<
   "image_opener",
   ImageOpenerSliceVariation
 >;
+
+/**
+ * Primary content in *Legal → Default → Primary*
+ */
+export interface LegalSliceDefaultPrimary {
+  /**
+   * Headline field in *Legal → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.default.primary.headline
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  headline: prismic.RichTextField;
+
+  /**
+   * Text field in *Legal → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: legal.default.primary.text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  text: prismic.RichTextField;
+}
+
+/**
+ * Default variation for Legal Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LegalSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<LegalSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Legal*
+ */
+type LegalSliceVariation = LegalSliceDefault;
+
+/**
+ * Legal Shared Slice
+ *
+ * - **API ID**: `legal`
+ * - **Description**: Legal
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type LegalSlice = prismic.SharedSlice<"legal", LegalSliceVariation>;
 
 /**
  * Primary content in *Mounting → Default → Primary*
@@ -1309,6 +1418,10 @@ declare module "@prismicio/client" {
       ColorsSliceDefaultPrimary,
       ColorsSliceVariation,
       ColorsSliceDefault,
+      ContactSlice,
+      ContactSliceDefaultPrimary,
+      ContactSliceVariation,
+      ContactSliceDefault,
       CtaSlice,
       CtaSliceDefaultPrimary,
       CtaSliceVariation,
@@ -1325,6 +1438,10 @@ declare module "@prismicio/client" {
       ImageOpenerSliceDefaultPrimary,
       ImageOpenerSliceVariation,
       ImageOpenerSliceDefault,
+      LegalSlice,
+      LegalSliceDefaultPrimary,
+      LegalSliceVariation,
+      LegalSliceDefault,
       MountingSlice,
       MountingSliceDefaultPrimary,
       MountingSliceVariation,

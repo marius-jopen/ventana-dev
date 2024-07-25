@@ -27,6 +27,12 @@
         "fieldset": "Slice Zone",
         "config": {
           "choices": {
+            "contact": {
+              "type": "SharedSlice"
+            },
+            "legal": {
+              "type": "SharedSlice"
+            },
             "colors": {
               "type": "SharedSlice"
             },
