@@ -33,10 +33,10 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
       if (canvas) {
         const context = canvas?.getContext("2d");
         if (context) {
-          const frameCount = 351;
+          const frameCount = 749;
 
           const currentFrame = (index: number) => (
-            `/colors-images/VENTANA_COLOR_R10_01C_${index.toString().padStart(5, "0")}.jpg`
+            `/colors-images/VENTANA_COLOR_R10_01D_${index.toString().padStart(5, "0")}.jpg`
           );
 
           const img = new Image();
