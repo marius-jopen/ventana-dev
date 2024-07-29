@@ -2,8 +2,7 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { useEffect, useRef, useState } from "react";
-import AOS from 'aos';
-import 'aos/dist/aos.css'; 
+import { asText } from "@prismicio/helpers"
 
 export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 
@@ -12,17 +11,26 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [startAnimation, setStartAnimation] = useState(false);
+  const [textIndex, setTextIndex] = useState(-1)
   const [frameNumber, setFrameNumber] = useState(0);
   const [isInView, setIsInView] = useState(false);
   const scrollSpeed = 1; // Variable to control the speed of the animation
 
-  useEffect(() => {
-    AOS.init({
-      offset: 30,
-      once: true,
-      duration: 1400, 
-    });
-    
+  const texts = [
+    asText(slice.primary.text_1),
+    asText(slice.primary.text_2),
+    asText(slice.primary.text_3),
+    ""
+  ]
+
+  const breakpoints = [
+    0.25,
+    0.45,
+    0.6,
+    0.9
+  ]
+
+  useEffect(() => {   
     if (typeof window !== "undefined") {
       setCanvasSize({
         width: window.innerWidth,
@@ -74,6 +82,24 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
                 Math.floor(scrollFraction * frameCount)
               );
               setFrameNumber(frameIndex);
+
+              // the breakpoints for the text animation
+              const progress = frameIndex / frameCount
+              
+              let newTextIndex = -1;
+
+              for (let i = 0; i < breakpoints.length; i++) {
+                console.log(progress, breakpoints[i])
+                if (progress >= breakpoints[i]) {
+                  newTextIndex = i;
+                } else {
+                  break; // Stop the loop when a breakpoint hasn't been crossed
+                }
+              }
+              
+              setTextIndex(newTextIndex);              
+
+              
               requestAnimationFrame(() => updateImage(frameIndex));
             }
           };
@@ -145,6 +171,28 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
     >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div className="bg-black row-start-1 col-span-24" ref={containerRef}>
+
+        {texts.map((txt, i) => (
+          <div
+            key={i}        
+            ref={(el) => {
+              if (el) {
+                const handleTransitionEnd = () => {
+                  if (i !== textIndex) {
+                    el.classList.remove('animate-exit');
+                  }
+                };
+                el.addEventListener('transitionend', handleTransitionEnd);
+                return () => el.removeEventListener('transitionend', handleTransitionEnd);
+              }
+            }}        
+            className={`animate-element fixed inset-0 z-50 w-screen h-screen flex justify-center items-center text-white ${i === textIndex ? 'animate-enter' : 'animate-exit'}`}>
+          <h1 className="text-2xl sm:text-5xl text-center mx-20 sm:mx-40">
+            {txt}
+          </h1>
+        </div>
+        ))}
+
           <div className="png__sequence">
             <canvas
               ref={canvasRef}
@@ -157,23 +205,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
         </div>
 
         <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-white h-64 z-20 -mt-64"></div>
-
-        <div data-aos="fade-up" className="distance-top-4 distance-bottom-1  row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
-          <PrismicRichText field={slice.primary.text_1} />
-        </div>
-
-        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
-          <PrismicRichText field={slice.primary.text_2} />
-        </div>
-
-        <div data-aos="fade-up" className="mt-[12px] row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
-          <PrismicRichText field={slice.primary.text_3} />
-        </div>
       </div>
-
-      {/* <div className="text-style-2 text-red-200 text-center z-30 fixed w-full top-0 left-0 h-full flex justify-center flex-col">
-        WORD
-      </div> */}
     </section>
   );
 };

@@ -592,3 +592,29 @@ body {
 .text-fx-item {
   padding-bottom: 30vh;
 }
+
+
+/** fade and blur animation, used in colors.tsx */
+.animate-element {
+  opacity: 0;
+  transform: scale(0.1);
+  filter: blur(30px);
+}
+
+.animate-enter {
+  transition: all 0.5s ease-in-out; /* Faster enter transition */
+
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1);
+}
+
+.animate-exit {
+  transition: all 1s ease-in-out; /* Slower exit transition */
+  opacity: 0;
+  transform: scale(3);
+  filter: blur(30px);
+}
+
+
+
