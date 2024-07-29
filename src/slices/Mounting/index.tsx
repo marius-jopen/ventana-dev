@@ -8,8 +8,12 @@ import 'aos/dist/aos.css';
 export type MountingProps = SliceComponentProps<Content.MountingSlice>;
 
 const Mounting = ({ slice }: MountingProps): JSX.Element => {
+  const parentRef = useRef<(HTMLElement | null)>(null);
+  const videoRef = useRef<(HTMLVideoElement | null)>(null);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [backgroundFixed, setBackgroundFixed] = useState(false)
+  const [additionalStyles, setAdditionalStyles] = useState("")
 
   useEffect(() => {
     AOS.init({
@@ -31,6 +35,34 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
       threshold: [0.5],
     });
 
+    const handleScroll = () => {
+      if (!parentRef.current || !videoRef.current) return;
+    
+      const container = parentRef.current;
+      const rect = container.getBoundingClientRect();
+    
+      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+        // Video is fully in view, fix it
+        videoRef.current.style.position = 'fixed';
+        videoRef.current.style.top = '0';
+        videoRef.current.style.bottom = 'auto';
+      } else if (rect.top > 0) {
+        // Video is entering viewport from the bottom
+        videoRef.current.style.position = 'absolute';
+        videoRef.current.style.top = '0';
+        videoRef.current.style.bottom = 'auto';
+      } else if (rect.bottom < window.innerHeight) {
+        // Video is leaving viewport from the top
+        videoRef.current.style.position = 'absolute';
+        videoRef.current.style.top = 'auto';
+        videoRef.current.style.bottom = '0';
+      }
+  
+    };
+    
+  
+    window.addEventListener('scroll', handleScroll);
+
     textRefs.current.forEach((ref, index) => {
       if (ref) {
         ref.setAttribute("data-index", index.toString());
@@ -39,6 +71,8 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
     });
 
     return () => {
+      window.removeEventListener('scroll', handleScroll)
+    
       textRefs.current.forEach(ref => {
         if (ref) {
           observer.unobserve(ref);
@@ -52,49 +86,55 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
   };
 
   return (
-    <section 
-      className="block h-full bg-black text-white w-full overflow-x-hidden" 
+    <section
+      className="block bg-black text-white w-full overflow-hidden" 
       data-slice="style-black"
       slice-name="mounting"
     >
-      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
-        <div className="row-start-1 col-span-24 distance-bottom-4 relative">
-          <div className="video-container">
-            <video
-              poster={slice.primary.video_poster?.url || ''}
-              className="w-full object-cover h-[100vh]"
-              width="100%"
-              height="100%"
-              autoPlay
-              playsInline
-              muted
-              loop
-              preload="metadata"
+      <div className="relative">
+        {/* Video */}
+        <video
+          ref={videoRef}
+          poster={slice.primary.video_poster?.url || ''}
+          className="w-screen object-cover h-screen"
+          width="100%"
+          height="100%"
+          autoPlay
+          playsInline
+          muted
+          loop
+          preload="metadata"
+        >
+          <source src={slice.primary.video_url || ''} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Text */}
+        <div ref={parentRef} id="text" className="text-style-3 text-center relative z-10 top-0 flex flex-col">
+          <div className="h-80" />
+          <div className="bg-gradient-to-b from-black h-screen w-screen absolute top-0 left-0 z-0"></div>
+          {["Simple to install.", "Hard to stop watching.", "Pur pugs make up a magnetic grid."].map((text, index) => (
+            <div
+              key={index}
+              ref={(el) => setRef(el, index)}
+              className={`transition-opacity duration-500 pt-80 pb-40 flex flex-col w-8/12 mx-auto justify-end items-center z-10 ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
             >
-              <source src={slice.primary.video_url || ''} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div className="text-style-3 text-fx-box text-center w-8/12 mx-auto">
-            {["Simple to install.", "Hard to stop watching.", "Pur pugs make up a magnetic grid."].map((text, index) => (
-              <div
-                key={index}
-                ref={(el) => setRef(el, index)}
-                className={`text-fx-item transition-opacity duration-500 ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
-              >
+              <span>
                 {text}
-              </div>
-            ))}
-          </div>
+              </span>
+            </div>
+          ))}
+          <div className="h-80" />
         </div>
+      </div>
 
+      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
         <div data-aos="fade-up" className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">
-          <PrismicRichText field={slice.primary.text_1} />
-        </div>
+            <PrismicRichText field={slice.primary.text_1} />
+          </div>
 
-        <div data-aos="fade-up" className="mt-[-50px] row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
-          <PrismicRichText field={slice.primary.text_2} />
-        </div>
+          <div data-aos="fade-up" className="mt-[-50px] row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+            <PrismicRichText field={slice.primary.text_2} />
+          </div>
       </div>
     </section>
   );
