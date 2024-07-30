@@ -13,11 +13,32 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const handleScroll = () => {
+    if (!parentRef.current || !videoRef.current) return;
+
+    const container = parentRef.current;
+    const rect = container.getBoundingClientRect();
+
+    if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
+      videoRef.current.style.position = 'fixed';
+      videoRef.current.style.top = '0';
+      videoRef.current.style.bottom = 'auto';
+    } else if (rect.top > 0) {
+      videoRef.current.style.position = 'absolute';
+      videoRef.current.style.top = '0';
+      videoRef.current.style.bottom = 'auto';
+    } else if (rect.bottom < window.innerHeight) {
+      videoRef.current.style.position = 'absolute';
+      videoRef.current.style.top = 'auto';
+      videoRef.current.style.bottom = '0';
+    }
+  };
+
   useEffect(() => {
     AOS.init({
-      offset: 30,
+      offset: 200,
       once: true,
-      duration: 1400, 
+      duration: 1400,
     });
 
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
@@ -33,26 +54,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
       threshold: [0.5],
     });
 
-    const handleScroll = () => {
-      if (!parentRef.current || !videoRef.current) return;
-
-      const container = parentRef.current;
-      const rect = container.getBoundingClientRect();
-
-      if (rect.top <= 0 && rect.bottom >= window.innerHeight) {
-        videoRef.current.style.position = 'fixed';
-        videoRef.current.style.top = '0';
-        videoRef.current.style.bottom = 'auto';
-      } else if (rect.top > 0) {
-        videoRef.current.style.position = 'absolute';
-        videoRef.current.style.top = '0';
-        videoRef.current.style.bottom = 'auto';
-      } else if (rect.bottom < window.innerHeight) {
-        videoRef.current.style.position = 'absolute';
-        videoRef.current.style.top = 'auto';
-        videoRef.current.style.bottom = '0';
-      }
-    };
+    handleScroll()
 
     window.addEventListener('scroll', handleScroll);
 
@@ -77,8 +79,6 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
   const setRef = (el: HTMLDivElement | null, index: number) => {
     textRefs.current[index] = el;
   };
-
-  console.log(slice)
 
   return (
     <section
@@ -122,16 +122,16 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
         </div>
       </div>
 
-
-      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5 distance-top-3">
-        <div  className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">
+      <div  className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5 distance-top-3">
+        <div data-aos="fade-up" className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">
             <PrismicRichText field={slice.primary.text_1} />
           </div>
 
-          <div  className="row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+          <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
             <PrismicRichText field={slice.primary.text_2} />
           </div>
       </div>
+
     </section>
   );
 };
