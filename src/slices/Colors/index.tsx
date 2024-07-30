@@ -184,7 +184,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
               }
             }}        
             className={`animate-element fixed inset-0 z-50 w-screen h-screen flex justify-center items-center text-white ${i === textIndex ? 'animate-enter' : 'animate-exit'}`}>
-          <h1 className="text-style-3 text-center mx-20 sm:mx-40">
+          <h1 className="text-style-19 text-center mx-20 sm:mx-[14%] text-black">
             {txt}
           </h1>
         </div>

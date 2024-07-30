@@ -227,7 +227,7 @@ body {
   font-family: var(--font-outfit);
   font-size: 40px;
   font-style: normal;
-  font-weight: 500;
+  /* font-weight: 500; */
   line-height: 130.5%; /* 52.2px */
   letter-spacing: 1px;
 
@@ -235,7 +235,7 @@ body {
     font-family: var(--font-outfit);
     font-size: 30px;
     font-style: normal;
-    font-weight: 500;
+    /* font-weight: 500; */
     line-height: 125%; /* 52.2px */
     letter-spacing: 1px;
   }
@@ -244,7 +244,7 @@ body {
     font-family: var(--font-outfit);
     font-size: 20px;
     font-style: normal;
-    font-weight: 400;
+    /* font-weight: 400; */
     line-height: 120%; /* 24px */
     letter-spacing: 1px;
   }
@@ -377,14 +377,14 @@ body {
   font-family: var(--font-outfit);
   font-size: 90px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 94.8px; /* 105.333% */
 
   @media (max-width: 1500px) {
     font-family: var(--font-outfit);
     font-size: 70px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 70.8px; /* 105.333% */
   }
 
@@ -538,6 +538,16 @@ body {
   font-weight: 400;
   line-height: normal;
   letter-spacing: 1px;
+}
+
+
+.text-style-19 {
+  font-family: var(--font-outfit);
+  font-size: 47px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 50px;
+  /* letter-spacing: 1px; */
 }
 
 

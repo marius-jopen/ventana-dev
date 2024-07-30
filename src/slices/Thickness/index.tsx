@@ -50,11 +50,11 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
           <PrismicRichText field={slice.primary.headline} />
         </div>
 
-        <div data-aos="fade-up" className="row-start-2 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white distance-top-4 distance-bottom-1">
+        <div data-aos="fade-up" className="row-start-2 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white distance-top-4">
           <PrismicRichText field={slice.primary.text} />
         </div>
 
-        <div className="row-start-3 col-span-12 md:col-span-24">
+        <div className="row-start-3 col-span-12 md:col-span-24 ">
           <video
             poster={slice.primary.video_poster?.url || ''}
             className="w-full h-auto"
