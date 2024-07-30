@@ -531,6 +531,15 @@ body {
   }
 }
 
+.text-style-18 {
+  font-family: var(--font-outfit);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+
 
 
 .png__sequence {

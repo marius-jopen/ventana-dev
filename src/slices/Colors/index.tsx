@@ -167,7 +167,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
     data-slice="style-white" 
     slice-name="colors"
     >
-      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5">
+      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-3">
         <div className="bg-black row-start-1 col-span-24" ref={containerRef}>
 
         {texts.map((txt, i) => (
@@ -185,7 +185,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
               }
             }}        
             className={`animate-element fixed inset-0 z-50 w-screen h-screen flex justify-center items-center text-white ${i === textIndex ? 'animate-enter' : 'animate-exit'}`}>
-          <h1 className="text-2xl sm:text-5xl text-center mx-20 sm:mx-40">
+          <h1 className="text-style-3 text-center mx-20 sm:mx-40">
             {txt}
           </h1>
         </div>

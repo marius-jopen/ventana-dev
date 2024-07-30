@@ -81,7 +81,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
           </video>
         </div>
 
-        <div data-aos="fade-up" className="row-start-3 col-span-24 text-style-5 bg-gradient-to-t from-black h-48 z-20 -mt-48"></div>
+        {/* <div data-aos="fade-up" className="row-start-3 col-span-24 text-style-5 bg-gradient-to-t from-black h-48 z-20 -mt-48"></div> */}
 
         <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-11 distance-bottom-1  distance-top-2">
           <div className="text-style-4">
