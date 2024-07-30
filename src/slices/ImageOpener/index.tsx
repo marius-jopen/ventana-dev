@@ -11,7 +11,7 @@ const ImageOpener = ({ slice }: ImageOpenerProps): JSX.Element => {
     data-slice="style-black"
     >
       <div className="relative grid grid-cols-12 md:grid-cols-24 h-[50vh] md:h-[55vw]">
-        <div className="relative z-10 col-start-2 col-end-12 md:col-end-24 text-style-9 text-white distance-top-2">
+        <div className="relative z-10 col-start-2 col-end-12 md:col-end-24 text-style-9 text-white distance-top-3">
           <PrismicRichText field={slice.primary.headline} />
         </div>
         

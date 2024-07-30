@@ -12,7 +12,7 @@ export type ContactProps = SliceComponentProps<Content.ContactSlice>;
 const Contact = ({ slice }: ContactProps): JSX.Element => {
   return (
     <section 
-    className="h-full block bg-black"
+    className="h-screen block bg-black"
     slice-name="contact"
     data-slice="style-black"
     >
