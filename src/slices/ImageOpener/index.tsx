@@ -16,7 +16,7 @@ const ImageOpener = ({ slice }: ImageOpenerProps): JSX.Element => {
         </div>
         
         <div className="absolute h-full w-full top-0 left-0">
-          <PrismicImage className="object-cover h-full" field={slice.primary.image} />
+          <PrismicImage className="object-cover w-full h-full" field={slice.primary.image} />
         </div>
       </div>
     </section>
