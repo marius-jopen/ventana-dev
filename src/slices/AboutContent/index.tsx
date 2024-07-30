@@ -21,7 +21,7 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
   return (
     <section 
     className="bg-white h-full block w-full overflow-x-hidden"
-    slice-name="chip"
+    slice-name="about-content"
     data-slice="style-white"
     >
       <div className="grid grid-cols-12 grid-flow-row auto-rows-max md:grid-cols-24 distance-top-3 distance-bottom-4">
