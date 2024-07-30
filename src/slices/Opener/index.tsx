@@ -17,7 +17,7 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
       if (!isHovering) {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
-    }, 300);
+    }, 700);
 
     return () => clearInterval(interval);
   }, [isHovering, words.length]);

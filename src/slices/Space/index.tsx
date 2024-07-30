@@ -25,7 +25,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
       if (!isHovering) {
         setCurrentWordIndex((prevIndex) => (prevIndex + 1) % words.length);
       }
-    }, 300); // Change word every 1 second
+    }, 700); // Change word every 1 second
 
     return () => clearInterval(interval);
   }, [isHovering, words.length]);

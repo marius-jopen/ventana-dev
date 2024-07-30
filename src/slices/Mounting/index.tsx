@@ -128,7 +128,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
             <PrismicRichText field={slice.primary.text_1} />
           </div>
 
-          <div data-aos="fade-up" className="mt-[-50px] row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+          <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
             <PrismicRichText field={slice.primary.text_2} />
           </div>
       </div>
