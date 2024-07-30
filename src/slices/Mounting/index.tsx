@@ -44,14 +44,14 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         const index = Number(entry.target.getAttribute("data-index"));
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.75) {
           setActiveIndex(index);
         }
       });
     };
 
     const observer = new IntersectionObserver(handleIntersection, {
-      threshold: [0.5],
+      threshold: [0.75],
     });
 
     handleScroll()
