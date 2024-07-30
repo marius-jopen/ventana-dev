@@ -394,6 +394,26 @@ export interface ColorsSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text_3: prismic.RichTextField;
+
+  /**
+   * Text Animated 1 field in *Colors → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.default.primary.text_animated_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_animated_1: prismic.KeyTextField;
+
+  /**
+   * Text Animated 2 field in *Colors → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: colors.default.primary.text_animated_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_animated_2: prismic.KeyTextField;
 }
 
 /**
@@ -718,6 +738,71 @@ export type DoubleTextSlice = prismic.SharedSlice<
 >;
 
 /**
+ * Primary content in *HomeGallery → Default → Primary*
+ */
+export interface HomeGallerySliceDefaultPrimary {
+  /**
+   * Image 1 field in *HomeGallery → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_gallery.default.primary.image_1
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_1: prismic.ImageField<never>;
+
+  /**
+   * Image 2 field in *HomeGallery → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_gallery.default.primary.image_2
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_2: prismic.ImageField<never>;
+
+  /**
+   * Image 3 field in *HomeGallery → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home_gallery.default.primary.image_3
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image_3: prismic.ImageField<never>;
+}
+
+/**
+ * Default variation for HomeGallery Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeGallerySliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<HomeGallerySliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *HomeGallery*
+ */
+type HomeGallerySliceVariation = HomeGallerySliceDefault;
+
+/**
+ * HomeGallery Shared Slice
+ *
+ * - **API ID**: `home_gallery`
+ * - **Description**: HomeGallery
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type HomeGallerySlice = prismic.SharedSlice<
+  "home_gallery",
+  HomeGallerySliceVariation
+>;
+
+/**
  * Primary content in *ImageOpener → Default → Primary*
  */
 export interface ImageOpenerSliceDefaultPrimary {
@@ -867,6 +952,36 @@ export interface MountingSliceDefaultPrimary {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   video_poster: prismic.ImageField<never>;
+
+  /**
+   * Text Animated 1 field in *Mounting → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mounting.default.primary.text_animated_1
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_animated_1: prismic.KeyTextField;
+
+  /**
+   * Text Animated 2 field in *Mounting → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mounting.default.primary.text_animated_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_animated_2: prismic.KeyTextField;
+
+  /**
+   * Text Animated 3 field in *Mounting → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: mounting.default.primary.text_animated_3
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text_animated_3: prismic.KeyTextField;
 }
 
 /**
@@ -1434,6 +1549,10 @@ declare module "@prismicio/client" {
       DoubleTextSliceDefaultPrimary,
       DoubleTextSliceVariation,
       DoubleTextSliceDefault,
+      HomeGallerySlice,
+      HomeGallerySliceDefaultPrimary,
+      HomeGallerySliceVariation,
+      HomeGallerySliceDefault,
       ImageOpenerSlice,
       ImageOpenerSliceDefaultPrimary,
       ImageOpenerSliceVariation,

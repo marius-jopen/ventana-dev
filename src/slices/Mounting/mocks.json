@@ -52,6 +52,21 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"text_animated_1": {
+				"__TYPE__": "FieldContent",
+				"value": "discovery",
+				"type": "Text"
+			},
+			"text_animated_2": {
+				"__TYPE__": "FieldContent",
+				"value": "sentence",
+				"type": "Text"
+			},
+			"text_animated_3": {
+				"__TYPE__": "FieldContent",
+				"value": "bend",
+				"type": "Text"
 			}
 		},
 		"items": []

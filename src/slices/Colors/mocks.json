@@ -35,6 +35,16 @@
 						}
 					}
 				]
+			},
+			"text_animated_1": {
+				"__TYPE__": "FieldContent",
+				"value": "it",
+				"type": "Text"
+			},
+			"text_animated_2": {
+				"__TYPE__": "FieldContent",
+				"value": "only",
+				"type": "Text"
 			}
 		},
 		"items": []

@@ -23,7 +23,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
     const handleIntersection = (entries: IntersectionObserverEntry[]) => {
       entries.forEach(entry => {
         const index = Number(entry.target.getAttribute("data-index"));
-        if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
+        if (entry.isIntersecting && entry.intersectionRatio > 0.6) {
           setActiveIndex(index);
         }
       });
@@ -78,6 +78,8 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
     textRefs.current[index] = el;
   };
 
+  console.log(slice)
+
   return (
     <section
       className="block bg-black text-white w-full overflow-hidden" 
@@ -103,11 +105,13 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
         <div ref={parentRef} id="text" className="text-style-3 text-center relative z-10 top-0 flex flex-col">
           <div className="h-80" />
           <div className="bg-gradient-to-b from-black h-screen w-screen absolute top-0 left-0 z-0"></div>
-          {["Simple to install.", "Hard to stop watching.", "Pur pugs make up a magnetic grid."].map((text, index) => (
+          {[slice.primary.text_animated_1 ? slice.primary.text_animated_1 : "", 
+          slice.primary.text_animated_2 ? slice.primary.text_animated_2 : "", 
+          slice.primary.text_animated_3 ? slice.primary.text_animated_3 : ""].map((text, index) => (
             <div
               key={index}
               ref={(el) => setRef(el, index)}
-              className={`transition-opacity duration-500 pt-80 pb-40 flex flex-col w-8/12 mx-auto justify-end items-center z-10 ${activeIndex === index ? "opacity-100" : "opacity-0"}`}
+              className={`transition-opacity duration-1000 pt-80 pb-40 flex flex-col w-8/12 mx-auto justify-end items-center z-10 ${activeIndex === index ? "opacity-100 blur-none" : "opacity-0 blur-xl"}`}
             >
               <span>
                 {text}
@@ -117,6 +121,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
           <div className="h-80" />
         </div>
       </div>
+
 
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5 distance-top-3">
         <div data-aos="fade-up" className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">

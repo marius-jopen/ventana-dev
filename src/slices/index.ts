@@ -10,6 +10,7 @@ export const components = {
   cta: dynamic(() => import("./Cta")),
   darker: dynamic(() => import("./Darker")),
   double_text: dynamic(() => import("./DoubleText")),
+  home_gallery: dynamic(() => import("./HomeGallery")),
   image_opener: dynamic(() => import("./ImageOpener")),
   legal: dynamic(() => import("./Legal")),
   mounting: dynamic(() => import("./Mounting")),

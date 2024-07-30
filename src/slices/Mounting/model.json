@@ -44,6 +44,27 @@
             "constraint": {},
             "thumbnails": []
           }
+        },
+        "text_animated_1": {
+          "type": "Text",
+          "config": {
+            "label": "Text Animated 1",
+            "placeholder": ""
+          }
+        },
+        "text_animated_2": {
+          "type": "Text",
+          "config": {
+            "label": "Text Animated 2",
+            "placeholder": ""
+          }
+        },
+        "text_animated_3": {
+          "type": "Text",
+          "config": {
+            "label": "Text Animated 3",
+            "placeholder": ""
+          }
         }
       },
       "items": {}
