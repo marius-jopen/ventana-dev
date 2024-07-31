@@ -38,7 +38,7 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
             {words[currentWordIndex]}
           </div>
 
-          <div className="text-style-5 -mt-[2vw]">
+          <div className="text-style-5 mt-[1.2vw]">
             <PrismicRichText field={slice.primary.subheadline} />
           </div>
         </div>
