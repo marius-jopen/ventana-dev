@@ -17,8 +17,8 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   const scrollSpeed = 1; // Variable to control the speed of the animation
 
   const texts = [
-    "We didn't invent new colors.",
-    "We invented technology to display colors you've never experienced before.",
+    slice.primary.text_animated_1 ? slice.primary.text_animated_1 : "",
+    slice.primary.text_animated_2 ? slice.primary.text_animated_2 : "",
     ""
   ]
 
@@ -184,7 +184,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
               }
             }}        
             className={`animate-element fixed inset-0 z-50 w-screen h-screen flex justify-center items-center text-white ${i === textIndex ? 'animate-enter' : 'animate-exit'}`}>
-          <h1 className="text-style-19 text-center mx-20 sm:mx-[14%] text-black">
+          <h1 className="text-style-19 text-center mx-20 sm:mx-[22%] text-black">
             {txt}
           </h1>
         </div>
