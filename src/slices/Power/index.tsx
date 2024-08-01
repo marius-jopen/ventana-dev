@@ -44,7 +44,7 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div data-aos-delay="1000" data-aos="fade-up" className="mt-0 md:mt-[12px] row-start-4 md:row-start-3 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos-delay="1000" data-aos="fade-up" className="mt-8 md:mt-[12px] row-start-4 md:row-start-3 col-start-5 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>

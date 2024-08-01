@@ -82,7 +82,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
         
         <div 
         data-aos="fade-up" 
-        className="row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box border-line-gray-on-white pb-16 md:pb-24 2xl:pb-28"
+        className="mt-8 md:mt-0 row-start-4 col-start-5 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box border-line-gray-on-white pb-16 md:pb-24 2xl:pb-28"
         >
           <PrismicRichText field={slice.primary.text_2} />
         </div>
