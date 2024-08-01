@@ -26,7 +26,7 @@ const DoubleText = ({ slice }: DoubleTextProps): JSX.Element => {
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max pt-12 md:pt-20 2xl:pt-28 pb-28 md:pb-32 2xl:pb-48">
         <div 
         data-aos="fade-up" 
-        className="pb-12 md:pb-0 row-start-1 col-start-2 col-end-12 bg-white/30 text-style-11 text-black"
+        className="pb-8 md:pb-0 row-start-1 col-start-2 col-end-12 bg-white/30 text-style-11 text-black"
         >
           <PrismicRichText field={slice.primary.headline} />
         </div>

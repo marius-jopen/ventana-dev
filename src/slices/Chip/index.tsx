@@ -32,7 +32,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
             clearInterval(timer);
             setTimeout(() => setFadeIn(true), 500); // Optionally delay the fade-in effect
           }
-        }, (3000 / maxNumber)); // Duration divided by max number to evenly spread the counting
+        }, (1500 / maxNumber)); // Duration divided by max number to evenly spread the counting
       }
     }, { threshold: 0.5 });
 
@@ -62,7 +62,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
             {count.toString().padStart(2, '0')}
           </div>
 
-          <div className={`ml-6 md:ml-[480px] 2xl:ml-[580px] -mt-8 md:mt-0 text-style-17 md:ml-[50%] w-full text-left md:absolute bottom-0 md:translate-y-[-60px] opacity-0 ${fadeIn ? 'fade-in' : ''}`}>
+          <div className={`ml-6 md:translate-x-[450px] 2xl:translate-x-[550px] -mt-8 md:mt-0 text-style-17 w-full text-left md:absolute bottom-0 md:translate-y-[-60px] opacity-0 ${fadeIn ? 'fade-in' : ''}`}>
             {slice.primary.fade_in_text}
           </div>
         </div>

@@ -76,10 +76,10 @@ body {
 
 .text-style-6 {
   font-family: var(--font-outfit);
-  font-size: 40px;
+  font-size: 35px;
   font-style: normal;
   font-weight: normal;
-  line-height: 130.5%;
+  line-height: 130%;
   letter-spacing: 1px;
 
   @media (max-width: 1536px) {
@@ -190,12 +190,12 @@ body {
   line-height: 94.8px;
 
   @media (max-width: 1536px) {
-    font-size: 70px;
-    line-height: 70.8px;
+    font-size: 60px;
+    line-height: 65px;
   }
 
   @media (max-width: 768px) {
-    font-size: 34px;
+    font-size: 40px;
     line-height: normal;
   }
 }
