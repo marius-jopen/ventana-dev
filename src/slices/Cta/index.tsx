@@ -20,7 +20,7 @@ const Cta = ({ slice }: CtaProps): JSX.Element => {
 
   return (
     <section 
-    className="h-full bnlock bg-white w-full overflow-x-hidden"
+    className="h-full bnlock bg-white w-full overflow-x-hidden overflow-y-hidden"
     slice-name="cta"
     data-slice="style-white"
     >
@@ -35,7 +35,7 @@ const Cta = ({ slice }: CtaProps): JSX.Element => {
           )}
         </div>
 
-        <div data-aos="fade-up" data-aos-delay="250" className="row-start-2 col-start-2 md:col-start-6 col-end-12 md:col-end-20 bg-white/30 text-style-8 text-text-gray-on-black text-center">
+        <div data-aos="fade-up" data-aos-delay="250" className="pb-24 md:pb-0row-start-2 col-start-2 md:col-start-6 col-end-12 md:col-end-20 bg-white/30 text-style-8 text-text-gray-on-black text-center">
           <PrismicRichText field={slice.primary.headline} />
         </div>
       </div>

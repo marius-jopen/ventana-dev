@@ -18,7 +18,7 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
 
   return (
     <section 
-    className="h-full block w-full overflow-x-hidden bg-white" 
+    className="h-full block w-full overflow-x-hidden overflow-y-hidden bg-white" 
     data-slice="style-white"
     slice-name="power"
     >
@@ -40,11 +40,11 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
           </div>
         </div>
         
-        <div data-aos-delay="750" data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
+        <div data-aos-delay="750" data-aos="fade-up" className="pb-12 md:pb-0 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div data-aos-delay="1000" data-aos="fade-up" className="mt-[12px] row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos-delay="1000" data-aos="fade-up" className="mt-0 md:mt-[12px] row-start-4 md:row-start-3 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>

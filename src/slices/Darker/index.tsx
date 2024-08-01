@@ -49,15 +49,15 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
           <PrismicRichText field={slice.primary.sub_headline} />
         </div>
 
-        <div data-aos-delay="250" data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-5 col-end-12 text-center md:text-right text-style-8 text-text-gray-on-black distance-top-5 distance-bottom-4">
+        <div data-aos-delay="250" data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-5 col-end-12 text-left md:text-right text-style-8 text-text-gray-on-black distance-top-5 distance-bottom-4">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         
-        <div data-aos-delay="150" data-aos="fade-up" className="row-start-5 col-start-2 md:col-start-14 col-end-12 md:col-end-21 text-center md:text-left text-style-8 text-text-gray-on-black distance-bottom-4">
+        <div data-aos-delay="150" data-aos="fade-up" className="row-start-5 col-start-2 md:col-start-14 col-end-12 md:col-end-21 text-right md:text-left text-style-8 text-text-gray-on-black distance-bottom-4">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
         
-        <div data-aos-delay="150" data-aos="fade-up" className="row-start-6 col-start-2 md:col-start-5 col-end-12 text-center md:text-right text-style-8 text-text-gray-on-black distance-bottom-5">
+        <div data-aos-delay="150" data-aos="fade-up" className="row-start-6 col-start-2 md:col-start-5 col-end-12 text-left md:text-right text-style-8 text-text-gray-on-black distance-bottom-5">
           <PrismicRichText field={slice.primary.text_3} />
         </div>
 
@@ -71,7 +71,7 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
           left: '50%',
           background: 'linear-gradient(to bottom, black 0%, gray 40%, gray 100%)'
         }} 
-        className="absolute w-[1px] row-start-4 row-end-7 bottom-0 top-0 left-[50%]"></div>
+        className="hidden md:block absolute w-[1px] row-start-4 row-end-7 bottom-0 top-0 left-[50%]"></div>
       </div>
     </section>
   );

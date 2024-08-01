@@ -207,11 +207,11 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
+        <div data-aos="fade-up" className="pb-12 md:pb-0 row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
 
-        <div data-aos="fade-up" className="mt-[12px] row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos="fade-up" className="mt-[12px] row-start-5 md:row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_3} />
         </div>
       </div>

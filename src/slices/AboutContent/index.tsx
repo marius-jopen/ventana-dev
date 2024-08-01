@@ -20,7 +20,7 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
 
   return (
     <section 
-    className="bg-white h-full block w-full overflow-x-hidden"
+    className="bg-white h-full block w-full overflow-x-hidden overflow-y-hidden"
     slice-name="about-content"
     data-slice="style-white"
     >
@@ -29,7 +29,7 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div data-aos="fade-up"  className="-mt-32 row-start-2 md:row-start-2 col-start-1 md:col-start-2 col-end-12">
+        <div data-aos="fade-up"  className="mt-0 md:-mt-32 row-start-2 md:row-start-2 col-start-1 md:col-start-2 col-end-12">
           <PrismicImage field={slice.primary.image_1} />
           
           {slice.primary.caption_1 && (
@@ -63,11 +63,11 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
           )}
         </div>
 
-        <div data-aos="fade-up"  className="-mt-2 row-start-6 md:row-start-4 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white">
+        <div data-aos="fade-up"  className="mt-0 md:-mt-2 row-start-6 md:row-start-4 col-start-2 md:col-start-15 col-end-12 md:col-end-23 text-style-7 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_3} />
         </div>
 
-        <div data-aos="fade-up" className="-mt-80 row-start-7 md:row-start-5 col-start-1 md:col-start-12 col-end-12 md:col-end-23">
+        <div data-aos="fade-up" className="mt-0 md:-mt-80 row-start-7 md:row-start-5 col-start-1 md:col-start-12 col-end-12 md:col-end-23">
           <PrismicImage field={slice.primary.image_4} />
 
           {slice.primary.caption_4 && (
@@ -77,7 +77,7 @@ const AboutContent = ({ slice }: AboutContentProps): JSX.Element => {
           )}
         </div>
 
-        <div data-aos="fade-up"  className="-mt-32 row-start-8 md:row-start-6 col-start-2 col-end-13 md:col-end-10">
+        <div data-aos="fade-up"  className="mt-0 md:-mt-32 row-start-8 md:row-start-6 col-start-2 col-end-13 md:col-end-10">
           <PrismicImage field={slice.primary.image_5} />
 
           {slice.primary.caption_5 && (

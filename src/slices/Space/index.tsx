@@ -32,7 +32,7 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
 
   return (
     <section 
-    className="h-full block w-full overflow-x-hidden bg-white" 
+    className="h-full block w-full overflow-x-hidden overflow-y-hidden bg-white" 
     data-slice="style-white"
     slice-name="space"
     >
@@ -69,11 +69,11 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
           </video>
         </div>
 
-        <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white" data-slice="style-white">
+        <div data-aos="fade-up" className="pb-12 md:pb-0 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white" data-slice="style-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         
-        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>

@@ -46,7 +46,7 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
     slice-name="thickness"
     >
       <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max">
-        <div data-aos="fade-up" className="row-start-1 col-start-5 col-end-12 md:col-end-21 text-center text-style-4 text-black-on-white distance-top-4">
+        <div data-aos="fade-up" className="row-start-1 col-start-2 md:col-start-5 col-end-12 md:col-end-21 text-center text-style-4 text-black-on-white distance-top-4">
           <PrismicRichText field={slice.primary.headline} />
         </div>
 

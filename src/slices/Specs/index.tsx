@@ -6,7 +6,7 @@ export type SpecsProps = SliceComponentProps<Content.SpecsSlice>;
 const Specs = ({ slice }: SpecsProps): JSX.Element => {
   return (
     <section 
-    className="h-full block bg-darkGray text-white w-full overflow-x-hidden" 
+    className="h-full block bg-darkGray text-white w-full overflow-x-hidden overflow-y-hidden" 
     slice-name="specs"
     data-slice="style-black"
     >
@@ -21,7 +21,7 @@ const Specs = ({ slice }: SpecsProps): JSX.Element => {
           </div>
         </div>
 
-        <div className="mt-[-10px] row-start-1 col-start-2 md:col-start-14 col-end-12 md:col-end-24">
+        <div className="mt-0 md:mt-[-10px] row-start-2 md:row-start-1 col-start-2 md:col-start-14 col-end-12 md:col-end-24">
           {Array.isArray(slice.primary.table) && slice.primary.table.map((item, index) => (
             <div data-aos-delay={500 + (index * 100)} data-aos="fade-up" className="flex justify-between border-b border-text-gray-on-black pt-6 pb-6" key={index}>
               <div className="text-lightGray text-style-15">
