@@ -24,7 +24,7 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
     >
       <div className="grid grid-cols-12 grid-flow-row auto-rows-max md:grid-cols-24 pb-20 md:pb-24 2xl:pb-32">
         <div className="row-start-1 col-span-24">
-          <video className="w-full h-auto" width="100%" height="100%" autoPlay playsInline muted preload="metadata">
+          <video className="mt-[-1px] w-full h-auto" width="100%" height="100%" autoPlay playsInline muted preload="metadata">
             <source src="https://player.vimeo.com/progressive_redirect/playback/986526973/rendition/1080p/file.mp4?loc=external&log_user=0&signature=f48471d39de109f73177811255435ae830ead1d533e12b7a7612f6abea6255af" type="video/mp4" />
             Your browser does not support the video tag.
           </video>

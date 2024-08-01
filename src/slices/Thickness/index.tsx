@@ -63,7 +63,7 @@ const Thickness = ({ slice }: ThicknessProps): JSX.Element => {
         <div className="row-start-3 col-span-12 md:col-span-24 ">
           <video
             poster={slice.primary.video_poster?.url || ''}
-            className="w-full h-auto"
+            className="w-full h-auto mt-[-1px]"
             width="100%"
             height="100%"
             autoPlay

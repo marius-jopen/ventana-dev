@@ -2,7 +2,6 @@
 import { Content } from "@prismicio/client";
 import { SliceComponentProps, PrismicRichText } from "@prismicio/react";
 import { useEffect, useRef, useState } from "react";
-import { asText } from "@prismicio/helpers"
 
 export type ColorsProps = SliceComponentProps<Content.ColorsSlice>;
 
@@ -11,22 +10,23 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [canvasSize, setCanvasSize] = useState({ width: 0, height: 0 });
   const [startAnimation, setStartAnimation] = useState(false);
-  const [textIndex, setTextIndex] = useState(-1)
+  const [textIndex, setTextIndex] = useState(-1);
   const [frameNumber, setFrameNumber] = useState(0);
   const [isInView, setIsInView] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const scrollSpeed = 1; // Variable to control the speed of the animation
 
   const texts = [
     slice.primary.text_animated_1 ? slice.primary.text_animated_1 : "",
     slice.primary.text_animated_2 ? slice.primary.text_animated_2 : "",
     ""
-  ]
+  ];
 
   const breakpoints = [
     0.19,
     0.65,
     0.9
-  ]
+  ];
 
   useEffect(() => {   
     if (typeof window !== "undefined") {
@@ -35,6 +35,13 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
         height: window.innerHeight,
       });
 
+      const checkIsMobile = () => {
+        setIsMobile(window.innerWidth < 768);
+      };
+
+      checkIsMobile();
+      window.addEventListener("resize", checkIsMobile);
+
       const canvas = canvasRef.current;
       if (canvas) {
         const context = canvas?.getContext("2d");
@@ -42,7 +49,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
           const frameCount = 674;
 
           const currentFrame = (index: number) => (
-            `/colors-images/VENTANA_COLOR_R11_01D${index.toString().padStart(3, "0")}.jpg`
+            `${isMobile ? '/colors-images-mobile' : '/colors-images'}/VENTANA_COLOR_R11_01D${index.toString().padStart(3, "0")}.jpg`
           );
           const img = new Image();
           img.src = currentFrame(0);
@@ -81,12 +88,11 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
               setFrameNumber(frameIndex);
 
               // the breakpoints for the text animation
-              const progress = frameIndex / frameCount
+              const progress = frameIndex / frameCount;
               
               let newTextIndex = -1;
 
               for (let i = 0; i < breakpoints.length; i++) {
-                console.log(progress, breakpoints[i])
                 if (progress >= breakpoints[i]) {
                   newTextIndex = i;
                 } else {
@@ -124,13 +130,14 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
           preloadImages();
 
           return () => {
+            window.removeEventListener("resize", checkIsMobile);
             window.removeEventListener("scroll", handleScroll);
             observer.disconnect();
           };
         }
       }
     }
-  }, [startAnimation, scrollSpeed]);
+  }, [startAnimation, scrollSpeed, isMobile]);
 
   const drawImageCover = (context: CanvasRenderingContext2D | null, img: HTMLImageElement, canvas: HTMLCanvasElement) => {
     if (!context) return;
