@@ -31,14 +31,14 @@ const Opener = ({ slice }: OpenerProps): JSX.Element => {
       <div className="relative h-[80vw] md:h-[57vw] 2xl:h-[50vw]">
         <div className="flex flex-col justify-center h-full text-center">
           <div 
-          className="text-style-13 -mt-[5vw]"
+          className="text-style-13 -mt-[7vw]"
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
           >
             {words[currentWordIndex]}
           </div>
 
-          <div className="text-style-5 mt-[5px] md:mt-[-30px] 2xl:mt-[30px]">
+          <div className="text-style-5 mt-[5px] md:mt-[-50px] 2xl:mt-[-10px]">
             <PrismicRichText field={slice.primary.subheadline} />
           </div>
         </div>

@@ -6,12 +6,12 @@ export type ImageOpenerProps = SliceComponentProps<Content.ImageOpenerSlice>;
 const ImageOpener = ({ slice }: ImageOpenerProps): JSX.Element => {
   return (
     <section 
-    className="bg-black text-white w-full overflow-x-hidden"
+    className="bg-black text-white w-full overflow-hidden"
     slice-name="image-opener"
     data-slice="style-black"
     >
       <div className="relative grid grid-cols-12 md:grid-cols-24 h-[50vh] md:h-[55vw]">
-        <div className="relative z-10 col-start-2 col-end-12 md:col-end-24 text-style-9 text-white distance-top-2 mt-4">
+        <div className="relative z-10 col-start-2 col-end-12 md:col-end-24 text-style-9 text-white pt-16 md:pt-20 2xl:pt-24">
           <PrismicRichText field={slice.primary.headline} />
         </div>
         

@@ -166,7 +166,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
     data-slice="style-white" 
     slice-name="colors"
     >
-      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-3">
+      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max pb-12 2xl:pb-16">
         <div className="bg-black row-start-1 col-span-24" ref={containerRef}>
 
         {texts.map((txt, i) => (
@@ -184,7 +184,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
               }
             }}        
             className={`animate-element fixed inset-0 z-50 w-screen h-screen flex justify-center items-center text-white ${i === textIndex ? 'animate-enter' : 'animate-exit'}`}>
-          <h1 className="text-style-19 text-center mx-20 sm:mx-[22%] text-black">
+          <h1 className="text-style-19 text-center mx-10 md:mx-[20%] 2xl:mx-[22%] text-black">
             {txt}
           </h1>
         </div>
@@ -203,7 +203,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
 
         <div className="row-start-2 col-span-24 text-style-5 bg-gradient-to-t from-white h-64 z-20 -mt-64"></div>
 
-        <div data-aos="fade-up" className="distance-top-4 distance-bottom-1  row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
+        <div data-aos="fade-up" className="pb-4 md:pb-6 2xl:pb-12 pt-16 md:pt-20 2xl:pt-32 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
@@ -211,7 +211,7 @@ const Colors = ({ slice }: ColorsProps): JSX.Element => {
           <PrismicRichText field={slice.primary.text_2} />
         </div>
 
-        <div data-aos="fade-up" className="mt-[12px] row-start-5 md:row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos="fade-up" className="mt-[12px] row-start-5 md:row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box border-line-gray-on-white">
           <PrismicRichText field={slice.primary.text_3} />
         </div>
       </div>

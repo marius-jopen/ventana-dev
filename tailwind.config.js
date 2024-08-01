@@ -15,7 +15,7 @@ module.exports = {
         'text-black-on-white': '#181818',
         'text-black-on-white': '#181818',
         'line-gray-on-white': '#dbdbdb',
-        'line-gray-on-black': '#dbdbdb',
+        'line-gray-on-black': '#575757',
         'offWhite': '#F6F6F6',
         'darkGray': "#979797",
         'lightGray': '#C5C5C5',

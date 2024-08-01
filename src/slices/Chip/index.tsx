@@ -55,14 +55,14 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
     >
       <div className="grid grid-cols-12 md:grid-cols-24">
         <div 
-        className="row-start-1 col-start-2 col-end-24 text-left ml-[50%] relative translate-x-[-300px]" 
+        className="row-start-1 col-start-2 col-end-24 text-left ml-[50%] relative translate-x-[-110px] md:translate-x-[-300px]" 
         ref={ref}
         >
           <div className="text-style-14">
             {count.toString().padStart(2, '0')}
           </div>
 
-          <div className={`text-style-17 ml-[50%] w-full text-left absolute bottom-0 translate-x-[250px] 2xl:translate-x-[170px] translate-y-[-60px] opacity-0 ${fadeIn ? 'fade-in' : ''}`}>
+          <div className={`ml-6 md:ml-[480px] 2xl:ml-[580px] -mt-8 md:mt-0 text-style-17 md:ml-[50%] w-full text-left md:absolute bottom-0 md:translate-y-[-60px] opacity-0 ${fadeIn ? 'fade-in' : ''}`}>
             {slice.primary.fade_in_text}
           </div>
         </div>
@@ -86,7 +86,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
 
         <div 
         data-aos="fade-up" 
-        className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-11 distance-bottom-1  distance-top-2"
+        className="row-start-4 col-start-2 md:col-start-3 col-end-12 md:col-end-11 pt-20 md:pt-24 2xl:pt-28 pb-6 md:pb-10 2xl:pt-pb-12"
         >
           <div className="text-style-4">
             <PrismicRichText field={slice.primary.headline} />
@@ -106,7 +106,7 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
         <div 
         data-aos-delay="500" 
         data-aos="fade-up" 
-        className="mt-0 md:mt-[12px] row-start-6 md:row-start-5 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-black line-box"
+        className="mt-0 md:mt-[12px] row-start-6 md:row-start-5 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-black line-box border-line-gray-on-black"
         >
           <PrismicRichText field={slice.primary.text} />
         </div>
