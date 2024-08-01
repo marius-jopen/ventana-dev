@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 body {
-  overflow: scroll; /* Show scrollbars */
+  overflow: scroll;
 }
 
 .text-text-gray-on-white strong {
@@ -16,135 +16,9 @@ body {
   @apply text-text-white-on-black font-normal;
 }
 
-.fade-in {
-  animation: fadeInEffect 1s ease-in forwards;
-}
-
-@keyframes fadeInEffect {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
 .line-box {
-  @apply border-t border-text-gray-on-black pt-4;
+  @apply border-t pt-4;
 }
-
-.distance-top-0 {
-  padding-top: 0px;
-}
-
-.distance-bottom-0 {
-  padding-bottom: 0px;
-}
-
-.distance-top-05 {
-  padding-top: 18px;
-}
-
-.distance-bottom-05 {
-  padding-bottom: 18px;
-}
-
-.distance-top-1 {
-  padding-top: 36px;
-}
-
-.distance-bottom-1 {
-  padding-bottom: 36px;
-}
-
-.distance-top-2 {
-  padding-top: 72px;
-}
-
-.distance-bottom-2 {
-  padding-bottom: 72px;
-}
-
-.distance-top-3 {
-  padding-top: 108px;
-
-  @media (max-width: 768px) {
-    padding-top: 36px;
-  }
-}
-
-.distance-bottom-3 {
-  padding-bottom: 108px;
-
-  @media (max-width: 768px) {
-    padding-bottom: 36px;
-  }
-}
-
-.distance-top-4 {
-  padding-top: 144px;
-
-  @media (max-width: 768px) {
-    padding-top: 36px;
-  }
-}
-
-.distance-bottom-4 {
-  padding-bottom: 144px;
-
-  @media (max-width: 768px) {
-    padding-bottom: 36px;
-  }
-}
-
-.distance-top-5 {
-  padding-top: 216px;
-
-  @media (max-width: 768px) {
-    padding-top: 36px;
-  }
-}
-
-.distance-bottom-5 {
-  padding-bottom: 216px;
-
-  @media (max-width: 768px) {
-    padding-bottom: 36px;
-  }
-}
-
-.distance-top-6 {
-  padding-top: 288px;
-
-  @media (max-width: 768px) {
-    padding-top: 36px;
-  }
-}
-
-.distance-bottom-6 {
-  padding-bottom: 288px;
-
-  @media (max-width: 768px) {
-    padding-bottom: 36px;
-  }
-}
-
-.distance-top-7 {
-  padding-top: 360px;
-
-  @media (max-width: 768px) {
-    padding-top: 36px;
-  }
-}
-
-.distance-bottom-7 {
-  padding-bottom: 360px;
-
-  @media (max-width: 768px) {
-    padding-bottom: 36px;
-  }
-}
-
-
-
-
-
 
 .text-style-2 {
   font-size: 120px;
@@ -156,22 +30,16 @@ body {
   font-size: 120px;
   font-style: normal;
   font-weight: 400;
-  line-height: 104.5%; /* 125.4px */
+  line-height: 104.5%;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 80px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 104.5%; /* 125.4px */
+    line-height: 104.5%;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 35px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%; /* 42px */
+    line-height: 120%;
   }
 }
 
@@ -180,22 +48,16 @@ body {
   font-size: 70px;
   font-style: normal;
   font-weight: 400;
-  line-height: 74.8px; /* 106.857% */
+  line-height: 74.8px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 50px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 56px; /* 106.857% */
+    line-height: 56px;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%; /* 42px */
+    line-height: 120%;
   }
 }
 
@@ -204,22 +66,16 @@ body {
   font-size: 50px;
   font-style: normal;
   font-weight: 400;
-  line-height: 59.8px; /* 119.6% */
+  line-height: 59.8px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 37px; /* 119.6% */
+    line-height: 37px;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 25px; /* 119.2% */
+    line-height: 25px;
   }
 }
 
@@ -227,26 +83,18 @@ body {
   font-family: var(--font-outfit);
   font-size: 40px;
   font-style: normal;
-  /* font-weight: 500; */
-  line-height: 130.5%; /* 52.2px */
+  font-weight: normal;
+  line-height: 130.5%;
   letter-spacing: 1px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 30px;
-    font-style: normal;
-    /* font-weight: 500; */
-    line-height: 125%; /* 52.2px */
-    letter-spacing: 1px;
+    line-height: 125%;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 20px;
-    font-style: normal;
-    /* font-weight: 400; */
-    line-height: 120%; /* 24px */
-    letter-spacing: 1px;
+    line-height: 120%;
   }
 }
 
@@ -255,25 +103,17 @@ body {
   font-size: 40px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130.5%; /* 52.2px */
+  line-height: 130.5%;
   letter-spacing: 1px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 30px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%; /* 52.2px */
-    letter-spacing: 1px;
+    line-height: 125%;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130.5%; /* 26.1px */
-    letter-spacing: 1px;
+    line-height: 130.5%;
   }
 }
 
@@ -282,25 +122,17 @@ body {
   font-size: 35px;
   font-style: normal;
   font-weight: 400;
-  line-height: 122.5%; /* 42.875px */
+  line-height: 122.5%;
   letter-spacing: 1px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 25px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 125%; /* 52.2px */
-    letter-spacing: 1px;
+    line-height: 125%;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%; /* 26px */
-    letter-spacing: 1px;
+    line-height: 130%;
   }
 }
 
@@ -309,25 +141,17 @@ body {
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
-  line-height: 130.5%; /* 32.625px */
+  line-height: 130.5%;
   letter-spacing: 1px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 127.5%; /* 32.625px */
-    letter-spacing: 1px;
+    line-height: 127.5%;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%; /* 18px */
-    letter-spacing: 1px;
+    line-height: 120%; 
   }
 }
 
@@ -338,7 +162,7 @@ body {
   font-weight: 400;
   line-height: 94.8px; /* 105.333% */
 
-  @media (max-width: 1536px) {
+  @media (min-width: 1536px) {
     font-family: var(--font-outfit);
     font-size: 80px;
     font-style: normal;
@@ -378,49 +202,35 @@ body {
   font-size: 90px;
   font-style: normal;
   font-weight: 400;
-  line-height: 94.8px; /* 105.333% */
+  line-height: 94.8px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 70px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 70.8px; /* 105.333% */
+    line-height: 70.8px;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 34px;
-    font-style: normal;
-    font-weight: 500;
     line-height: normal;
   }
 }
 
 .text-style-12 {
   font-family: var(--font-outfit);
-  font-size: 21.564px;
+  font-size: 30px;
   font-style: normal;
   font-weight: 400;
-  line-height: 122.5%; /* 26.416px */
+  line-height: 122.5%;
   letter-spacing: 0.719px;
 
   @media (max-width: 1536px) {
-    font-family: var(--font-outfit);
     font-size: 23px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 122.5%; /* 26.416px */
-    letter-spacing: 0.719px;
+    line-height: 122.5%;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 16.56px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 122.5%; /* 20.286px */
-    letter-spacing: 0.719px;
+    line-height: 122.5%;
   }
 }
 
@@ -430,33 +240,35 @@ body {
   font-size: 311.818px;
   font-style: normal;
   font-weight: 500;
-  line-height: 342.584px; /* 109.867% */
+  line-height: 342.584px;
 
   @media (max-width: 1536px) {
-    text-align: center;
-    font-family: var(--font-outfit);
     font-size: 211.818px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 342.584px; /* 109.867% */
+    line-height: 342.584px;
   }
 
   @media (max-width: 768px) {
-    font-family: var(--font-outfit);
     font-size: 75px;
-    font-style: normal;
-    font-weight: 500;
     line-height: normal;
   }
 }
 
 .text-style-14 {
   font-family: var(--font-outfit);
-  font-size: 540px;
+  font-size: 500px;
   font-style: normal;
   font-weight: 400;
   line-height: 104.5%; /* 564.3px */
   letter-spacing: -31px;
+
+  @media (min-width: 1536px) {
+    font-family: var(--font-outfit);
+    font-size: 540px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 104.5%; /* 564.3px */
+    letter-spacing: -31px;
+  }
 
   @media (max-width: 768px) {
     font-family: var(--font-outfit);
@@ -476,7 +288,7 @@ body {
   line-height: 130.5%; /* 24.795px */
   letter-spacing: 1px;
 
-  @media (max-width: 1536px) {
+  @media (min-width: 1536px) {
     font-family: var(--font-outfit);
     font-size: 16px;
     font-style: normal;
@@ -503,7 +315,7 @@ body {
   line-height: normal;
   letter-spacing: 1px;
 
-  @media (max-width: 1536px) {
+  @media (min-width: 1536px) {
     font-family: var(--font-outfit);
     font-size: 20px;
     font-style: normal;
@@ -530,7 +342,7 @@ body {
   line-height: normal;
 
 
-  @media (max-width: 768px) {
+  @media (min-width: 768px) {
     font-family: var(--font-outfit);
     font-size: 16px;
     font-style: normal;
@@ -556,10 +368,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: 50px;
-  /* letter-spacing: 1px; */
 }
-
-
 
 .png__sequence {
   width: 100%;
@@ -577,6 +386,52 @@ body {
   max-width: 100vw;
   max-height: 100vh;
   z-index: 1;
+}
+
+.animate-updown {
+  animation: updown 25s ease-in-out infinite;
+}
+
+.animate-downup {
+  animation: downup 25s ease-in-out infinite;
+}
+
+.text-fx-box {
+  position: relative;
+  padding: 50vh 0 25vh;
+}
+
+.text-fx-item {
+  padding-bottom: 30vh;
+}
+
+.animate-element {
+  opacity: 0;
+  transform: scale(0.1);
+  filter: blur(30px);
+}
+
+.animate-enter {
+  transition: all 0.5s ease-in-out; 
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1);
+}
+
+.animate-exit {
+  transition: all 1s ease-in-out;
+  opacity: 0;
+  transform: scale(3);
+  filter: blur(30px);
+}
+
+.fade-in {
+  animation: fadeInEffect 1s ease-in forwards;
+}
+
+@keyframes fadeInEffect {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 @keyframes updown {
@@ -602,47 +457,3 @@ body {
     transform: translateY(-2vw);
   }
 }
-
-.animate-updown {
-  animation: updown 25s ease-in-out infinite;
-}
-
-.animate-downup {
-  animation: downup 25s ease-in-out infinite;
-}
-
-
-.text-fx-box {
-  position: relative;
-  padding: 50vh 0 25vh;
-}
-
-.text-fx-item {
-  padding-bottom: 30vh;
-}
-
-
-/** fade and blur animation, used in colors.tsx */
-.animate-element {
-  opacity: 0;
-  transform: scale(0.1);
-  filter: blur(30px);
-}
-
-.animate-enter {
-  transition: all 0.5s ease-in-out; /* Faster enter transition */
-
-  opacity: 1;
-  filter: blur(0px);
-  transform: scale(1);
-}
-
-.animate-exit {
-  transition: all 1s ease-in-out; /* Slower exit transition */
-  opacity: 0;
-  transform: scale(3);
-  filter: blur(30px);
-}
-
-
-

@@ -32,12 +32,15 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
 
   return (
     <section 
-    className="h-full block w-full overflow-x-hidden overflow-y-hidden bg-white" 
+    className="h-full block w-full overflow-hidden bg-white" 
     data-slice="style-white"
     slice-name="space"
     >
-      <div className="grid grid-cols-12 md:grid-cols-24 distance-bottom-6 grid-flow-row auto-rows-max">
-        <div data-aos="zoom-out" className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white distance-top-3 text-black-on-white">
+      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max">
+        <div 
+        data-aos="zoom-out" 
+        className="row-start-1 col-start-2 col-end-24 text-center text-black-on-white pt-12 md:pt-20 2xl:pt-24 text-black-on-white">
+
           <div 
           className="text-style-3"
           onMouseEnter={() => setIsHovering(true)}
@@ -46,12 +49,12 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
             {words[currentWordIndex]}  {/* Show current word from the headline */}
           </div>
           
-          <div className="text-style-5 distance-top-05">
+          <div className="text-style-5 pt-3 md:pt-6 2xl:pt-10">
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
         </div>
 
-        <div className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center distance-top-3 distance-bottom-3">
+        <div className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-23 text-center pt-12 md:pt-20 2xl:pt-24 pb-8 md:pb-16 2xl:pb-24">
           <video
             poster={slice.primary.video_poster?.url || ''}
 
@@ -69,11 +72,18 @@ const Space = ({ slice }: SpaceProps): JSX.Element => {
           </video>
         </div>
 
-        <div data-aos="fade-up" className="pb-12 md:pb-0 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white" data-slice="style-white">
+        <div 
+        data-aos="fade-up" 
+        className="pb-12 md:pb-0 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-12 text-style-6-1 text-text-gray-on-white" 
+        data-slice="style-white"
+        >
           <PrismicRichText field={slice.primary.text_1} />
         </div>
         
-        <div data-aos="fade-up" className="row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div 
+        data-aos="fade-up" 
+        className="row-start-4 col-start-2 md:col-start-17 col-end-9 md:col-end-23 text-style-8 text-text-gray-on-white line-box border-line-gray-on-white pb-16 md:pb-24 2xl:pb-28"
+        >
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>
