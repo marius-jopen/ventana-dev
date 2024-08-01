@@ -29,7 +29,7 @@ const HeaderMobile = (): JSX.Element => {
     if (isOpen) {
       const timeout = setTimeout(() => {
         setOpen(false);
-      }, 10500);
+      }, 1000);
       return () => clearTimeout(timeout);
     }
   }, [isOpen]);
