@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { Outfit } from 'next/font/google'
 import Header from "../app/components/header"; // Ensure correct import path
-import Footer from "../app/components/footer"; // Ensure correct import path
+import HeaderMobile from "../app/components/header-mobile"; // Ensure correct import path
 import '../app/styles.css'; // Ensure correct import path
 import Head from 'next/head';
 
@@ -67,8 +67,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </Head>
       <body className={`${outfit.variable} font-sans bg-black antialiased w-full overflow-x-hidden`} >
         <Header />
+        <HeaderMobile />
         {children}
-        <Footer />
       </body>
     </html>
   );

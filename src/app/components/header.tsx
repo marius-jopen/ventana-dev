@@ -40,7 +40,7 @@ const Header = (): JSX.Element => {
 
   return (
     <div
-      className={`flex justify-between top-0 left-0 w-full fixed z-[300] px-8 pt-4 transition-transform duration-1000 translate-y-0 opacity-100 ${visible ? '' : '!-translate-y-full !opacity-0'}`}
+      className={`hidden md:flex justify-between top-0 left-0 w-full fixed z-[300] px-8 pt-4 transition-transform duration-1000 translate-y-0 opacity-100 ${visible ? '' : '!-translate-y-full !opacity-0'}`}
     >
       <Link href="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="140" height="25" viewBox="0 0 844 102" fill="none">

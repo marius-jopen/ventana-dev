@@ -89,7 +89,7 @@ body {
 
   @media (max-width: 768px) {
     font-size: 20px;
-    line-height: 120%;
+    line-height: 130%;
   }
 }
 
@@ -290,7 +290,7 @@ body {
   }
 
   @media (max-width: 768px) {
-    font-size: 16px;
+    font-size: 26px;
     line-height: 130.5%;
   }
 }
