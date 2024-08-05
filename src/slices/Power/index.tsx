@@ -35,16 +35,16 @@ const Power = ({ slice }: PowerProps): JSX.Element => {
             <PrismicRichText field={slice.primary.sub_headline} />
           </div>
           
-          <div data-aos-delay="500" data-aos="zoom-out" className="text-style-3 text-black-on-white text-black-on-white pt-2 md:pt-4 2xl:pt-6 pb-12 md:pb-20 2xl:pb-24">
+          <div data-aos="zoom-out" className="text-style-3 text-black-on-white text-black-on-white pt-2 md:pt-4 2xl:pt-6 pb-12 md:pb-20 2xl:pb-24">
             <PrismicRichText field={slice.primary.headline} />
           </div>
         </div>
         
-        <div data-aos-delay="750" data-aos="fade-up" className="pb-12 md:pb-0 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
+        <div data-aos="fade-up" className="pb-12 md:pb-0 row-start-3 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-white">
           <PrismicRichText field={slice.primary.text_1} />
         </div>
 
-        <div data-aos-delay="1000" data-aos="fade-up" className="mt-8 md:mt-[12px] row-start-4 md:row-start-3 col-start-5 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
+        <div data-aos="fade-up" className="mt-8 md:mt-[12px] row-start-4 md:row-start-3 col-start-5 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-white line-box">
           <PrismicRichText field={slice.primary.text_2} />
         </div>
       </div>

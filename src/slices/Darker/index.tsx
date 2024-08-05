@@ -56,7 +56,6 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
         </div>
 
         <div 
-        data-aos-delay="50" 
         data-aos="fade-up" 
         className="row-start-4 col-start-2 md:col-start-5 col-end-9 md:col-end-12 text-left md:text-right text-style-8 text-text-gray-on-black pt-20 md:pt-32 2xl:pt-44 pb-20 md:pb-20 2xl:pb-24"
         >
@@ -64,7 +63,6 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
         </div>
         
         <div 
-        data-aos-delay="150" 
         data-aos="fade-up" 
         className="row-start-5 col-start-4 md:col-start-14 col-end-12 md:col-end-21 text-right md:text-left text-style-8 text-text-gray-on-black pb-20 md:pb-20 2xl:pb-24"
         >
@@ -72,7 +70,6 @@ const Darker = ({ slice }: DarkerProps): JSX.Element => {
         </div>
         
         <div 
-        data-aos-delay="150" 
         data-aos="fade-up" 
         className="row-start-6 col-start-2 md:col-start-5 col-end-9 md:col-end-12 text-left md:text-right text-style-8 text-text-gray-on-black pb-20 md:pb-28 2xl:pb-36"
         >

@@ -95,7 +95,6 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
 
         <div className="row-start-5 col-start-2 md:col-start-3 col-end-12 md:col-end-11">
           <div 
-          data-aos-delay="250" 
           data-aos="fade-up" 
           className="pb-12 md:pb-0 text-style-7 text-text-gray-on-black"
           >
@@ -104,7 +103,6 @@ const Chip = ({ slice }: ChipProps): JSX.Element => {
         </div>
 
         <div 
-        data-aos-delay="500" 
         data-aos="fade-up" 
         className="mt-8 md:mt-[12px] row-start-6 md:row-start-5 col-start-5 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box border-line-gray-on-black"
         >
