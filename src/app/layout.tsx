@@ -64,6 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <title>VENTANA</title>
         <meta name="description" content="Ventana" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="robots" content="NOODP" />
       </Head>
       <body className={`${outfit.variable} font-sans bg-black antialiased w-full overflow-x-hidden`} >
         <Header />
