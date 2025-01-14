@@ -16,8 +16,8 @@ const Contact = ({ slice }: ContactProps): JSX.Element => {
     slice-name="contact"
     data-slice="style-black"
     >
-      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-top-5 distance-bottom-6">
-        <div className="text-style-4 text-center distance-bottom-2 mt-1 row-start-1 col-start-2 md:col-start-7 col-end-12 md:col-end-19 text-text-white-on-black">
+      <div className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max pt-44 md:pt-64 2xl:pt-80">
+        <div className="text-style-4 text-center mt-1 row-start-1 col-start-2 md:col-start-7 col-end-12 md:col-end-19 text-text-white-on-black pb-4 md:pb-6 2xl:pb-8">
           <PrismicRichText field={slice.primary.headline} />
         </div>
         

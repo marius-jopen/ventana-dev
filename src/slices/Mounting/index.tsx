@@ -111,7 +111,7 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
             <div
               key={index}
               ref={(el) => setRef(el, index)}
-              className={`transition-opacity duration-1000 pt-80 pb-40 flex flex-col w-8/12 mx-auto justify-end items-center z-10 ${activeIndex === index ? "opacity-100 blur-none" : "opacity-0 blur-xl"}`}
+              className={`transition-opacity duration-1000 pt-80 pb-40 flex flex-col w-10/12 mx-auto justify-end items-center z-10 ${activeIndex === index ? "opacity-100 blur-none" : "opacity-0 blur-xl"}`}
             >
               <span>
                 {text}
@@ -122,12 +122,12 @@ const Mounting = ({ slice }: MountingProps): JSX.Element => {
         </div>
       </div>
 
-      <div  className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max distance-bottom-5 distance-top-3">
-        <div data-aos="fade-up" className="row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">
+      <div  className="grid grid-cols-12 md:grid-cols-24 grid-flow-row auto-rows-max pt-12 md:pt-16 2xl:pt-24 pb-12 md:pb-20 2xl:pb-28">
+        <div data-aos="fade-up" className="pb-12 md:pb-0 row-start-2 col-start-2 md:col-start-3 col-end-12 md:col-end-11 text-style-5 text-text-gray-on-black">
             <PrismicRichText field={slice.primary.text_1} />
           </div>
 
-          <div data-aos="fade-up" className="row-start-3 col-start-2 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box">
+          <div data-aos="fade-up" className="mt-8 md:mt-0 row-start-3 col-start-2 col-start-5 md:col-start-17 col-end-12 md:col-end-23 text-style-8 text-text-gray-on-black line-box border-line-gray-on-black">
             <PrismicRichText field={slice.primary.text_2} />
           </div>
       </div>

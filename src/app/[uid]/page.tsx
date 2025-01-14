@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+import Footer from "../components/footer"; // Ensure correct import path
 
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
@@ -24,7 +25,7 @@ export async function generateMetadata({
     .catch(() => notFound());
 
   return {
-    title: prismic.asText(page.data.title),
+    title: "Ventana – " + prismic.asText(page.data.title),
     description: page.data.meta_description,
     openGraph: {
       title: page.data.meta_title || undefined,
@@ -43,7 +44,10 @@ export default async function Page({ params }: { params: Params }) {
     .getByUID("page", params.uid)
     .catch(() => notFound());
 
-  return <SliceZone slices={page.data.slices} components={components} />;
+  return <>
+    <SliceZone slices={page.data.slices} components={components} />
+    <Footer page={params.uid} />
+  </>
 }
 
 export async function generateStaticParams() {

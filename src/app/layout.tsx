@@ -1,9 +1,9 @@
 "use client";
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import { Outfit } from 'next/font/google'
+import { Outfit } from 'next/font/google';
 import Header from "../app/components/header"; // Ensure correct import path
-import Footer from "../app/components/footer"; // Ensure correct import path
+import HeaderMobile from "../app/components/header-mobile"; // Ensure correct import path
 import '../app/styles.css'; // Ensure correct import path
 import Head from 'next/head';
 
@@ -11,20 +11,36 @@ const outfit = Outfit({
   subsets: ['latin'],
   weight: ['400', '500'],
   variable: '--font-outfit',
-})
+});
+
+const preloadImages = (folder: string, frameCount: number) => {
+  for (let i = 0; i < frameCount; i++) {
+    const img = new Image();
+    img.src = `${folder}/VENTANA_COLOR_R11_01D${i.toString().padStart(3, "0")}.jpg`;
+  }
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname(); // Detect route changes
 
-
   useEffect(() => {
-    const slices = document.querySelectorAll("section[data-slice]");
+    const frameCount = 674; // Adjust based on your image count
 
+    const preloadImagesForAllDevices = () => {
+      const mobileFolder = '/colors-images-mobile';
+      const desktopFolder = '/colors-images';
+
+      preloadImages(desktopFolder, frameCount);
+      preloadImages(mobileFolder, frameCount);
+    };
+
+    preloadImagesForAllDevices();
+
+    const slices = document.querySelectorAll("section[data-slice]");
     let lastKnownSlice: string | null = null;
 
     const updateHeaderColor = (sliceClass: string | null) => {
       if (sliceClass !== lastKnownSlice) {
-        // console.log("Updating header color to:", sliceClass);
         lastKnownSlice = sliceClass;
         const event = new CustomEvent("headerColorChange", { detail: { color: sliceClass } });
         window.dispatchEvent(event);
@@ -36,7 +52,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         const rect = slice.getBoundingClientRect();
         if (rect.top <= 50 && rect.bottom >= 50) { // Adjust this value based on header height
           const sliceClass = slice.getAttribute("data-slice");
-          // console.log("Slice at top:", sliceClass);
           updateHeaderColor(sliceClass);
         }
       });
@@ -62,14 +77,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <Head>
         <title>VENTANA</title>
-        <meta name="description" content="Ventana" />
+        <meta name="description" content="Ventana – More than a display. A window to the future." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="NOODP" />
       </Head>
       <body className={`${outfit.variable} font-sans bg-black antialiased w-full overflow-x-hidden`} >
         <Header />
+        <HeaderMobile />
         {children}
-        <Footer />
       </body>
     </html>
   );

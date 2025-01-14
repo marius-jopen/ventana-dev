@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 import { SliceZone } from "@prismicio/react";
 import * as prismic from "@prismicio/client";
+import Footer from "../app/components/footer"; // Ensure correct import path
 
 import { createClient } from "@/prismicio";
 import { components } from "@/slices";
@@ -17,7 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const home = await client.getByUID("page", "home");
 
   return {
-    title: prismic.asText(home.data.title),
+    title: "Ventana – Home",
     description: home.data.meta_description,
     openGraph: {
       title: home.data.meta_title ?? undefined,
@@ -31,5 +32,8 @@ export default async function Index() {
   const client = createClient();
   const home = await client.getByUID("page", "home");
 
-  return <SliceZone slices={home.data.slices} components={components} />;
+  return <>
+    <SliceZone slices={home.data.slices} components={components} />
+    <Footer page={"home"} />
+  </>
 }

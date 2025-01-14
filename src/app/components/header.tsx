@@ -5,6 +5,8 @@ import Link from "next/link";
 const Header = (): JSX.Element => {
   const [headerColor, setHeaderColor] = useState("text-white");
   const [logoColor, setLogoColor] = useState("white");
+  const [visible, setVisible] = useState(true);
+  const [scrollPos, setScrollPos] = useState(0);
 
   useEffect(() => {
     const handleColorChange = (event: Event) => {
@@ -19,10 +21,26 @@ const Header = (): JSX.Element => {
       window.removeEventListener("headerColorChange", handleColorChange as EventListener);
     };
   }, []);
-  
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      const isVisible = scrollPos > currentScrollPos || currentScrollPos < 10;
+
+      setVisible(isVisible);
+      setScrollPos(currentScrollPos);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollPos]);
+
   return (
     <div
-      className={`flex justify-between top-0 left-0 w-full fixed z-[300] px-8 pt-4 ${headerColor} `}
+      className={`hidden md:flex justify-between top-0 left-0 w-full fixed z-[300] px-8 pt-4 transition-transform duration-1000 translate-y-0 opacity-100 ${visible ? '' : '!-translate-y-full !opacity-0'}`}
     >
       <Link href="/">
         <svg xmlns="http://www.w3.org/2000/svg" width="140" height="25" viewBox="0 0 844 102" fill="none">
@@ -30,7 +48,7 @@ const Header = (): JSX.Element => {
         </svg>        
       </Link>
 
-      <div className="flex gap-4 text-style-16">
+      <div className={`${headerColor}  flex gap-4 text-style-16`}>
         <Link className="hover:text-darkGray transition duration-300" href="/">Home</Link>
         <Link className="hover:text-darkGray transition duration-300" href="/product">Product</Link>
         <Link className="hover:text-darkGray transition duration-300" href="/company">Company</Link>
